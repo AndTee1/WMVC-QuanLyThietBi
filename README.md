@@ -27,7 +27,7 @@ Dự án cuối kỳ môn lập trình web
     - ADD , EDIT using POST
 
 + Rule commit
-    - commit lên branch cá nhân xong mergen lên bracnh tính năng sau đo nhóm trưởng sẻ merge lên master
-    - nhóm trưởng có trách nhiệm review code các thành viên mình làm gì 
+    - code commit lên branch rồi gửi request merge lên master
+    - nhóm trưởng có trách nhiệm review code các thành viên mình làm gì sau đó merge code cho nhóm rồi báo để m.n pull
     - làm file nào chỉ git add namefile
     - full orgin master  

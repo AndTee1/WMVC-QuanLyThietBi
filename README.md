@@ -22,7 +22,7 @@ Dự án cuối kỳ môn lập trình web
 
 + PHP
     - biến php là dynamic
-    - validate sử dụng php không sửa dụng DOMJS để làm
+    - validate sử dụng php không sử dụng DOMJS để làm
     - Search using GET
     - ADD , EDIT using POST
 

@@ -89,7 +89,7 @@
                                 <td>
                                     <button type='submit' 
                                             name='btnDelete'>Xóa</button>
-                                    <button type='submit' 
+                                    <button type='button' 
                                             name='btnEdit' 
                                             onclick='window.location.href="classroom_edit_input_view.php?id="+"<?php echo $room['id']?>"'
                                              >Sửa</button>

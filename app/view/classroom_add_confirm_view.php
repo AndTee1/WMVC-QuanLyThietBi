@@ -16,75 +16,55 @@
     ?>
     <div class="content container">
         <div class='col-md-12'>
-            <form name='formadd' action='../controller/classroom_add_controller.php' method='POST'>  
-                <div class="col-md-12">
-                    <div class="col-md-4"></div>
-                    <div class="col-sm-6">
-                        <div><span class="error"><?php echo $nameErr;?></span></div>
+            <form name='formadd' action='../controller/classroom_add_controller.php' method='POST'> 
+                <div class="col-md-12"> 
+                    <div class="col-md-12">
+                        <div class="col-sm-2">
+                            <div class="word">Tên Phòng học</div>
+                        </div>
+                        <div class="col-sm-7">
+                            <label for="" style='width:50%'>
+                                <div class="lable-input">.</div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-sm-2">
+                            <div class="word">Tòa nhà</div>
+                        </div>
+                        <div class="col-sm-7">
+                            <label for="" style='width:50%'>
+                                <div class="lable-input">.</div>
+                            </label>                  
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="col-sm-2">
+                            <div class="word">Mô tả chi tiết</div>
+                        </div>
+                        <div class="col-sm-7">
+                            <label for="" style='width:100%'>
+                                <div class="lable-input description"></div>
+                            </label>                        
+                        </div>
+                    </div>
+                    <div class="col-md-12 seacrch">
+                        <div class="col-sm-2">
+                            <div class="word">Avatar</div>
+                        </div>
+                        <div class="col-sm-7">
+                            <label for="" style='width:30%'>
+                                <div class="lable-input avatar">IMAGE</div>
+                            </label>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-12">
-                    <div class="col-md-2"></div>
-                    <div class="col-sm-2">
-                        <div class="word">Tên Phòng học</div>
-                    </div>
-                    <div class="col-sm-6">
-                        <label for="" style='width:50%'>
-                            <div class="lable-input">.</div>
-                        </label>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="col-md-4"></div>
-                    <div class="col-sm-6">
-                        <div><span class="error"><?php echo $buildingErr;?></span></div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="col-md-2"></div>
-                    <div class="col-sm-2">
-                        <div class="word">Tòa nhà</div>
-                    </div>
-                    <div class="col-sm-6">
-                        <label for="" style='width:50%'>
-                            <div class="lable-input">.</div>
-                        </label>                  
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="col-md-4"></div>
-                    <div class="col-sm-6">
-                        <div><span class="error"><?php echo $descriptionErr;?></span></div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="col-md-2"></div>
-                    <div class="col-sm-2">
-                        <div class="word">Mô tả chi tiết</div>
-                    </div>
-                    <div class="col-sm-6">
-                        <label for="" style='width:100%'>
-                            <div class="lable-input description"></div>
-                        </label>                        
-                    </div>
-                </div>
-                <div class="col-md-12 seacrch">
-                    <div class="col-md-2"></div>
-                    <div class="col-sm-2">
-                        <div class="word">Avatar</div>
-                    </div>
-                    <div class="col-sm-6">
-                        <label for="" style='width:30%'>
-                            <div class="lable-input avatar">IMAGE</div>
-                        </label>
-                    </div>
-                </div>
-                <div class="col-md-12" style='text-align: center; margin-top:20px'>
+                <div class="col-md-12 confirm">
                     <!-- <div class="col-sm-6"> -->
-                        <button type="button" class="filtervalue" id="btn-edit" name="edit">Sửa lại</button>
+                        <button type="button" id="btn-edit" name="edit">Sửa lại</button>
                     <!-- </div> -->
                     <!-- <div class="col-sm-2"> -->
-                        <button type="button" class="filtervalue" id="btn-add" name="add">Đăng kí</button>
+                        <button type="button" id="btn-add" name="add">Đăng kí</button>
                     <!-- </div> -->
                 </div>
             </form>

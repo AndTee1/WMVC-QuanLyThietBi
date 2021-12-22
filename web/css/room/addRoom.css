@@ -2,14 +2,40 @@
     font-family: 'Times New Roman', Times, serif;
     font-size: 16px;
 }
-input{
-    width: 85%;
-    padding: 5px 5px;
+.txtarea{
     border: 1px solid #385d8a;
     background-color: #e1eaf4;
-    overflow-wrap: break-word;
+}
+input, select{
+    border: 1px solid #385d8a;
+    background-color: #e1eaf4;
+    width: 70%;
+    padding: 5px 5px;
 }
 
+button{
+    background-color: #4f81bd;
+    color: black;
+    border: none;
+}
+
+button.col-sm-3 {
+    padding: 6px;
+    margin-left: 10px;
+    color: white;
+}
+
+.confirm{
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+}
+.confirm > button{
+    border-radius: 8px;
+    padding: 20px 20px;
+    width: 20%;
+    border: 3px solid #385d8a;
+}
 .lable-input{
     width: 85%;
     padding: 5px 5px;
@@ -17,40 +43,29 @@ input{
     background-color: #e1eaf4;
 }
 
+label.col-sm-8 {padding: 0px;}
+
 .lable-input > div {
 	padding: 10px 5px;
 }
 
-.filtervalue{
-    border-radius: 8px;
-    border: 3px solid #385d8a;
-    background-color: #4f81bd;
-    padding: 10px 12px;
-    height: 60px;
-    text-align: center;
-    color: white;
-    width: 15%;
-    margin-left: 50px;
-}
 .word{
-    padding: 7px 10px;
+    padding: 5px 1px;
     color: black;
     background-color: #FFFFFF;
     text-align: left;
 }
-table{
-    margin-top: 30px;
-    border:1px solid black;
-    width: 100%;
-}
+
 .content{
-    position: relative;
-    width: 80% !important;
     margin: auto;
-    margin-top: 100px;
+    width: 70% !important;
+    margin-top: 50px;
     border: 1px solid #385d8a;
 }
 
+.content > form{
+    margin: 30px 0px;
+}
 th,td{
     border-right: 1px solid black;
     padding: 5px 10px !important;
@@ -58,19 +73,12 @@ th,td{
 tr{
     border-bottom: 1px solid black;
 }
-select{
-    width: 85%;
-    padding: 5px 5px;
-    border: 1px solid #385d8a;
-    background-color: #e1eaf4;
-}
-.filterbuilding{
-    margin-bottom: 20px;
-}
+
 .content.container > div{
     margin: 20px 10px;
     box-sizing: border-box;
 }
+
 tr > td:last-child > button{
     background-color: #4f81bd;
     color: black;
@@ -81,7 +89,9 @@ tr > td:last-child > button{
 
 .error {
     color: #FF0000;
+    font-weight: bold;
 }
+
 .description {
     height: 100px;
     word-break: break-all;
@@ -91,12 +101,17 @@ tr > td:last-child > button{
 .avatar{
     border: 3px solid #385d8a;
     background-color: #4f81bd;
-    /* padding: 30px 12px; */
     height: 100px;
     color: white;
 }
+
+#avatar{
+    width: 100%;
+}
+
 a{
     font-style: italic;
     color: black !important;
     text-decoration-line: underline !important;
 }
+

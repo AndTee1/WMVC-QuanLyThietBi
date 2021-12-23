@@ -1,6 +1,5 @@
 <?php
 require '../common/define.php';
-require '../model/teacher.php';
 ?>
 <html lang="en">
 

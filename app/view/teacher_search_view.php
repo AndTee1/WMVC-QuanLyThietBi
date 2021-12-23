@@ -1,6 +1,5 @@
 <?php
-    include '../common/define.php';
-    require '../common/connectDB.php';
+    require '../common/define.php';
  ?>
 <html lang="en">
 <head>
@@ -45,24 +44,8 @@
                 <th class="th__description">Mô tả chi tiết</th>
                 <th class="th__action">Action</th>
             </tr>
-            <?php include '../../app/controller/teacher_search_controller.php'?>
+            <?php require '../controller/teacher_search_controller.php'?>
     </table>
-    <script>
-        let deleteLinks = document.querySelectorAll('.delete');
-        for (let i = 0; i < deleteLinks.length; i++) {
-            deleteLinks[i].addEventListener('click', function(event) {
-                event.preventDefault();
-                let id_teacher=this.getAttribute('id');
-                let url = "../controller/teacher_delete_controller.php?id="+id_teacher;
-                if (confirm(this.getAttribute('data-confirm'))) {
-                    const xhttp = new XMLHttpRequest();
-                    xhttp.open("GET",url);
-                    xhttp.send();
-                }
-            });
-            
-        }
-    </script>
    
 </body>
 </html>

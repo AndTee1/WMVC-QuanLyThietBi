@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman';
+    box-sizing: border-box;
+    font-size : 16px
+}
+
+body {
+    margin: 100px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+table, th, td {
+    border: 1px solid #385d8a;
+    border-collapse: collapse;
+}
+
+th {
+    font-weight: 200;
+    text-align: center;
+    padding: 5px 0;
+}
+td {
+    padding: 5px 0 5px 10px;
+}
+td:first-child {
+    text-align: center;
+    padding: 0;
+}
+td:last-child {
+    text-align: center;
+    padding: 5px 0;
+}
+.tr__label {
+    background-color: rgb(156, 194, 229);
+}
+.th__id {
+    width: 40px;
+}
+.th__username {
+    width: 150px;
+}
+
+.th__specialized {
+    width: 150px;
+}
+.th__description {
+    width: 250px;
+}
+.th__action {
+    width: 150px;
+}
+
+
+
+.count__teacher {
+    margin-bottom: 10px;
+    margin-right: 600px;
+}
+
+
+.search {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.btn__submit {
+    width: 100px;
+    height: 30;
+    color: #FFFFFF;
+    background-color: #4f81bd;
+    margin-left: 40px;
+    padding: 5px 10px;
+    border: 1px solid #385d8a;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.search__keyword {
+    margin-bottom: 20px;
+}
+.keyword__input {
+    width: 200px;
+    height: 30px;
+    padding-left: 10px;
+    margin-left: -5px;
+    background-color: #e1eaf4;
+    border: 1px solid #385d8a;
+}
+.search__specialized {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.search__specialized::after {
+    position: absolute;
+    content: "";
+    top: 3.8px;
+    right: 1px;
+    cursor: pointer;
+    background-color: #fff;
+    border-top: 28px solid DodgerBlue;
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    pointer-events: none;
+    transition: .25s all ease;
+}
+
+label {
+    width: 120px;
+    height: 30px;
+    display: inline-block;
+    color: #FFFFFF;
+    text-align: center;
+    background-color: rgb(156, 194, 229);
+    padding: 5px;
+    margin: 3px 50px 3px 0;
+    border: 1px solid #385d8a;
+}
+.specialized__select {
+    width: 200px;
+    height: 30px;
+    display: inline-block;
+    color: #000;
+    border: 1px solid #385d8a;
+    cursor: pointer;
+    padding-left: 5px;
+}
+button {
+    padding: 5px 10px;
+    background-color: #4f81bd;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}

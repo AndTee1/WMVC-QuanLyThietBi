@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TÌm kiếm nâng cao</title>
-    <link rel="stylesheet" href="../../web/css/device/searchAdvanced.css">
+    <link rel="stylesheet" href="../../web/css/device/searchAdvancedDevice.css">
 </head>
 
 <body>

@@ -1,0 +1,124 @@
+form {
+    margin: 25px auto;
+    padding: 10px;
+    border: 2px solid #385d8a;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+  }
+  
+  * {
+    padding: 0;
+    margin: 0;
+    font-family: "Times New Roman";
+  }
+  
+  body {
+    margin: 50px auto;
+    text-align: center;
+    width: 800px;
+  }
+  
+  label {
+    width: 120px;
+    display: inline-block;
+    text-align: left;
+    font-size: 16px;
+    margin-right: auto;
+    padding: 9px;
+  }
+  
+  input {
+    border: 1px solid #385d8a;
+    font-size: 16px;
+    font-weight: 100;
+    font-family: "Times New Roman";
+    padding: 6px;
+    width: 200px;
+    background-color: #e1eaf4;
+  }
+  
+  div {
+    margin: 10px;
+  }
+  
+  label.validate {
+    width: 200px;
+    color: #ff3c33;
+  }
+  
+  .borrow {
+    width: 150px;
+    height: 45px;
+    padding: 5px 10px;
+    font-size: 16px;
+    font-family: "Times New Roman";
+    font-weight: 1;
+    background: #4f81bd;
+    border: 1px solid #385d8a;
+    margin-top: 100px;
+    border-radius: 8px;
+  }
+  
+  .time {
+    width: 200px;
+    padding: 5px 10px;
+    font-size: 16px;
+    font-family: "Times New Roman";
+    font-weight: 1;
+    border: 1px solid #385d8a;
+    margin-top: 10px;
+  }
+  
+  .combobox {
+    width: 215px;
+    padding: 8px;
+    font-size: 16px;
+    font-family: "Times New Roman";
+    font-weight: 1;
+    /*   background: #ffffff; */
+    background-color: #e1eaf4;
+    border: 1px solid #385d8a;
+  }
+  
+  .count {
+    text-align: left;
+  }
+  
+  table {
+    width: 100%;
+    text-align: left;
+    margin: 20px;
+    font-weight: 100;
+    /* background: blue; */
+  }
+  
+  .pay {
+    width: 100px;
+    font-size: 16px;
+    background: #0099ff;
+  }
+  .group-date i {
+    padding: 9px;
+    border: 1px solid #385d8a;
+    background-color: #e1eaf4;
+    margin-right: 12px;
+  }
+  
+  
+  th {
+    /* border: 1px solid black; */
+    width: 100px;
+  }
+  
+  .group-date input {
+    border: 1px solid #385d8a;
+    font-size: 16px;
+    font-weight: 100;
+    padding: 8px;
+    width: 180px;
+    background-color: #e1eaf4;
+  }
+  
+  

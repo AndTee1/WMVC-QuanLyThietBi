@@ -1,0 +1,30 @@
+.container {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+.section {
+width: 600px;
+display: flex;
+justify-content: flex-start;
+align-items: center;
+margin-bottom: 40px;
+}
+.section > p {
+width: 150px;
+font-weight: bold;
+}
+.input-field {
+display: flex;
+}
+.txt {
+width: 400px;
+height: 80px;
+}
+.btn-submit {
+border-radius: 3px;
+width: 200px;
+height: 40px;
+background-color: rgb(70, 141, 191);
+}

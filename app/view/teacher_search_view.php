@@ -65,7 +65,7 @@ require '../common/define.php';
                 <td><?php echo $row['description'] ?></td>
                 <td>
 
-                    <button id="<?php echo $row['id'] ?>" class="delete" data-confirm="Bạn chắc chắn muốn xóa <?php echo $row['name'] ?> ?">Xóa</button>
+                    <button>Xóa</button>
                     <button>
                         Sửa
                         <a href="teacher_edit_input_view.php<?php echo '?id=' . $row['id']; ?>"></a>

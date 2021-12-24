@@ -1,3 +1,3 @@
 <?php 
-    require '../model/teacher.php'
+    require '../model/teacher.php';
 ?>

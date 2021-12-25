@@ -1,0 +1,53 @@
+*{
+    font-family: 'Times New Roman', Times, serif;
+}
+textarea{
+    border: 1px solid #385d8a;
+    background-color: #e1eaf4;
+}
+input, select{
+    border: 1px solid #385d8a;
+    background-color: #e1eaf4;
+    width: 70%;
+    padding: 5px 5px;
+}
+button{
+    background-color: #4f81bd;
+    color: black;
+    border: none;
+}
+.main{
+    margin: auto;
+    width: 70% !important;
+    margin-top: 100px;
+    border: 1px solid #385d8a;
+}
+.main > form{
+    margin: 30px 0px;
+}
+.col-sm-12{
+    margin-bottom:10px ;
+}
+#avatar{
+    width: 100%;
+}
+label{
+    padding: 0px !important;
+    width: 70% !important;
+}
+button.col-sm-3{
+    padding: 6px;
+    margin-left: 10px;
+}
+.btnedit{
+    text-align: center;
+}
+.btnedit > button{
+    border-radius: 8px;
+    padding: 20px 20px;
+    width: 30%;
+}
+label.validate {
+    width: 50px;
+    color: #ff3c33;
+}

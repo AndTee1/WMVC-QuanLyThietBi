@@ -6,12 +6,9 @@
 	$sqlDeviceSearchADV->execute();
     	$result = $sqlDeviceSearchADV->setFetchMode(PDO::FETCH_ASSOC);
     	$r = $sqlDeviceSearchADV->fetchAll() ;
-<<<<<<< HEAD
-=======
-
 
 	$sqlDevices = 'SELECT * FROM `devices`';
 	$listDevices = $conn ->prepare($sqlDevices);
 	$listDevices -> execute();
->>>>>>> 622986d (fix add UI Borrow_device)
+
 ?>

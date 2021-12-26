@@ -1,6 +1,4 @@
-<?php
-require '../common/define.php';
-?>
+
 <!DOCTYPE html>
 <html>
 
@@ -10,89 +8,79 @@ require '../common/define.php';
   <link rel="stylesheet" href="/WMVC-QuanLyThietBi/web/css/device/borrowDevice.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
 </head>
 
 <body>
-  <form method="post">
+<?php
+    require '../controller/device_borrow_controller.php';
+    
+?>
+  <form action='' method='POST'>
     <!-- Tên thiết bị -->
     <div>
-      <label>Tên thiết bị</label> &ensp;
-      <input class="input" type="text" name="Equipment">
+      <label>Tên thiết bị</label>&ensp;
+      <input class="input" type="text" name="name">
+      
     </div>
-    <!-- Validate tên thiết bị -->
-    <div>
-      <label></label>
-      <label class="validate">Hãy nhập tên thiết bị</label>
-    </div>
-
+    <div class="validate"><?php  echo $nameErr;?></div>
     <!-- Giáo viên -->
     <div class="css">
-      <label>Giáo viên</label> &ensp;
+      <label>Giáo viên</label>&ensp;
       <select class="combobox" name="teacher">
-        <option> </option>
-        <option> Tokuda Shigeo </option>
-        <option> Hoắc Kiến Hoa</option>
-        <option> Tachi Abana </option>
+      <option> </option>
+        <?php while ($row = $listTeacher->fetch()) { ?>
+          <option value="<?php echo $row['id'] ?>"><?php echo $row['name'] ?></option>
+        <?php } ?>  
       </select>
-    </div>
-
-    <!-- Validate giáo viên -->
-    <div>
-      <label></label>
-      <label class="validate">Hãy nhập tên giáo viên</label>
-    </div>
+      
+    </div>  
+    <div class="validate"><?php  echo $teacherErr;?></div>
+  
 
     <!-- Lớp học -->
-    <div>
-      <label>Lớp học</label> &ensp;
-      <select class="combobox" name="class">
+    <div >
+      <label>Lớp học</label>&ensp;
+      <select class="combobox1" name="classroom">
         <option> </option>
-        <option> Máy tính và Khoa học thông tin </option>
-        <option> Toán tin</option>
-        <option> Khoa học dữ liệu </option>
-      </select>
-    </div>
+        <?php while ($row = $listRoom->fetch()) { ?>
+          <option value="<?php echo $row['id']?> "><?php echo $row['name'] ?></option>
+        <?php } ?>
 
-    <!-- Validate Lớp học  -->
-    <div>
-      <label></label>
-      <label class="validate">Hãy nhập tên lớp học</label>
+      </select>
+      
     </div>
+    <div class="validate"><?php  echo $classroomErr;?></div>
+    
+    
 
     <!-- Thời gian bắt đầu  -->
-    <div class="group-date">
-      &emsp;&ensp;
-      <label>Thời gian bắt đầu </label> &ensp;
-      <input type="text" id="datetimepicker1" />
-      <i class="fas fa-calendar-alt"></i>
+    <div class="group-date">&emsp; &ensp;
+      <label>Thời gian bắt đầu</label>&ensp;
+      <input type="text" id="datetimepicker1" name ="start_transaction">
+      <i class="fas fa-calendar-alt" id="icon-calendar1"></i>
     </div>
-
-    <!-- validate thời gian bắt đầu-->
-    <div>
-      <label></label>
-      <label class="validate">Hãy thêm mô tả chi tiết</label>
+    <div class="validate"><?php  echo $start_transactionErr;?></div>
+    <!-- Thời gian bắt đầu  -->
+    <div class="group-date">&emsp; &ensp;
+      <label>Thời gian kết thúc</label>&ensp;
+      <input type="text" id="datetimepicker2" name = "end_transaction">
+      <i class="fas fa-calendar-alt" id="icon-calendar2"></i>
     </div>
-
-    <!-- Thời gian kết thúc  -->
-    <div class="group-date"> &emsp; &ensp;
-      <label>Thời gian kết thúc </label> &ensp;
-      <input type="text" id="datetimepicker2" />
-      <i class="fas fa-calendar-alt"></i>
-    </div>
-
-    <!-- validate thời gian bắt đầu-->
-    <div>
-      <label></label>
-      <label class="validate">Hãy thêm mô tả chi tiết</label>
-    </div>
-
+    <div class="validate"><?php  echo $end_transactionErr;?></div>
     <input type="submit" name="login" value="Mượn" style="cursor:pointer" class="borrow">
   </form>
   <script>
-    jQuery('#datetimepicker1').datetimepicker();
-    jQuery('#datetimepicker2').datetimepicker();
+    $('#datetimepicker1').datetimepicker();
+    $('#icon-calendar1').on('click', function() {
+      $('#datetimepicker1').datetimepicker('show');
+    });
+    $('#datetimepicker2').datetimepicker();
+    $('#icon-calendar2').on('click', function() {
+      $('#datetimepicker2').datetimepicker('show');
+    });
   </script>
 </body>
 

@@ -6,4 +6,9 @@
 	$sqlDeviceSearchADV->execute();
     	$result = $sqlDeviceSearchADV->setFetchMode(PDO::FETCH_ASSOC);
     	$r = $sqlDeviceSearchADV->fetchAll() ;
+
+	$sqlDevices = 'SELECT * FROM `devices`';
+	$listDevices = $conn ->prepare($sqlDevices);
+	$listDevices -> execute();
+
 ?>

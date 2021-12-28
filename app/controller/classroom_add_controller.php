@@ -22,10 +22,11 @@
             $description = ($_POST["description"]);
         }
 
-        if (empty($_POST["avatar"])) {
-            $avatarErr = "Hãy chọn avatar *";
+        if (empty( $_FILES['upload']['name'])) {
+            $avatarErr = "Hãy chọn avatar*";
         } else {
-            $avatar = ($_POST["avatar"]);
+            $avatar =  $_FILES['upload']['name'];
+            move_uploaded_file($_FILES['upload']['tmp_name'], '../../web/avata/'.$avatar);
         }
     }
 ?>

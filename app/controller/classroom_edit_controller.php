@@ -18,10 +18,10 @@
             $building = ($_POST["building"]);
         }
 
-        if (($_POST["description"])) {
+        if (empty($_POST["description"])) {
             $descriptionErr = "Hãy nhập mô tả *";
-        }else if(strlen($_POST["name"])>1000){
-            $nameErr = "Mô tả chi tiết bé hơn 100 ký tự";
+        }else if(strlen($_POST["description"])>1000){
+            $nameErr = "Mô tả chi tiết bé hơn 1000 ký tự";
         } else {
             $description = ($_POST["description"]);
         }

@@ -4,6 +4,7 @@
     $name = $specialized = $degree = $avatar = $description="";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+       
         if (empty($_POST["name"])) {
             $nameErr = "Hãy nhập tên";
         } else {
@@ -21,17 +22,19 @@
             $degree = ($_POST["degree"]);
         }
 
-        if ($_POST["description"]) {
+        if ($_POST["description"]=="") {
             $descriptionErr = "Hãy nhập mô tả";
         } else {
             $description = ($_POST["description"]);
         }
 
-        if (empty($_POST["avatar"])) {
+        if (empty( $_FILES['upload']['name'])) {
             $avatarErr = "Hãy chọn avatar";
         } else {
-            $avatar = ($_POST["avatar"]);
+            $avatar =  $_FILES['upload']['name'];
+            move_uploaded_file($_FILES['upload']['tmp_name'], '../../web/avata/'.$avatar);
         }
+        
     } 
     
 ?>

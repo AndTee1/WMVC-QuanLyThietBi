@@ -1,6 +1,8 @@
 *{
     font-family: 'Times New Roman', Times, serif;
 }
+
+
 textarea{
     border: 1px solid #385d8a;
     background-color: #e1eaf4;
@@ -47,4 +49,10 @@ button.col-sm-3{
     border-radius: 8px;
     padding: 20px 20px;
     width: 30%;
+}
+.content-complete{
+    margin: auto;
+    width: 70% !important;
+    margin-top: 50px;
+    border: 1px solid #385d8a;
 }

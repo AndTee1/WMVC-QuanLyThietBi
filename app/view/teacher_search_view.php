@@ -36,48 +36,9 @@ require '../common/define.php';
                 </div>
             </div>
         </form>
-        <div class="count__teacher">
-            <p>Số giáo viên tìm thấy: 10</p>
-        </div>
-        <table>
-            <tr class="tr__label">
-                <th class="th__id">No</th>
-                <th class="th__username">Tên Giáo Viên</th>
-                <th class="th__specialized">Chuyên ngành</th>
-                <th class="th__description">Mô tả chi tiết</th>
-                <th class="th__action">Action</th>
-            </tr>
-            <?php require '../controller/teacher_search_controller.php';
-            while ($row = $listTeacher->fetch()) {
-            ?>
-                <tr>
-                    <td><?php echo $row['id'] ?></td>
-                    <td><?php echo $row['name'] ?></td>
-                    <td>
-                        <?php
-                        foreach ($listSpecialized as $key => $value) {
-                            if ($key == $row['specialized']) {
-                                echo $value;
-                            }
-                        }
-                        ?>
-                    </td>
-                    <td><?php echo $row['description'] ?></td>
-                    <td>
-
-                        <button>Xóa</button>
-                        <button>
-                            Sửa
-                            <a href="teacher_edit_input_view.php<?php echo '?id=' . $row['id']; ?>"></a>
-                        </button>
-                    </td>
-                </tr>
-            <?php
-            }
-            ?>
-        </table>
+        <?php require '../controller/teacher_search_controller.php'; ?>
     </div>
-
+    <script src=""></script>
 </body>
 
 </html>

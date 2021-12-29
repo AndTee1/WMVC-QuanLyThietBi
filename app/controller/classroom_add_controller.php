@@ -16,7 +16,7 @@
             $building = ($_POST["building"]);
         }
 
-        if (($_POST["description"])) {
+        if (trim($_POST["description"]) == "") {
             $descriptionErr = "Hãy nhập mô tả *";
         } else {
             $description = ($_POST["description"]);

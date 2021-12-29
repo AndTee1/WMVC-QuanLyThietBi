@@ -1,40 +1,41 @@
 <?php
-    require '../model/teacher.php';   
+    // require '../model/teacher.php';   
     $nameErr = $specializedErr = $degreeErr = $avatarErr = $descriptionErr="";
-    $name = $specialized = $degree = $avatar = $description="";
+    $nameT = $specializedT = $degreeT = $avatarT = $descriptionT=$uploadT="";
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-       
+    if (isset($_POST['btnAdd'])) {
         if (empty($_POST["name"])) {
             $nameErr = "Hãy nhập tên";
         } else {
-            $name = ($_POST["name"]);
+            $nameT = ($_POST["name"]);
         }
                     
         if($_POST['specialized'] == "none") {
             $specializedErr = "Hãy chọn chuyên ngành";
         } else {
-            $specialized = ($_POST["specialized"]);
+            $specializedT = ($_POST["specialized"]);
         }
         if($_POST['degree'] == "none") {
             $degreeErr = "Hãy chọn học vị";
         } else {
-            $degree = ($_POST["degree"]);
+            $degreeT = ($_POST["degree"]);
         }
 
-        if ($_POST["description"]=="") {
+        if (trim($_POST['description']) == "") {
             $descriptionErr = "Hãy nhập mô tả";
         } else {
-            $description = ($_POST["description"]);
+            $descriptionT = ($_POST['description']);
         }
 
         if (empty( $_FILES['upload']['name'])) {
             $avatarErr = "Hãy chọn avatar";
         } else {
-            $avatar =  $_FILES['upload']['name'];
-            move_uploaded_file($_FILES['upload']['tmp_name'], '../../web/avata/'.$avatar);
+            $avatarT =  $_FILES['upload']['name'];
+            move_uploaded_file($_FILES['upload']['tmp_name'], '../../web/avata/'.$avatarT);
         }
-        
+        $uploadT = $_POST['upload'];
+        if($nameT!=""&& $specializedT !=""&&$degreeT!=""&&$descriptionT!=""&&$uploadT!=""){
+            header("Location: ../view/teacher_add_confirm_view.php?name=$nameT&specialized=$specializedT&degree=$degreeT&avata=$uploadT&description=$descriptionT");
+        }
     } 
-    
 ?>

@@ -1,7 +1,7 @@
 <?php
         require '../controller/device_edit_controller.php';
         require '../common/connectDB.php'; 
-?>
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,8 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../web/css/device/editDevice.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    
-    <title>Sửa thiết bị</title>
+    <title>Thêm phòng học</title>
 </head>
 <body>
     <div class="content container">
@@ -19,7 +18,7 @@
             <div class="col-md-12">  
                 <div class="col-md-12">
                     <div class="col-sm-2">
-                    <label class="input-form" for="name">Tên thiết bị</label>
+                        <div class="word">Tên thiết bị</div>
                     </div>
                     <div class="col-sm-7">
                         <label for="" style='width: 100%'>
@@ -32,10 +31,11 @@
                     <div class="col-sm-7">
                         <div><span class="error"></span></div>
                     </div>
-                </div>                               
+                </div>
+                                          
                 <div class="col-md-12">
                     <div class="col-sm-2">
-                    <label class="input-form" for="name">Mô tả chi tiết</label>
+                        <div class="word">Mô tả chi tiết</div>
                     </div>
                     <div class="col-sm-7">
                         <label for="">
@@ -43,22 +43,17 @@
                             </textarea>
                         </label>                        
                     </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="col-md-2"></div>
-                    <div class="col-sm-7">
-                        <div><span class="error"></span></div>
-                    </div>
-                </div>                                
+                </div>                              
                 <div class="col-sm-12">
                     <div class="col-sm-2">
-                    <label class="input-form" for="name">Avatar</label>
+                        <div class="word">Avatar</div>
                     </div>
-                    <div class="col-xs-3 col-sm-3 col-md-3">
-                <div class="form-group">
-                    <input type="file" name="image" value="" class="form-control">
-                </div>
-            </div>
+                    <div class="col-sm-7">
+                        <label for="" class="col-sm-8">
+                            <input type="text" name="avatar" id="avatar">
+                        </label>
+                        <button type="button" name="btnAvata" class="col-sm-3">Browse</button>
+                    </div>
                 </div>
                 <div class="col-md-12">
                     <div class="col-md-2"></div>

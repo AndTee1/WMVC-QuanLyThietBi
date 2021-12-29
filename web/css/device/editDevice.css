@@ -2,18 +2,6 @@
     font-family: 'Times New Roman', Times, serif;
     font-size: 16px;
 }
-.input-form {
-    text-align:center;
-    background-color:#4f81bd;
-    border: 1px solid #385d8a;
-    color: #FFFFFF;
-    padding: 5px 10px;
-    margin-top: 0px;
-    margin-bottom: 2px;
-
-    display: inline-block;
-    width: 120px;
-}
 .txtarea{
     border: 1px solid #385d8a;
     background-color: #e1eaf4;

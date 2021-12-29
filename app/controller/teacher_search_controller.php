@@ -1,12 +1,12 @@
 <?php
 require '../model/teacher.php';
 
-if (isset($_GET['search'])) {
-    $keyword = trim($_GET['keyword']);
-    $specialized = $_GET['specialized'];
-    $rowAll = searchData($keyword, $specialized);
-?>
-    <div class="count">
+// if (isset($_GET['search'])) {
+//     $keyword = trim($_GET['keyword']);
+//     $specialized = $_GET['specialized'];
+//     $rowAll = searchData($keyword, $specialized);
+// ?>
+    <!-- <div class="count">
         <label class="count__teacher">Số giáo viên tìm thấy : <?php echo count($rowAll) ?></label>
     </div>
     <table>
@@ -16,11 +16,11 @@ if (isset($_GET['search'])) {
             <th class="th__specialized">Chuyên ngành</th>
             <th class="th__description">Mô tả chi tiết</th>
             <th class="th__action">Action</th>
-        </tr>
+        </tr> -->
         <?php
-        foreach ($rowAll as $k => $v) {
+        //foreach ($rowAll as $k => $v) {
         ?>
-            <tr>
+            <!-- <tr>
                 <td><?php print_r($v['id']) ?></td>
                 <td><?php print_r($v['name']) ?></td>
                 <td>
@@ -39,15 +39,15 @@ if (isset($_GET['search'])) {
                         <a href="../view/teacher_edit_input_view.php<?php echo '?id=' . $v['id']; ?>">Sửa</a>
                     </button>
                 </td>
-            </tr>
+            </tr> -->
         <?php
-        }
-        echo  '</table>';
-    } elseif (isset($_GET['id'])) {
-        echo deleteData($_GET['id']);
-    } else {
-        ?>
-        <div class="count">
+    //     }
+    //     echo  '</table>';
+    // } elseif (isset($_GET['id'])) {
+    //     echo deleteData($_GET['id']);
+    // } else {
+    //     ?>
+        <!-- <div class="count">
             <label class="count__teacher">Số giáo viên tìm thấy: 0</label>
         </div>
         <table>
@@ -58,7 +58,7 @@ if (isset($_GET['search'])) {
                 <th class="th__description">Mô tả chi tiết</th>
                 <th class="th__action">Action</th>
             </tr>
-        </table>
+        </table> -->
     <?php
-    }
+    //}
     ?>

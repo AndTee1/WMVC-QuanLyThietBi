@@ -3,59 +3,53 @@
 <head>
     <title>Trả sách</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="/WMVC-QuanLyThietBi/web/css/device/givebackDevice.css" />
+    <link rel="stylesheet" type="text/css" href="../../web/css/device/givebackDevice.css" />
    
 </head>
 <body>
+
+<?php
+        require '../controller/device_giveback_controller.php';
+?>
+
 <form method="post">
         
         <!-- Thiết bị -->
         <div>
             <label>Thiết bị</label>
-            <input class="input" type="text" name="Equipment">
+            <input class="input" type="text" name="equipment">
         </div>
 
         <!-- Validate thiết bị -->
-        <div>
-            <label></label>
-            <label class="validate">Hãy nhập tên thiết bị</label>
-            
-        </div>
+        <div><span class="error"><?php echo $equipmentErr;?></span></div>
 
         <!-- Giáo viên -->
         <div class="css">
             <label>Giáo viên</label>
             <select class="selectbox" name="teacher">
                 <option> </option>
-                <option> Phạm Ngọc Sơn </option>
-                <option> Phạm Thế Anh</option>
-                <option> Phạm Thái Duy </option>     
+                <?php while ($row = $listTeacher->fetch()) { ?>
+                <option value="<?php echo $row['id'] ?>"><?php echo $row['name'] ?></option>
+                <?php } ?>  
             </select>
         </div>
 
         <!-- Validate giáo viên  -->
-        <div>
-            <label></label>
-            <label class="validate">Hãy chọn giáo viên</label>
-        </div>
+        <div><span class="error"><?php echo $teacherErr;?></span></div>
 
         <!-- Lớp học -->
-        <div>
+        <div class="css">
             <label>Lớp học</label>
-            <select class="selectbox" name="class">
+            <select class="selectbox" name="classroom">
                 <option> </option>
-                <option> Máy tính và Khoa học thông tin </option>
-                <option> Toán tin</option>
-                <option> Khoa học vật liệu </option>     
-                
+                <?php while ($row = $listRoom->fetch()) { ?>
+                <option value="<?php echo $row['id'] ?>"><?php echo $row['name'] ?></option>
+                <?php } ?>  
             </select>
         </div>
 
         <!-- Validate Lớp học  -->
-        <div>
-            <label></label>
-            <label class="validate">Hãy chọn lớp học</label>            
-        </div>
+        <div><span class="error"><?php echo $classroomErr;?></span></div>
 
         <!-- Nút tìm kiếm -->
         <input type="submit" name="login" value="Tìm kiếm" style="cursor:pointer" class="search"> 

@@ -1,3 +1,17 @@
+<?php
+        require '../controller/classroom_add_confirm_controller.php';
+        require '../common/define.php';
+
+        // $room_name = isset($_POST['nameR']) ? $_POST['nameR'] : '';
+        // $room_building = isset($_POST['buildingR']) ? $_POST['buildingR'] : '';
+        // $room_description = isset($_POST['descriptionR']) ? $_POST['descriptionR'] : '';
+        // $room_avatar = isset($_POST['avatarR']) ? $_POST['avatarR'] : '';
+
+        // if ($room_name == '' || $room_building == '' || $room_description == '' || $room_avatar == '') {
+        //     header('Location: ../view/classroom_add_input_view.php');
+        // }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,14 +23,9 @@
     <title>Xác nhận thêm phòng học</title>
 </head>
 <body>
-    <?php
-        require '../controller/classroom_add_controller.php';
-        require '../common/define.php';
-       
-    ?>
     <div class="content container">
         <div class='col-md-12'>
-            <form name='formadd' action='../controller/classroom_add_controller.php' method='POST'> 
+            <form name='formadd' action='' method='POST' id="formadd"> 
                 <div class="col-md-12"> 
                     <div class="col-md-12">
                         <div class="col-sm-2">
@@ -24,7 +33,7 @@
                         </div>
                         <div class="col-sm-7">
                             <label for="" style='width:50%'>
-                                <div class="lable-input">.</div>
+                                <input type="text" name="name" disabled="true" value="<?php echo $name;?>">
                             </label>
                         </div>
                     </div>
@@ -34,7 +43,7 @@
                         </div>
                         <div class="col-sm-7">
                             <label for="" style='width:50%'>
-                                <div class="lable-input">.</div>
+                                <input type="text" name="building" disabled="true" value="<?php echo $building;?>">
                             </label>                  
                         </div>
                     </div>
@@ -43,29 +52,27 @@
                             <div class="word">Mô tả chi tiết</div>
                         </div>
                         <div class="col-sm-7">
-                            <label for="" style='width:100%'>
-                                <div class="lable-input description"></div>
+                            <label for="">                
+                                <textarea type="input" rows="5" cols="60" name="description" id="description" disabled="true" style="border: 1px solid #385d8a; background-color: #e1eaf4"> 
+                                    <?php echo $description?>
+                                </textarea>
                             </label>                        
                         </div>
                     </div>
-                    <div class="col-md-12 seacrch">
+                    <div class="col-md-12">
                         <div class="col-sm-2">
                             <div class="word">Avatar</div>
                         </div>
                         <div class="col-sm-7">
                             <label for="" style='width:30%'>
-                                <div class="lable-input avatar">IMAGE</div>
+                                <img src="../../web/avata/<?php echo $avatar?>" alt="" style="width:150px; height:150px;">
                             </label>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-12 confirm">
-                    <!-- <div class="col-sm-6"> -->
-                        <button type="button" id="btn-edit" name="edit">Sửa lại</button>
-                    <!-- </div> -->
-                    <!-- <div class="col-sm-2"> -->
-                        <button type="button" id="btn-add" name="add">Đăng kí</button>
-                    <!-- </div> -->
+                    <button type="button" id="btn-edit" name="btn-edit" onclick="history.back()">Sửa lại</button>
+                    <button type="submit" id="btn-add" name="btn-add">Đăng kí</button>
                 </div>
             </form>
         

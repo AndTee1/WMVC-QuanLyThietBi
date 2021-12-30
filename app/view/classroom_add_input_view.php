@@ -14,7 +14,7 @@
 </head>
 <body>
     <div class="content container">
-        <form name='formconfirm' action='' method='POST' class="col-sm-12"> 
+        <form name='formconfirm' action='' method='POST' class="col-sm-12" enctype="multipart/form-data"> 
             <div class="col-md-12">  
                 <div class="col-md-12">
                     <div class="col-sm-2">
@@ -59,7 +59,7 @@
                     </div>
                     <div class="col-sm-7">
                         <label for="">
-                            <textarea type="input" rows="5" cols="60" name="description" id="description" style="border: 1px solid #385d8a; background-color: #e1eaf4">
+                            <textarea type="text" rows="5" cols="60" name="description" id="description" style="border: 1px solid #385d8a; background-color: #e1eaf4">
                             </textarea>
                         </label>                        
                     </div>
@@ -74,11 +74,15 @@
                     <div class="col-sm-2">
                         <div class="word">Avatar</div>
                     </div>
-                    <div class="col-sm-7">
-                        <label for="" class="col-sm-8">
-                            <input type="text" name="avatar" id="avatar">
+                    <div class="col-sm-7" style="display:flex">
+                        <label for="" class="col-sm-8" style="display:flex">
+                            <input type="text" name="upload" id="avatar">
                         </label>
-                        <button type="button" name="btnAvata" class="col-sm-3">Browse</button>
+                        <!-- <button type="button" name="btnAvata" class="col-sm-3">Browse</button> -->
+                        <div class="col-sm-2">
+                            <input type="file" id="upload" name="upload" onchange="myFunction(this)"/>
+                            <label for="upload" class="labelupload" id="labelup">Browse</label>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-12">
@@ -89,10 +93,10 @@
                 </div>
             </div>
             <div class="col-md-12 confirm">
-                <button type="submit" id="btn-confirm" name="btn-confirm">Xác nhận</button>
+                <button type="submit" id="btn-add" name="btn-add">Xác nhận</button>
             </div>
         </form>
     </div>
-    <script type="text/javascript" src=""></script>
+    <script type="text/javascript" src="../../web/js/addRoom.js"></script>
 </body>
 </html>

@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="../../web/css/device/addInputDevice.css">
     </head>
 <body class="container">
+  <div class="main">
     <section class="section">
       <p>Ten thiet bi</p>
       <input placeholder="Nhap cmn di"/>
@@ -24,5 +25,6 @@
       </div>
     </section>
     <button class="btn-submit">Xac nhan</button>
+  </div>
 </body>
 </html>

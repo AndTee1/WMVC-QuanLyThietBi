@@ -38,10 +38,28 @@ button.col-sm-3 {
 }
 .lable-input{
     width: 85%;
-    padding: 5px 5px;
+    padding: 15px 5px;
     border: 1px solid #385d8a;
     background-color: #e1eaf4;
 }
+
+.labelupload{
+    display: inline-block;
+    background-color: #4f81bd;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    padding: 8px 10px 5px 10px;
+    color: white;
+    max-width: 150% !important;
+    }
+
+#upload{
+    display: none !important;
+}
+/* input,select{
+    min-height: 45px !important;
+} */
 
 label.col-sm-8 {padding: 0px;}
 

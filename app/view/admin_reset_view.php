@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="uft-8" />
-        <link rel="stylesheet" href="/WMVC-QuanLyThietBi/web/css/admin/resetpass.css">
+        <link rel="stylesheet" href="../../web/css/admin/resetpass.css">
     </head>
     <body>
         <div class="container">

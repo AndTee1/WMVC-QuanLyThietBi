@@ -1,81 +1,73 @@
 form {
     padding: 10px;
     border: 1px solid #385d8a;
-    width: 700px;
+    width: 850px;
     font-family: 'Times New Roman';
     font-size: 16px;
     margin-left : auto;
     margin-right: auto; 
     margin-top: 100px;
 }
- 
-* {
-    padding: 0;
-    margin: 0;
-}
+
 
 body {
     margin: 50px auto;
     text-align: center;
-    width: 800px;
+    width: 1000px;
 }
 
 label {  
-    width: 100px;
+
     display: inline-block;
     text-align: left;
-    font-size: 1rem;
+    font-size: 16px;
     font-family: 'Times New Roman';
     background: white;
     margin-right: 20px;
-    padding: 9px;
+    padding: 20px 12px 20px 15px;
     
 }
 
 input {
-    border: 1px solid #385d8a;
-    font-size: 1.3rem;
+	border: 1px solid #385d8a;
+    font-size: 16px;
     font-weight: 100;
-    padding: 5px 10px;
-    width: 200px;  
-    margin-right: 55px;
+    font-family: "Times New Roman";
+    padding: 6px;
+    width: 205px;
+	height: 25px;
+    background-color: #e1eaf4;	
 }
-
 div {
     margin: 10px;
 }
 
-.error {
-    /* margin: 10px; */
-    color: #FF3C33;
-}
 
-.search {
-    width: 167px;
+#button {
+	width: 150px;
+    height: 45px;
     padding: 5px 10px;
-    font-size: 1rem;
-    font-family: 'Times New Roman';
-    font-weight: 1;
+    font-size: 16px;
+    font-family: "Times New Roman";
     background: #4f81bd;
     border: 1px solid #385d8a;
-    margin-top: 30px;
-
+    margin-top: 45px;
 }
 
+
+
 .selectbox {
-    width: 222px;
+    width: 220px;
+	margin: 20px 12px 0px 0px;
     padding: 8px;
-    font-size: 1rem;
+    font-size: 16px;
     font-family: 'Times New Roman';
-    font-weight: 1;
-    background: #ffffff;
     border: 1px solid #385d8a;
-    margin-right: 55px;
+	background-color: #e1eaf4;
 }
 
 .count {
     text-align: left;
-
 }
 
 table {
@@ -83,25 +75,12 @@ table {
     text-align: left;
     margin: 20px ;
     font-weight: 100;
-    /* background: blue; */
 }
 
-.pay {
-    width: 100px;
-    font-size: 1rem;
-    background: #4f81bd;
-    border: 1px solid #385d8a;
+.title-col {
+	width: 40px;
 }
-
-.pay-non {
-    width: 100px;
-    background: #ffffff;
-    border: 1px solid white;
-}
-
-
 th {
-    /* border: 1px solid black; */
     width: 100px;
 }
 

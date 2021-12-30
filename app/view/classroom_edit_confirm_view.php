@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../web/css/room/editRoom.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <title>Xác nhận thêm phòng học</title>
+    <title>Xác nhận sửa phòng học</title>
 </head>
 <body>
     <?php
@@ -20,7 +20,7 @@
                 <div class="col-md-12"> 
                     <div class="col-md-12">
                         <div class="col-sm-2">
-                            <div class="word">Tên Phòng học</div>
+                            <div class="content">Tên Phòng học</div>
                         </div>
                         <div class="col-sm-7">
                             <label for="" style='width:50%'>
@@ -30,7 +30,7 @@
                     </div>
                     <div class="col-md-12">
                         <div class="col-sm-2">
-                            <div class="word">Tòa nhà</div>
+                            <div class="content">Tòa nhà</div>
                         </div>
                         <div class="col-sm-7">
                             <label for="" style='width:50%'>
@@ -40,7 +40,7 @@
                     </div>
                     <div class="col-md-12">
                         <div class="col-sm-2">
-                            <div class="word">Mô tả chi tiết</div>
+                            <div class="content">Mô tả chi tiết</div>
                         </div>
                         <div class="col-sm-7">
                             <label for="" style='width:100%'>
@@ -50,11 +50,11 @@
                     </div>
                     <div class="col-md-12 seacrch">
                         <div class="col-sm-2">
-                            <div class="word">Avatar</div>
+                            <div class="content">Avatar</div>
                         </div>
                         <div class="col-sm-7">
                             <label for="" style='width:30%'>
-                            <img src="../../web/avata/demo.jpg" alt="Italian Trulli" class="image">
+                            <img src="../../web/avata/demo.jpg" class="image">
                             </label>
                         </div>
                     </div>

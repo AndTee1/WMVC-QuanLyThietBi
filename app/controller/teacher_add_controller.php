@@ -24,7 +24,7 @@
         if (trim($_POST['description']) == "") {
             $descriptionErr = "Hãy nhập mô tả";
         } else {
-            $descriptionT = ($_POST['description']);
+            $descriptionT = trim($_POST['description']);
         }
 
         if (empty( $_FILES['upload']['name'])) {
@@ -35,7 +35,7 @@
         }
         $uploadT = $_POST['upload'];
         if($nameT!=""&& $specializedT !=""&&$degreeT!=""&&$descriptionT!=""&&$uploadT!=""){
-            header("Location: ../view/teacher_add_confirm_view.php?name=$nameT&specialized=$specializedT&degree=$degreeT&avata=$uploadT&description=$descriptionT");
+            header("Location: ../view/teacher_add_confirm_view.php?name=$nameT&specialized=$specializedT&avata=$uploadT&degree=$degreeT&description=$descriptionT");
         }
     } 
 ?>

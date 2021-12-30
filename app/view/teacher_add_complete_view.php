@@ -16,7 +16,7 @@
     <div class="content-complete container">
         <div class='col-md-12' style="text-align: center;padding:30px 20px">
             <p>Bạn đã đăng kí thành công giáo viên.</p>
-            <a href="../view/teacher_add_input_view.php">Trở về trang chủ</p>
+            <a href="../../home.php">Trở về trang chủ</p>
         </div>
     </div>
     <script type="text/javascript" src=""></script>

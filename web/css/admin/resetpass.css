@@ -2,7 +2,6 @@
     box-sizing: border-box;
     font-family: time-new-roman;
     font-size: 16px;
-    border-radius: 0%;
 }
 
 body{
@@ -22,13 +21,14 @@ body{
 }
 
 .container .form .error{
-    margin: 20px 90px 0px 90px;
+    margin-left: 220px;
+    margin-top: 2px;
     cursor: no-drop;
     color: #FF3C33;
 }
 
 .container .form .form-control{
-    margin: 20px 90px 20px 90px;
+    margin: 20px 90px 0px 90px;
 }
 
 .container .form .form-control span{
@@ -52,6 +52,7 @@ body{
     margin-bottom: 20px;
     cursor: pointer;
     color: black;
+    border-radius: 4px;
 }
 
 .container .form button:hover{

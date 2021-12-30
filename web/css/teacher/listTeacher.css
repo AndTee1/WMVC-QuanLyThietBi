@@ -5,7 +5,10 @@
     box-sizing: border-box;
     font-size : 16px
 }
-
+a {
+    text-decoration: none;
+    color: #000000;
+}
 .container {
     width: 1000px;
     margin: 100px auto;
@@ -23,13 +26,13 @@ table, th, td {
 
 th {
     text-align: left;
-    padding: 5px 0 5px 10px;
+    padding: 5px 5px;
 }
 th:last-child {
     text-align: center;
 }
 td {
-    padding: 5px 10px;
+    padding: 5px 5px;
 }
 td:first-child {
     text-align: right;
@@ -45,14 +48,14 @@ td:last-child {
     width: 40px;
 }
 .th__username {
-   width: auto;
+   width: 200px;
 }
 
 .th__specialized {
     width: 150px;
 }
 .th__description {
-    width: 250px;
+    width: 300px;
 }
 .th__action {
     width: 150px;
@@ -61,7 +64,7 @@ td:last-child {
 .count__teacher {
     width: 200px;
     margin-bottom: 10px;
-    margin-right: 600px;
+    margin-right: 640px;
 }
 
 

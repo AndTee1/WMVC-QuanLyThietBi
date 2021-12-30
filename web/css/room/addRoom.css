@@ -43,6 +43,24 @@ button.col-sm-3 {
     background-color: #e1eaf4;
 }
 
+.labelupload{
+    display: inline-block;
+    background-color: #4f81bd;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    padding: 8px 10px 5px 10px;
+    color: white;
+    max-width: 150% !important;
+    }
+
+#upload{
+    display: none !important;
+}
+/* input,select{
+    min-height: 45px !important;
+} */
+
 label.col-sm-8 {padding: 0px;}
 
 .lable-input > div {

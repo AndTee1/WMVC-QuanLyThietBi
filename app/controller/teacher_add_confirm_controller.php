@@ -1,6 +1,7 @@
 <?php
     // $name = $specialized = $degree = $avatar = $description=$upload="";
     require '../model/teacher.php';
+    require '../controller/teacher_add_controller.php';
     $name=$_GET['name'];
     $specialized=$_GET['specialized'];
     $degree=$_GET['degree'];
@@ -9,6 +10,7 @@
     $created=date("Y-m-d h:i:s");
     if(isset($_POST['btnAdd'])){
         add( $name,$specialized,$degree,$avata,$description,$created);
+        deleteImgTmp($avata);
         router();
     }
     function router(){

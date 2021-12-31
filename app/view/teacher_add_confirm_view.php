@@ -30,7 +30,7 @@
                         <p>Chuyên ngành</p>
                     </div>
                     <div class="col-sm-7">
-                        <input type="text" name="specialized" disabled="true" value=" <?php foreach ($listSpecialized as $key=>$special) : ?> <?php if($specialized==$key){ echo $special;}?><?php endforeach; ?>">
+                        <input type="text" name="specialized" disabled="true" value="<?php foreach ($listSpecialized as $key=>$special) : ?><?php if($specialized==$key){ echo $special;}?><?php endforeach; ?>">
                       
                     </div>
                 </div>
@@ -39,7 +39,7 @@
                         <p>Học vị</p>
                     </div>
                     <div class="col-sm-7">
-                        <input type="text" name="degree" disabled="true" value=" <?php foreach ($listDegree as $key=>$deg) : ?><?php if($degree==$key) {echo $deg;}?><?php endforeach; ?>">
+                        <input type="text" name="degree" disabled="true" value="<?php foreach ($listDegree as $key=>$deg) : ?><?php if($degree==$key) {echo $deg;}?><?php endforeach; ?>">
                         
                     </div>
                 </div>
@@ -49,11 +49,9 @@
                     </div>
                     <div class="col-sm-7">
                         <label for="" class="col-sm-8">
-                           <img src="../../web/avata/<?php echo $avata?>" alt="" style="width:35%">
+                           <img src="../../web/avata/teacherTMP/<?php echo $avata?>" alt="" style="width:35%">
                            
                         </label>
-                        <button type="button" name="btnAvata" class="col-sm-3">Browse</button>
-                        
                     </div>
                 </div>
                 <div class="col-sm-12">

@@ -78,8 +78,7 @@
                         <label for="" class="col-sm-8" style="display:flex">
                             <input type="text" name="upload" id="avatar">
                         </label>
-                        <!-- <button type="button" name="btnAvata" class="col-sm-3">Browse</button> -->
-                        <div class="col-sm-2">
+                        <div class="col-sm-2" style="padding-left: 0px;">
                             <input type="file" id="upload" name="upload" onchange="myFunction(this)"/>
                             <label for="upload" class="labelupload" id="labelup">Browse</label>
                         </div>

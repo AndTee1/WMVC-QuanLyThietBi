@@ -1,5 +1,4 @@
 <?php
-    //require '../model/classroom.php';
     $nameErr = $buildingErr = $descriptionErr = $avatarErr = "";
     $nameR = $buildingR = $descriptionR = $avatarR = "";
 
@@ -7,7 +6,12 @@
         if (empty($_POST["name"])) {
             $nameErr = "Hãy nhập tên phòng học *";
         } else {
-            $nameR = ($_POST["name"]);
+            if (strlen($_POST['name']) > 100){
+                $nameErr = "Không nhập quá 100 ký tự *"; 
+            }
+            else {
+                $nameR = ($_POST["name"]);
+            }
         }
                     
         if($_POST['building'] == "none") {
@@ -19,7 +23,12 @@
         if (trim($_POST["description"]) == "") {
             $descriptionErr = "Hãy nhập mô tả *";
         } else {
-            $descriptionR = ($_POST["description"]);
+            if (strlen($_POST["description"]) > 1000){
+                $descriptionErr = "Không nhập quá 1000 ký tự *"; 
+            }
+            else {
+                $descriptionR = ($_POST["description"]);
+            }
         }
 
         if (empty( $_FILES['upload']['name'])) {

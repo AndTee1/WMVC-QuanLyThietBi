@@ -11,8 +11,8 @@
 
             $sql = "INSERT IGNORE INTO `classrooms` (`name`,`avatar`,`description`,`building`, `updated`, `created`) 
                      VALUES ('$name','$avatar','$description','$building','','$created')";
-            $succ = $conn -> query($sql);
-            $succ->execute();
+            $insert = $conn -> prepare($sql);
+            $insert->execute();
         };
     }
 ?>

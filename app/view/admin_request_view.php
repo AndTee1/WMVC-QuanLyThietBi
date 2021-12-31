@@ -5,7 +5,7 @@
 <html>
     <head>
         <meta charset="uft-8" />
-        <link rel="stylesheet" href="../../web/css/admin/resetpass.css">
+        <link rel="stylesheet" href="../../web/css/admin/request.css">
     </head>
     <body>
         <div class="container">

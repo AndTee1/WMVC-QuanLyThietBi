@@ -4,6 +4,7 @@
     $nameT = $specializedT = $degreeT = $avatarT = $descriptionT=$uploadT="";
 
     if (isset($_POST['btnAdd'])) {
+
         if (empty($_POST["name"])) {
             $nameErr = "Hãy nhập tên";
         } else {
@@ -43,12 +44,7 @@
             header("Location: ../view/teacher_add_confirm_view.php?name=$nameT&specialized=$specializedT&avata=$uploadT&degree=$degreeT&description=$descriptionT");
         } 
        
-        function deleteImgTmp($avatarT){
-            $file="../../web/avata/teacherTMP/$avatarT";
-            $newfile="../../web/avata/$avatarT";
-            copy($file, $newfile);
-            unlink("../../web/avata/teacherTMP/".$avatarT);
-        } 
+       
     } 
     
 ?>

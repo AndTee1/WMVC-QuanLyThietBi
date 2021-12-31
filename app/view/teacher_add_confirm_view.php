@@ -1,6 +1,9 @@
 <?php 
   require '../common/define.php';
   require '../controller/teacher_add_confirm_controller.php';
+  if($_GET['name']==""){
+      header("Location: ../view/teacher_add_input_view.php");
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">

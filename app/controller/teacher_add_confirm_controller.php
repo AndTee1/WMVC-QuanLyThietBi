@@ -10,14 +10,14 @@
     $created=date("Y-m-d h:i:s");
     $loading=0;
     if(isset($_POST['btnAdd'])){
-        $loading+=1;
+        $loading+=1; 
         if($loading==1){
             add( $name,$specialized,$degree,$avata,$description,$created);
             deleteImgTmp($avata);
             router();
         }
-       
     }
+    
     function router(){
         header("Location: ../view/teacher_add_complete_view.php");
     }

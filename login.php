@@ -10,7 +10,7 @@ require 'app/controller/admin_login_controller.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="web/css/admin/login.css">
-    <title>Đăng nhập</title>
+    <title>Login</title>
 </head>
 
 <body>
@@ -29,11 +29,10 @@ require 'app/controller/admin_login_controller.php';
                 <div>
                     <span class="error"><?php echo $passwordErr; ?></span>
                 </div>
-
             </li>
             <li>
                 <div class="ct">
-                    <a href="app/view/admin_reset_view.php" style="font-style: italic;">Quên password</a>
+                    <a href="app/view/admin_request_view.php" style="font-style: italic;">Quên password</a>
                 </div>
             </li>
             <li>

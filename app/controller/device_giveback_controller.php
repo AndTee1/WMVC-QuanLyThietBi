@@ -5,12 +5,18 @@
     
     $equipment = $teacher = $classroom = "";
     $equipmentErr = $teacherErr = $classroomErr = "";
+    $idgive=$idgive2=$timegive="";
     $count = 0;
-    
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $i = 1;
+    // error_reporting(0);
+
+    if (isset($_POST["search"])) {
+        // error_reporting(0);
+
         if (empty($_POST["equipment"])) {
             $equipmentErr = "Hãy nhập tên thiết bị";
-        } else {
+        } 
+        else {
             if($listDevices->rowCount()>0) 
             {
                 $result=$listDevices->fetchAll(PDO::FETCH_OBJ);
@@ -41,7 +47,17 @@
             $classroomErr = "Hãy chọn lớp học *";
         } else {
             $classroom = ($_POST["classroom"]);
-        }
+        }   
+    }
+
+   
+    for($i = 0; $i < 10000; $i++){
+        if(isset($_POST["giveback".$i])){
+            $idgive2 = $_POST["idgiveback".$i];
+            $timegive = $_POST["timegiveback"];
+            givebackbook($idgive2,$timegive);
+           
+        } 
     }
     
 ?>

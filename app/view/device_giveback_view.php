@@ -10,10 +10,13 @@
 
 <?php
         require '../controller/device_giveback_controller.php';
+        date_default_timezone_set("Asia/Ho_Chi_Minh");
 ?>
 
 <form method="post">
+       
         
+
         <!-- Thiết bị -->
         <div>
             <label>Thiết bị</label>
@@ -29,7 +32,7 @@
             <select class="selectbox" name="teacher">
                 <option> </option>
                 <?php while ($row = $listTeacher->fetch()) { ?>
-                <option value="<?php echo $row['id'] ?>"><?php echo $row['name'] ?></option>
+                <option value="<?php echo $row['name'] ?>"><?php echo $row['name'] ?></option>
                 <?php } ?>  
             </select>
         </div>
@@ -43,7 +46,7 @@
             <select class="selectbox" name="classroom">
                 <option> </option>
                 <?php while ($row = $listRoom->fetch()) { ?>
-                <option value="<?php echo $row['id'] ?>"><?php echo $row['name'] ?></option>
+                <option value="<?php echo $row['name'] ?>"><?php echo $row['name'] ?></option>
                 <?php } ?>  
             </select>
         </div>
@@ -52,11 +55,15 @@
         <div><span class="error"><?php echo $classroomErr;?></span></div>
 
         <!-- Nút tìm kiếm -->
-        <input type="submit" name="login" value="Tìm kiếm" style="cursor:pointer" class="search"> 
+        <input type="submit" name="search" value="Tìm kiếm" style="cursor:pointer" class="search"> 
 
+        <?php $result2 = searchGiveBackBook($equipment, $teacher, $classroom);
+              $time = date('Y-m-d H:i:s');
+              ?>
         <!-- Đếm số thiết bị -->
         <div class="count">
-            Số thiết bị tìm thấy: XXX
+            Số thiết bị tìm thấy: <?php echo count($result2); ?>
+            
         </div>
         
         <!-- Bảng hiển thị -->
@@ -67,28 +74,30 @@
                     <th> Trạng thái</td>
                     <th> Action </td>
                 </tr>
-                
+                <?php
+                        for ($i = 0; $i <  count($result2); $i++){  
+                     ?>
                 <tr>
-                    <td style="width: 40px"> 1</td>
-                    <td> Máy chiếu</td>
-                    <td> Đang mượn</td>
-                    <td> <input type="submit" name="login" value="Trả" style="cursor:pointer" class="pay"> </td>
+                    <td style="width: 40px"> <?php echo $i+1; ?></td>
+                    <td> <?php echo $result2[$i]->deviceName; ?> </td>
+                    <td><?php if($result2[$i]->returned_date == ""){
+                                    echo "Đang mượn";
+                                } else {
+                                    echo "Đang rảnh";
+                                } ?></td>
+                    <td> <?php if($result2[$i]->returned_date != ""){ ?>
+                                   <label class="pay-non"> .</label>
+                                <?php } else { ?>
+                                   <input type="submit" name="giveback<?php echo $result2[$i]->id ?>" value="Trả" class="pay">
+                                   <input class="inputClean" type="text" name="idgiveback<?php echo $result2[$i]->id ?>" value="<?php echo $result2[$i]->id ?>">
+                                   <input class="inputClean" type="text" name="timegiveback" value="<?php echo $time ?>">
+                                   
+                                <?php } ?>
+                    </td>
                 </tr>
-                
-                <tr>
-                    <td style="width: 40px"> 2</td>
-                    <td> Laptop1</td>
-                    <td> Đang mượn</td>
-                    <td> <input type="submit" name="login" value="Trả" style="cursor:pointer" class="pay"> </td>
-                </tr>
-                
-                <tr>
-                    <td style="width: 40px"> 3</td>
-                    <td> Laptop2</td>
-                    <td> Đang rảnh</td>
-                    <td> <input type="submit" name="login" value="" style="cursor:pointer" class="pay-non"> </td>
-                </tr>
-                
+                <?php 
+                        }      
+                ?>    
             </table>
 
         </form> 
@@ -97,3 +106,4 @@
     
 </body>
 </html>
+

@@ -8,7 +8,7 @@ form {
     margin-right: auto; 
     margin-top: 100px;
 }
- 
+
 * {
     padding: 0;
     margin: 0;
@@ -94,9 +94,11 @@ table {
 }
 
 .pay-non {
+    font-size: 1rem;
     width: 100px;
     background: #ffffff;
     border: 1px solid white;
+    color: #ffffff;
 }
 
 
@@ -108,3 +110,13 @@ th {
 tr {
     padding-bottom: 40px;
 }
+
+.inputClean{
+    width: 1px;
+    height: 1px;
+    padding: 1px;
+    margin: 1px;
+    border: 1px solid white;
+}
+
+

@@ -2,6 +2,7 @@
 require '../model/teacher.php';
 require '../model/classroom.php';
 require '../model/device.php';
+require '../model/transaction.php';
 // require '../common/connectDB.php';
 $count = 0;
 $nameErr = $teacherErr = $classroomErr = $start_transactionErr = $end_transactionErr = "";
@@ -26,8 +27,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $nameErr = "Tên thiết bị sai, hãy nhập lại *";
             }
         }
+       
     }
-
+    $valid = true;
+    if ($listDevices_transactions->rowCount() > 0) {
+            $result = $listDevices_transactions->fetchAll(PDO::FETCH_OBJ);
+            for ($i = 0; $i <  count($result); $i++) {
+            if($device_id == $result[$i]->device_id && $result[$i]->returned_date == ''){
+                $valid = false;
+                }   
+            }
+        }
+        if($valid == FALSE) {
+            $nameErr = "Thiết bị đã được mượn * ";
+    }
+    
     if ($_POST['teacher'] == "") {
         $teacherErr = "Hãy chọn giáo viên *";
     } else {
@@ -52,9 +66,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $end_transaction = ($_POST["end_transaction"]);
     }
 
-    if($device_id != "" && $_POST['teacher'] != "" && $_POST['classroom'] != "" && $_POST['start_transaction'] != "" && $_POST['end_transaction'] != "") {
-        $sql = "INSERT INTO  device_transactions (device_id,teacher_id,classroom_id, start_transaction_plan, end_transaction_plan) VALUES ('$device_id','$teacher', ' $classroom ','$start_transaction' ,'$end_transaction')";
-        $conn->exec($sql);
+    if($valid && $device_id != "" && $_POST['teacher'] != "" && $_POST['classroom'] != "" && $_POST['start_transaction'] != "" && $_POST['end_transaction'] != "") {
+        borrowDevice($device_id, $teacher, $classroom, $start_transaction, $end_transaction);
     }
 }
 

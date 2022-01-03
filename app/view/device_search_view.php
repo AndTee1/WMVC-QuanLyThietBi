@@ -5,71 +5,77 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TÌm kiếm/Xóa thiết bị</title>
+    <title>TÌm kiếm thiết bị</title>
     <link rel="stylesheet" href="../../web/css/device/searchDevice.css">
 </head>
 
 <body>
-    <form action="" method="GET">
-        <div class="search">
-            <div class="search_keyword">
-                <label >Từ khóa</label>
-                <input type="text" name="keyword">
+    <div class="content container">
+        <form action="" method="GET">
+            <div class="search">
+                <div class="search_keyword">
+                    <label>Từ khóa</label>
+                    <input type="text" value="<?php if(isset($_GET['keyword'])) echo $_GET['keyword'] ?>" name="keyword">
+                </div>
+                <div class="search_status">
+                    <label>Tình trạng</label>
+                    <select id="status" name="status">
+                        <option value=''>Tất cả</option>
+                        <option value="1" <?php if(isset($_GET['status']) && $_GET['status'] == 1) echo 'selected' ?> >Đang rảnh</option>
+                        <option value="2"  <?php if(isset($_GET['status']) && $_GET['status'] == 2) echo 'selected' ?>>Đang mượn</option>
+                    </select>
+                </div>
+                <div>
+                    <button type="submit" id="btn_search">Tìm kiếm</button>
+                </div>
             </div>
-            <div class="search_status">
-                <label >Tình trạng</label>
-                <select id="status"  name="status">
-                    <option value=''></option>
-                    <option>Đang rảnh</option>
-                    <option>Đang mượn</option>
-                </select>
-            </div>          
-            <div>
-                <button type="submit" id="btn_search" name="search">Tìm kiếm</button>
-            </div>
+        </form>
+        <?php require '../controller/device_search_controller.php'; ?>
+        <div class="count_device">
+            <p>Số thiết bị tìm thấy: <?php echo count($resultSearch) ?></p>
+            
         </div>
-    </form>
-    <div class="count_device">
-        <p>Số thiết bị tìm thấy:</p>
-    </div>
-    
-    <table>
-        <tr>
-            <th id="th_no">No</th>
-            <th id="th_name">Tên thiết bị</th>
-            <th id="th_status">Trạng thái</th>
-            <th id="th_action">Action</th>
-        </tr>
-        <?php require '../controller/device_search_advaned_controller.php';?>
-        <?php
-        foreach ($r as $row) { ?>
+        <table>
             <tr>
-                <td><?php echo $row['id'] ?></td>
-                <td><?php echo $row['name'] ?></td>
-                <td>
-                    <?php                             
-                        if($row['returned_date'] === null and $row['device_id'] !== null){
+                <th id="th_no">No</th>
+                <th id="th_name">Tên thiết bị</th>
+                <th id="th_status">Trạng thái</th>
+                <th id="th_action">Action</th>
+            </tr>
+            <?php 
+           
+            foreach ($resultSearch as $row) { ?>
+                <tr>
+                    <td><?php echo $row['id'] ?></td>
+                    <td><?php echo $row['name'] ?></td>
+                    <td>
+                        <?php
+                        if (isset($row['status']) && $row['status'] == 2 ) {
                             echo "Đang mượn";
-                        }
-                        else{
+                        } else {
                             echo "Đang rảnh";
                         }
-                    ?>
-                </td>
-                <td>
-                    <?php  
-                        if($row['device_id'] !== null){            
-                        }else{                           
-                            $b='<button id="btn_delete"><a href="device_delete.php">Xóa</a></button>';
+                        ?>
+                    </td>
+                    <td>
+                        <?php
+                        if (isset($row['status']) && $row['status'] == 1) {
+                            
+                           //$b = '<button class="btn_delete"><a href="device_delete_view.php?id=' .  $row['id'] . '">Xóa</a></button> <button class="btn_delete"><a href="device_edit_view.php?id=' .  $row['id'] . '">Sửa</a></button>';
+                           
+                          $b = '<a href="../controller/device_search_controller.php?delete=true&id=' . $row['id'] .'" class="btn_delete" onclick="return confirm(`Bạn chắc chắn muốn xóa thiết bị?`)">Xóa</a>';
                             echo $b;
+                        } else {
+                            
                         }
-                    ?>
-                </td>
-            </tr>
-        <?php
-        }
-        ?>
-    </table>
-    
+                        ?>
+                    </td>
+                </tr>
+            <?php
+            }
+            ?>
+        </table>
+    </div>
 </body>
+
 </html>

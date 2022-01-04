@@ -126,8 +126,9 @@
                                     <!-- <form action="" method="GET"> -->
                                     <button type='button' 
                                             name='btnDelete'
-                                            id='dialogshow' onclick="myFun()" >Xóa</button>
-                                            <dialog id="my-dialog-5" style="border:1px solid #4da6ff ">
+                                            id='dialogshow' 
+                                            onclick="document.getElementById('my-dialog-<?php echo $room['id']?>').showModal();" >Xóa</button>
+                                            <dialog id="my-dialog-<?php echo $room['id']?>" style="border:1px solid #4da6ff ">
                                                 <!-- <form method="GET" name="deleteform"> -->
                                                     <div class="col-sm-12">
                                                         <div class="col-sm-12 debai">
@@ -139,7 +140,8 @@
                                                         <div class="col-sm-8"></div>
                                                         <div class="col-sm-3"style="text-align:right;display:flex">
                                                             <button  type="submit" id="oki5" class="btn1-style" name='delete'>ConFirm</button>
-                                                            <button type="button" id="close5"  class="btn-style">Cancle</button>
+                                                            <button type="button" id="close5"  class="btn-style" 
+                                                            onclick="document.getElementById('my-dialog-<?php echo $room['id']?>').close();">Cancle</button>
                                                         </div>
                                                             
                                                     </div>

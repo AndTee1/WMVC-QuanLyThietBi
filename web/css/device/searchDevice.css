@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman';
+    box-sizing: border-box;
+    font-size: 16px
+}
+
+.container {
+    width: 70% !important;
+    margin: auto;
+    padding: 50px;
+    margin-top: 100px;
+    border: 1px solid #385d8a;
+}
+
+form {
+    text-align: center;
+}
+
+label {
+    width: 100px;
+    height: 30px;
+    color: #000000;
+    display: inline-block;
+    text-align: left;
+    padding: 5px;
+    margin: 3px 50px 3px 0;
+    margin-top: 10px;
+}
+
+input,
+select {
+    width: 200px;
+    height: 30px;
+    padding-left: 10px;
+    margin-left: -5px;
+    background-color: #e1eaf4;
+    border: 1px solid #385d8a;
+}
+
+#btn_search {
+    background: #4f81bd;
+    border: 1px solid #385d8a;
+    color: #000000;
+    padding: 5px 10px;
+    margin: auto;
+    margin-top: 10px;
+    width: 110px;
+    margin-left: 130px;
+}
+
+.count_device {
+    margin-bottom: 10px;
+}
+
+table,
+th,
+td {
+    border: 1px solid #385d8a;
+    border-collapse: collapse;
+}
+
+td,
+th {
+    padding: 10px;
+    text-align: center;
+}
+
+#th_no {
+    width: 50px;
+}
+
+#th_name {
+    width: 230px;
+}
+
+#th_status {
+    width: 230px;
+}
+
+#th_action {
+    width: 220px;
+}
+
+.btn_delete {
+    background: #4f81bd;
+    border: 1px solid #385d8a;
+    padding: 5px 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}

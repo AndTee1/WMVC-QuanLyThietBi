@@ -1,7 +1,7 @@
 <?php
         require '../controller/teacher_add_controller.php';
         require '../common/define.php';
-        if(empty($_GET['status'])){
+        if($_GET['status'] != 'true'){
             header("Location: ../view/teacher_add_input_view.php");
         }
 ?>

@@ -15,13 +15,13 @@
             $insert->execute();
         };
     }
-    function deleteData($id) {
+    function deleteDataC($id) {
         global $conn;
         $query = $conn->prepare ("DELETE FROM classrooms WHERE id=" . $id);
         $query->execute();
         return 1;
     }
-    function searchData($keyword, $building) {
+    function searchDataC($keyword, $building) {
         global $conn;
         if( $building != "none") {
             $query = $conn->prepare("SELECT * FROM `classrooms` WHERE (`name` LIKE '%$keyword%' or `description` LIKE '%$keyword%' ) and `building` = '$building'");

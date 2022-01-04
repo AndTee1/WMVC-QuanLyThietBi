@@ -23,7 +23,7 @@ button{
 .main{
     margin: auto;
     width: 70% !important;
-    margin-top: 100px;
+    margin-top: 60px !important;
     border: 1px solid #385d8a;
 }
 .main > form{

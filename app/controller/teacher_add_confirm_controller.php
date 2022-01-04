@@ -7,6 +7,7 @@
     $degree=$_GET['degree'];
     $avata=$_GET['avata'];
     $description=$_GET['description'];
+    date_default_timezone_set("Asia/Ho_Chi_Minh");
     $created=date("Y-m-d h:i:s");
     $loading=0;
     

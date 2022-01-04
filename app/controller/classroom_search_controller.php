@@ -9,13 +9,13 @@
         // echo 'done';
         $word = trim($_GET['filter']);
         $building= $_GET['building'];
-        $rowAll = searchData( $word,$building);
+        $rowAll = searchDataC( $word,$building);
         // echo count($rowAll);
     }
 
     if(isset($_POST['delete'])){
         $id = $_POST['infoID'];
-        deleteData($id);
+        deleteDataC($id);
         $word = trim($_GET['filter']);
         $building= $_GET['building'];
         $rowAll = searchData( $word,$building);

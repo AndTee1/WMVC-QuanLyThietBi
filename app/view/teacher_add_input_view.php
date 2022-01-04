@@ -30,7 +30,7 @@
         display: none !important;
     }
     input,select{
-        min-height: 45px !important;
+        min-height: 40px !important;
     }
    
     </style>
@@ -89,7 +89,7 @@
                             <input type="text" name="upload" id="avata" >
                             
                         </label>
-                        <div class="col-sm-2">
+                        <div class="col-sm-3">
                         <input type="file" id="upload" name="upload" onchange="myFunction(this)"/>
                         <label for="upload" class="lableupload" id="labelup" style="width:120%!important"> Browse</label>
                         </div>

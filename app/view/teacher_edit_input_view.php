@@ -14,10 +14,10 @@
 </head>
 <body>
     <div class="main container">
-        <from action="" method='POST' name='editform' class="col-sm-10">
+        <from action="" method='POST' name='editform' class="col-sm-12">
             
-            <div class="content col-sm-10">
-                <div class="col-sm-10">
+            <div class="content col-sm-12">
+                <div class="col-sm-12">
                     <div class="col-sm-2">
                         <p>Họ và tên</p>
                     </div>
@@ -27,7 +27,7 @@
                     </div>
                 </div>
                
-                <div class="col-sm-10">
+                <div class="col-sm-12">
                     <div class="col-sm-2">
                         <p>Chuyên ngành</p>    
                     </div>
@@ -44,7 +44,7 @@
                     </div>
                 </div>
                
-                <div class="col-sm-10">
+                <div class="col-sm-12">
                     <div class="col-sm-2">    
                         <p>Học vị</p>
                     </div>
@@ -61,7 +61,13 @@
                     </div>
                 </div>
 
-                <div class="col-sm-10">
+                <div class="col-md-12">
+                    <div class="col-md-2"></div>
+                    <div class="col-sm-7">
+                        <img src="../../web/avata/demo.jpg" class="image">
+                    </div>
+                </div>                                
+                <div class="col-sm-12">
                     <div class="col-sm-2">
                         <p>Avatar</p>
                     </div>
@@ -70,11 +76,11 @@
                             <input type="text" name="avatar" id="avatar">
                             <div><span><?php echo $avatarErr;?></span></div>  
                         </label>
-                        <button type="button" name="btnAvata" class="col-sm-3">Browse</button>
+                        <button type="button" name="btnAvatar" class="col-sm-3">Browse</button>
                     </div>
                 </div>
               
-                <div class="col-sm-10">
+                <div class="col-sm-12">
                     <div class="col-sm-2">
                         <p>Mô tả thêm</p>
                     </div>
@@ -87,7 +93,7 @@
                 </div>               
             </div>
 
-            <div class="col-md-10 btnedit">
+            <div class="col-md-12 btnedit">
                 <button type='submit' name='btnEdit'>Xác nhận</button>
             </div>
         </from>

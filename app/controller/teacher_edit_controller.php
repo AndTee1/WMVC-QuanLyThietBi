@@ -33,4 +33,5 @@
             $avatar = ($_POST["avatar"]);
         }
     }    
+
 ?>

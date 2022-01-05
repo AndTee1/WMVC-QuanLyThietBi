@@ -23,9 +23,6 @@
             <input class="input" type="text" name="equipment">
         </div>
 
-        <!-- Validate thiết bị -->
-        <div><span class="error"><?php echo $equipmentErr;?></span></div>
-
         <!-- Giáo viên -->
         <div class="css">
             <label>Giáo viên</label>
@@ -37,8 +34,6 @@
             </select>
         </div>
 
-        <!-- Validate giáo viên  -->
-        <div><span class="error"><?php echo $teacherErr;?></span></div>
 
         <!-- Lớp học -->
         <div class="css">
@@ -50,9 +45,6 @@
                 <?php } ?>  
             </select>
         </div>
-
-        <!-- Validate Lớp học  -->
-        <div><span class="error"><?php echo $classroomErr;?></span></div>
 
         <!-- Nút tìm kiếm -->
         <input type="submit" name="search" value="Tìm kiếm" style="cursor:pointer" class="search"> 

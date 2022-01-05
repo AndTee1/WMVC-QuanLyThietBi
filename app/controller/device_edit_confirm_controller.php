@@ -16,7 +16,7 @@
             }else{
                 unlink("../../web/avata/device/".$avatar);
             }
-            editDevice($id,$name, $building, $description, $avatar, $update);
+            editDevice($id,$name, $description, $avatar, $update);
             header("Location: ../view/device_edit_complete_view.php");
     }
 ?>

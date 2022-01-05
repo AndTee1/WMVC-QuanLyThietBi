@@ -47,7 +47,4 @@ button.col-sm-3{
     padding: 20px 20px;
     width: 30%;
 }
-label.validate {
-    width: 50px;
-    color: #ff3c33;
-}
+span{ color:rgb(255, 9, 9);font-weight: bold;}

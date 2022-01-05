@@ -30,7 +30,26 @@
                                     CROSS JOIN devices ON device_transactions.device_id = devices.id 
                                     CROSS JOIN teachers ON device_transactions.teacher_id = teachers.id 
                                     CROSS JOIN classrooms ON device_transactions.classroom_id = classrooms.id
-                                    WHERE devices.name = '$equipment' AND teachers.name = '$teacher' AND classrooms.name = '$classroom'";
+                                    ";
+        if($equipment == '' && $teacher == '' && $classroom == ''){
+            $sqlDevicesGiveBackBook1 = "";
+        } else if($equipment != '' && $teacher == '' && $classroom == ''){
+            $sqlDevicesGiveBackBook1 = "WHERE devices.name = '$equipment'";
+        } else if($equipment == '' && $teacher != '' && $classroom == ''){
+            $sqlDevicesGiveBackBook1 = "WHERE teachers.name = '$teacher'";
+        } else if($equipment == '' && $teacher == '' && $classroom != ''){
+            $sqlDevicesGiveBackBook1 = "WHERE classrooms.name = '$classroom'";
+        } else if($equipment != '' && $teacher != '' && $classroom == ''){
+            $sqlDevicesGiveBackBook1 = "WHERE devices.name = '$equipment' AND teachers.name = '$teacher'";
+        }else if($equipment != '' && $teacher == '' && $classroom != ''){
+            $sqlDevicesGiveBackBook1 = "WHERE devices.name = '$equipment' AND classrooms.name = '$classroom'";
+        }else if($equipment == '' && $teacher != '' && $classroom != ''){
+            $sqlDevicesGiveBackBook1 = "WHERE teachers.name = '$teacher' AND classrooms.name = '$classroom'";
+        } else {
+            $sqlDevicesGiveBackBook1 = "WHERE devices.name = '$equipment' AND teachers.name = '$teacher' AND classrooms.name = '$classroom'";
+        }
+        
+        $sqlDevicesGiveBackBook .= $sqlDevicesGiveBackBook1;                                
         $listDeviceGiveBack = $conn ->prepare($sqlDevicesGiveBackBook);     
         $listDeviceGiveBack->execute(); 
         $result = $listDeviceGiveBack->fetchAll(PDO::FETCH_OBJ);

@@ -4,14 +4,16 @@
     $building = $_GET['building'];
     $description = $_GET['description'];
     $avatar = $_GET['avatar'];
+
+    date_default_timezone_set('Asia/Ho_Chi_Minh');
     $created = date("Y-m-d h:i:s");
 
     $check_tmp = 0;
     if(isset($_POST['btn-add'])){
         $check_tmp += 1; 
         if($check_tmp == 1){
-            remove_tmp($avatar);
             add_room($name, $building, $description, $avatar, $created);
+            remove_tmp($avatar);
             router_room();
         }
     }
@@ -20,7 +22,7 @@
         $file="../../web/avata/add_classroom/$img_tmp";
         $newfile="../../web/avata/$img_tmp";
         copy($file, $newfile);
-        unlink("../../web/avata/add_classroom/".$img_tmp);
+        unlink("../../web/avata/add_classroom/.$img_tmp");
     } 
 
     function router_room(){

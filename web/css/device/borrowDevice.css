@@ -135,3 +135,17 @@ th {
   margin: 0;
 }
 
+.custombackhome{
+  margin:10px 5px;
+  display: flex;
+  border-radius:7px;
+  background-color: #4f81bd;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.custombackhome>a{
+  color:white !important;
+  
+
+}

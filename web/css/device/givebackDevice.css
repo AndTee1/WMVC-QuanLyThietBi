@@ -34,7 +34,7 @@ label {
 
 input {
     border: 1px solid #385d8a;
-    font-size: 1rem;
+    font-size: 1.3rem;
     font-weight: 100;
     padding: 5px 10px;
     width: 200px;  
@@ -118,6 +118,17 @@ tr {
     padding: 1px;
     margin: 1px;
     border: 1px solid white;
+}
+
+.custombackhome{
+    margin:10px 5px;
+    display: flex;
+    border-radius:8px;
+    background-color: #4f81bd;
+}
+.custombackhome>a{
+    color:white;
+
 }
 
 

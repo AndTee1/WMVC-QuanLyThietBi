@@ -1,37 +1,50 @@
 <?php
-    require '../model/teacher.php';   
+    // require '../model/teacher.php';   
     $nameErr = $specializedErr = $degreeErr = $avatarErr = $descriptionErr="";
-    $name = $specialized = $degree = $avatar = $description="";
+    $nameT = $specializedT = $degreeT = $avatarT = $descriptionT=$uploadT="";
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['btnAdd'])) {
+
         if (empty($_POST["name"])) {
             $nameErr = "Hãy nhập tên";
         } else {
-            $name = ($_POST["name"]);
+            $nameT = ($_POST["name"]);
         }
                     
         if($_POST['specialized'] == "none") {
             $specializedErr = "Hãy chọn chuyên ngành";
         } else {
-            $specialized = ($_POST["specialized"]);
+            $specializedT = ($_POST["specialized"]);
         }
         if($_POST['degree'] == "none") {
             $degreeErr = "Hãy chọn học vị";
         } else {
-            $degree = ($_POST["degree"]);
+            $degreeT = ($_POST["degree"]);
         }
 
-        if ($_POST["description"]) {
+        if (trim($_POST['description']) == "") {
             $descriptionErr = "Hãy nhập mô tả";
-        } else {
-            $description = ($_POST["description"]);
+        } else if (strlen(trim($_POST['description'])) > 1000) {
+            $descriptionErr = 'Không nhập quá 1000 ký tự';
+        }else {
+            $descriptionT = trim($_POST['description']);
         }
 
-        if (empty($_POST["avatar"])) {
+        if (empty( $_FILES['upload']['name'])) {
             $avatarErr = "Hãy chọn avatar";
-        } else {
-            $avatar = ($_POST["avatar"]);
+        } else if(preg_match("/\.(jpg|jpeg|png|gif|JPG|JPEG|PNG|GIF)$/",$_POST['upload'])){
+            $avatarT =  $_FILES['upload']['name'];
+            move_uploaded_file($_FILES['upload']['tmp_name'], '../../web/avata/teacherTMP/'.$avatarT); 
         }
+        else {
+            $avatarErr= "Đây không phải file ảnh";
+        }
+        $uploadT = $_POST['upload'];
+        if($nameT!=""&& $specializedT !=""&&$degreeT!=""&&$descriptionT!=""&&$uploadT!=""){
+            header("Location: ../view/teacher_add_confirm_view.php?name=$nameT&specialized=$specializedT&avata=$uploadT&degree=$degreeT&description=$descriptionT");
+        } 
+       
+       
     } 
     
 ?>

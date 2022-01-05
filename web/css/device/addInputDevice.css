@@ -1,0 +1,47 @@
+.container {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+.section {
+width: 600px;
+display: flex;
+justify-content: flex-start;
+align-items: center;
+text-align: left;
+margin-bottom: 30px;
+}
+.section > p {
+width: 150px;
+font-weight: bold;
+}
+.input-field {
+display: flex;
+}
+.txt {
+width: 400px;
+height: 80px;
+}
+.btn-submit {
+border-radius: 7px;
+width: 200px;
+height: 50px;
+background-color: #4f81bd;
+}
+
+.btn-browse {
+    margin-left: 3px;
+    background-color: #4f81bd;
+}
+
+.main{
+    text-align: center;
+    width: 700px;
+    height: 400px;
+    border: 1px solid #385d8a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

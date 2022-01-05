@@ -110,6 +110,7 @@
         $deviceName = $conn -> prepare($sql);
         $deviceName -> execute();
     }
+
 	function findDevice($id){
         require '../common/connectDB.php';
         if($id !=""){

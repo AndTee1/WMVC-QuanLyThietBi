@@ -1,6 +1,10 @@
 <?php 
   require '../common/define.php';
   require '../controller/teacher_add_controller.php';
+//   if(isset($_POST['btnAvata'])){
+    
+//       echo '<img src="../../web/avata/'+$file_part+'.jpg" width="100%"/>';
+//   }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,17 +15,46 @@
     <link rel="stylesheet" href="../../web/css/teacher/addTeacher.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <title>Đăng ký giáo viên</title>
+    <style>
+    .lableupload{
+    display: inline-block;
+    background-color: #4f81bd;
+    color: black;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    line-height: 45px;
+    margin-bottom: 0px;
+    }
+    #upload{
+        display: none !important;
+    }
+    input,select{
+        min-height: 40px !important;
+    }
+    .custombackhome{
+        margin:10px 5px;
+        display: flex;
+        border-radius:8px;
+    }
+    .custombackhome>a{
+        color:white !important;
+
+    }
+   
+    </style>
 </head>
 <body>
+<button class="custombackhome"><a href="../../home.php"><img src="https://img.icons8.com/material-outlined/24/FFFFFF/home--v2.png"/>Trang chủ</a></button>
     <div class="main container">
-        <form action="" method='POST' name='addform' class="col-sm-12">
+        <form action="" method='POST' name='addform' class="col-sm-12" enctype="multipart/form-data">
             <div class="content col-md-12">
                 <div class="col-sm-12">
                     <div class="col-sm-2">
                         <p>Họ và Tên</p>
                     </div>
                     <div class="col-sm-7">
-                        <input type="text" name="name">
+                        <input type="text" name="name" >
                         <div><span><?php echo $nameErr;?></span></div>
                     </div>
                 </div>
@@ -61,14 +94,23 @@
                     <div class="col-sm-2">
                         <p>Avatar</p>
                     </div>
-                    <div class="col-sm-7">
-                        <label for="" class="col-sm-8">
-                            <input type="text" name="avata" id="avata">
-                            <div><span><?php echo $avatarErr;?></span></div>
+                    <div class="col-sm-7" style="display:flex">
+                        <label for="" class="col-sm-10" style="display:flex">
+                            <input type="text" name="upload" id="avata" >
+                            
                         </label>
-                        <button type="button" name="btnAvata" class="col-sm-3">Browse</button>
-                        
+                        <div class="col-sm-3">
+                        <input type="file" id="upload" name="upload" onchange="myFunction(this)"/>
+                        <label for="upload" class="lableupload" id="labelup" style="width:120%!important"> Browse</label>
+                        </div>
                     </div>
+                    <div class="col-sm-12">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-7" style="padding-left: 6px;">
+                            <span><?php echo $avatarErr;?></span></div>
+                        </div>
+                       
+                   
                 </div>
                 <div class="col-sm-12">
                     <div class="col-sm-2">
@@ -76,7 +118,7 @@
                     </div>
                     <div class="col-sm-7">
                         <label for="" class="col-sm-6">
-                        <textarea type="input" rows="5" cols="70" name="description" id="description">  
+                        <textarea type="text" rows="5" cols="70" name="description" id="description">  
                         </textarea>  
                         <div><span><?php echo $descriptionErr;?></span></div>
                         </label>
@@ -89,5 +131,19 @@
             </div>
         </form>
     </div>
+    <script>
+        if (window.history.replaceState) {
+			window.history.replaceState(null, null, window.location.href);
+		}
+ 
+        function myFunction(target) {
+            document.getElementById("avata").value = target.files[0].name;
+            // document.getElementById("avata").value =fileVal;
+            // console.log(fileVal);
+        }
+        
+        
+        
+    </script>
 </body>
 </html>

@@ -13,10 +13,10 @@
         date_default_timezone_set("Asia/Ho_Chi_Minh");
 ?>
 
-<form method="post">
-       
-        
+<button class="custombackhome"><a href="../../home.php"><img src="https://img.icons8.com/material-outlined/24/FFFFFF/home--v2.png"/>  Trang chủ  </a></button>
 
+<form method="post">
+    
         <!-- Thiết bị -->
         <div>
             <label>Thiết bị</label>

@@ -120,4 +120,18 @@ tr {
     border: 1px solid white;
 }
 
+.custombackhome{
+    margin:10px 5px;
+    display: flex;
+    border-radius:8px;
+    background-color: #4f81bd;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.custombackhome>a{
+    color:white !important;
+
+}
+
 

@@ -32,10 +32,20 @@
     input,select{
         min-height: 40px !important;
     }
+    .custombackhome{
+        margin:10px 5px;
+        display: flex;
+        border-radius:8px;
+    }
+    .custombackhome>a{
+        color:white !important;
+
+    }
    
     </style>
 </head>
 <body>
+<button class="custombackhome"><a href="../../home.php"><img src="https://img.icons8.com/material-outlined/24/FFFFFF/home--v2.png"/>Trang chủ</a></button>
     <div class="main container">
         <form action="" method='POST' name='addform' class="col-sm-12" enctype="multipart/form-data">
             <div class="content col-md-12">

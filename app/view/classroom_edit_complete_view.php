@@ -9,10 +9,6 @@
     <title>Sửa phòng học thành công</title>
 </head>
 <body>
-    <?php
-        require '../controller/classroom_edit_controller.php';
-        require '../common/define.php';
-    ?>
     <div class="component container">
         <div class='col-md-12' style="text-align: center;">
             <p>Bạn đã đăng kí thành công phòng học.</p>

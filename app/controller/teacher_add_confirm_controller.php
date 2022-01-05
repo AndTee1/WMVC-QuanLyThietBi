@@ -7,9 +7,10 @@
     $degree=$_GET['degree'];
     $avata=$_GET['avata'];
     $description=$_GET['description'];
+    date_default_timezone_set("Asia/Ho_Chi_Minh");
     $created=date("Y-m-d h:i:s");
     $loading=0;
-    $status=true;
+    
     if(isset($_POST['btnAdd'])){
         $loading+=1; 
         if($loading==1){
@@ -20,6 +21,7 @@
     }
     
     function router(){
+        $status='true';
         header("Location: ../view/teacher_add_complete_view.php?status=$status");
     }
     function deleteImgTmp($avatarT){

@@ -10,13 +10,13 @@
 </head>
 <body>
     <?php
-        require '../controller/classroom_edit_controller.php';
+        require '../controller/classroom_edit_confirm_controller.php';
         require '../common/define.php';
        
     ?>
     <div class="component container">
         <div class='col-md-12'>
-            <form name='classroom-confirm' action='../controller/classroom_edit_controller.php' method='POST'> 
+            <form name='classroom-confirm' action='' method='POST'> 
                 <div class="col-md-12"> 
                     <div class="col-md-12">
                         <div class="col-sm-2">
@@ -24,7 +24,10 @@
                         </div>
                         <div class="col-sm-7">
                             <label for="" style='width:50%'>
-                                <div class="lable-input">.</div>
+                            <?php 
+                            $nameChange=$_GET["name"];
+                            echo "<div class='lable-input'>$nameChange</div>"
+                            ?>
                             </label>
                         </div>
                     </div>
@@ -34,7 +37,14 @@
                         </div>
                         <div class="col-sm-7">
                             <label for="" style='width:50%'>
-                                <div class="lable-input">.</div>
+                            <?php 
+                            $buildingChange=$_GET["building"];
+                            foreach ($listBuilding as $key=>$build){
+                                if($key===$buildingChange){
+                                    echo "<div class='lable-input'>$build</div>";
+                                }
+                            }
+                            ?>
                             </label>                  
                         </div>
                     </div>
@@ -44,7 +54,10 @@
                         </div>
                         <div class="col-sm-7">
                             <label for="" style='width:100%'>
-                                <div class="lable-input description"></div>
+                            <?php 
+                            $descriptionChange=$_GET["description"];
+                            echo "<div class='lable-input'>$descriptionChange</div>"
+                            ?>
                             </label>                        
                         </div>
                     </div>
@@ -54,19 +67,21 @@
                         </div>
                         <div class="col-sm-7">
                             <label for="" style='width:30%'>
-                            <img src="../../web/avata/demo.jpg" class="image">
+                            <?php 
+                            $avatarChange=$_GET["avatar"];
+                            echo "<img src='../../web/avata/room/$avatarChange' class='image'>"
+                            ?>
                             </label>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-12 accept">
-                        <button type="button" id="btn-back" name="back">Sửa lại</button>
-                        <button type="button" id="btn-edit" name="edit">Sửa lại</button>
+                        <button type="button" id="btn-back" name="back" onclick="history.back()">Sửa lại</button>
+                        <button type="submit" id="btn-edit" name="edit">Sửa</button>
                 </div>
             </form>
         
         </div>
     </div>
-    <script type="text/javascript" src=""></script>
 </body>
 </html>

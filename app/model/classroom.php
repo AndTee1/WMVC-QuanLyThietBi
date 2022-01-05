@@ -40,4 +40,23 @@
         $rowAll = $query->fetchAll();
         return $rowAll;
     }
+    
+    function get_room($id){
+        require '../common/connectDB.php';
+        if($id !=""){
+            $sql = "SELECT * FROM `classrooms` WHERE id=$id ";
+            $getData = $conn -> prepare($sql);
+            $getData->execute();
+            $getData->setFetchMode(PDO::FETCH_ASSOC); 
+            $resultUser = $getData->fetchAll();
+           return $resultUser;
+        };
+    }
+    function edit_room($id ,$name, $building, $description, $avatar, $update){
+        require '../common/connectDB.php';
+        if($id !=""){
+            $sql = "UPDATE `classrooms` SET `name`='$name',`avatar`='$avatar',`description`='$description',`building`='$building',`updated`='$update',`created`='' WHERE id=$id";            $update = $conn -> prepare($sql);
+            $update->execute();
+        };
+    }
 ?>

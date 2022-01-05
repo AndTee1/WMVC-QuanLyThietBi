@@ -1,8 +1,23 @@
+  
 *{
     font-family: 'Times New Roman', Times, serif;
     font-size: 16px;
 }
-.txtarea{
+.component.container > div{
+    margin: 20px 10px;
+    box-sizing: border-box;
+}
+.component{
+    margin: auto;
+    width: 70% !important;
+    margin-top: 50px;
+    border: 1px solid #385d8a;
+}
+
+.component > form{
+    margin: 30px 0px;
+}
+textarea {
     border: 1px solid #385d8a;
     background-color: #e1eaf4;
 }
@@ -25,12 +40,12 @@ button.col-sm-3 {
     color: white;
 }
 
-.confirm{
+.accept{
     text-align: center;
     margin-top: 20px;
     color: white;
 }
-.confirm > button{
+.accept > button{
     border-radius: 8px;
     padding: 20px 20px;
     width: 20%;
@@ -38,7 +53,7 @@ button.col-sm-3 {
 }
 .lable-input{
     width: 85%;
-    padding: 15px 5px;
+    padding: 5px 5px;
     border: 1px solid #385d8a;
     background-color: #e1eaf4;
 }
@@ -49,21 +64,21 @@ label.col-sm-8 {padding: 0px;}
 	padding: 10px 5px;
 }
 
-.word{
+.content{
     padding: 5px 1px;
     color: black;
     background-color: #FFFFFF;
     text-align: left;
 }
 
-.content{
+.component{
     margin: auto;
     width: 70% !important;
     margin-top: 50px;
     border: 1px solid #385d8a;
 }
 
-.content > form{
+.component > form{
     margin: 30px 0px;
 }
 th,td{
@@ -74,7 +89,7 @@ tr{
     border-bottom: 1px solid black;
 }
 
-.content.container > div{
+.component.container > div{
     margin: 20px 10px;
     box-sizing: border-box;
 }
@@ -108,10 +123,27 @@ tr > td:last-child > button{
 #avatar{
     width: 100%;
 }
+.image{
+    width: 200px;
+    height: 200px;
+    margin-bottom: 2%;
+}
 
 a{
     font-style: italic;
     color: black !important;
     text-decoration-line: underline !important;
 }
-
+.browse {
+    display: inline-block;
+    background-color: #4f81bd;
+    border: 1px solid #385d8a;
+    cursor: pointer;
+    text-align: center;
+    padding: 5px 10px 5px 10px;
+    color: white;
+    max-width: 150% !important;
+}
+#upload{
+        display: none !important;
+}

@@ -2,14 +2,10 @@
         require '../controller/classroom_add_confirm_controller.php';
         require '../common/define.php';
 
-        // $room_name = isset($_POST['nameR']) ? $_POST['nameR'] : '';
-        // $room_building = isset($_POST['buildingR']) ? $_POST['buildingR'] : '';
-        // $room_description = isset($_POST['descriptionR']) ? $_POST['descriptionR'] : '';
-        // $room_avatar = isset($_POST['avatarR']) ? $_POST['avatarR'] : '';
-
-        // if ($room_name == '' || $room_building == '' || $room_description == '' || $room_avatar == '') {
-        //     header('Location: ../view/classroom_add_input_view.php');
-        // }
+        $room_name = isset($_GET['name']) ? $_GET['name'] : '';
+        if ($room_name == '') {
+            header('Location: ../view/classroom_add_input_view.php');
+        }
 ?>
 
 <!DOCTYPE html>
@@ -65,7 +61,7 @@
                         </div>
                         <div class="col-sm-7">
                             <label for="" style='width:30%'>
-                                <img src="../../web/avata/<?php echo $avatar?>" alt="" style="width:150px; height:150px;">
+                                <img src="../../web/avata/add_classroom/<?php echo $avatar?>" alt="" style="width:150px; height:150px;">
                             </label>
                         </div>
                     </div>

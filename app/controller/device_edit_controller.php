@@ -1,6 +1,6 @@
 <?php
-    $nameErr = $buildingErr = $descriptionErr = $avatarErr = "";
-    $name = $building = $description = $avatarCorrect = "";
+    $nameErr =  $descriptionErr = $avatarErr = "";
+    $name = $description = $avatarCorrect = "";
         require '../model/device.php';
         $id=$_GET["id"];
         $result=findDevice($id);
@@ -11,9 +11,9 @@
         }
     if (isset($_POST['btn-accept'])) {
         if (empty($_POST["name"])) {
-            $nameErr = "Hãy nhập tên phòng học *";
+            $nameErr = "Hãy nhập tên thiết bị *";
         } else if(strlen($_POST["name"])>100){
-            $nameErr = "Tên phòng học bé hơn 100 ký tự";
+            $nameErr = "Tên bé hơn 100 ký tự";
         }else {
             $name = ($_POST["name"]);
         }

@@ -81,7 +81,7 @@
                     <div class="col-md-2"></div>
                     <div class="col-sm-7">
                     <?php 
-                        echo "<img src='../../web/avata/room/$id/$avatarPast' class='image' id='image'>"
+                        echo "<img src='../../web/avata/$id/$avatarPast' class='image' id='image'>"
                     ?>
                     </div>
                 </div>                                

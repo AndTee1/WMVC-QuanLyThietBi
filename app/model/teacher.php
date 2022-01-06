@@ -33,7 +33,7 @@
     }
     function getLastID(){
         global $conn;
-        $idT="";
+        $idT=0;
         $query = $conn ->prepare("SELECT * FROM `teachers` WHERE id=(SELECT max(id) FROM `teachers`)");
         $query -> execute();
         foreach ($query as $id) {

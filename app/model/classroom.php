@@ -42,8 +42,9 @@
     }
     
     function get_room($id){
+        
         require '../common/connectDB.php';
-        if($id !=""){
+        if($id !=NULL){
             $sql = "SELECT * FROM `classrooms` WHERE id=$id ";
             $getData = $conn -> prepare($sql);
             $getData->execute();
@@ -54,14 +55,14 @@
     }
     function edit_room($id ,$name, $building, $description, $avatar, $update){
         require '../common/connectDB.php';
-        if($id !=""){
+        if($id !=NULL){
             $sql = "UPDATE `classrooms` SET `name`='$name',`avatar`='$avatar',`description`='$description',`building`='$building',`updated`='$update',`created`='' WHERE id=$id";            $update = $conn -> prepare($sql);
             $update->execute();
         };
     }
     function getLastIDR(){
         global $conn;
-        $idT="";
+        $idT=0;
         $query = $conn ->prepare("SELECT * FROM `classrooms` WHERE id=(SELECT max(id) FROM `classrooms`)");
         $query -> execute();
         foreach ($query as $id) {

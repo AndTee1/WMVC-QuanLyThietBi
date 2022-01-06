@@ -47,7 +47,7 @@
         }
          else {
             $avatarCorrect =  $_FILES['upload']['name'];
-            move_uploaded_file($_FILES['upload']['tmp_name'], "../../web/avata/room/roomTMP/$avatarCorrect");
+            move_uploaded_file($_FILES['upload']['tmp_name'], "../../web/avata/add_classroom/$avatarCorrect");
         }
         $upload = $_POST['upload'];
         if($name !="" && $building !="" && $description !="" && $upload !=""){

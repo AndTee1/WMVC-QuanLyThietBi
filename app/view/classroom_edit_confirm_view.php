@@ -70,7 +70,7 @@
                             <label for="" style='width:30%'>
                             <?php 
                             $avatarChange=$_SESSION["avatar"];
-                            echo "<img src='../../web/avata/room/roomTMP/$avatarChange' class='image'>"
+                            echo "<img src='../../web/avata/add_classroom/$avatarChange' class='image'>"
                             ?>
                             </label>
                         </div>

@@ -1,7 +1,7 @@
 <?php
-        require '../controller/device_edit_controller.php';
-        require '../common/connectDB.php'; 
-    ?>
+        require '../controller/device_edit_confirm_controller.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,59 +16,51 @@
     <div class="content container">
         <form name='formconfirm' action='' method='POST' class="col-sm-12"> 
             <div class="col-md-12">  
-                <div class="col-md-12">
-                    <div class="col-sm-2">
-                        <div class="word">Tên thiết bị</div>
+            <div class="col-md-12">
+                <div class="col-sm-2">
+                    <div class="content">Tên thiết bị</div>
                     </div>
-                    <div class="col-sm-7">
-                        <label for="" style='width: 100%'>
-                            <input type="text" class="filter" id="name" name="name">
+                        <div class="col-sm-7">
+                        <label for="" style='width:50%'>
+                        <?php 
+                        $name=$_GET["name"];
+                        echo "<div class='lable-input'>$name</div>"
+                        ?>
                         </label>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="col-md-2"></div>
-                    <div class="col-sm-7">
-                        <div><span class="error"></span></div>
-                    </div>
-                </div>
-                                          
-                <div class="col-md-12">
-                    <div class="col-sm-2">
-                        <div class="word">Mô tả chi tiết</div>
-                    </div>
-                    <div class="col-sm-7">
-                        <label for="">
-                            <textarea type="input" rows="5" cols="60" name="description" id="description" style="border: 1px solid #385d8a; background-color: #e1eaf4">
-                            </textarea>
-                        </label>                        
-                    </div>
-                </div>                              
-                <div class="col-sm-12">
-                <div class="col-md-12 seacrch">
+                        </div>
+                    </div>                            
+                    <div class="col-md-12">
                         <div class="col-sm-2">
-                            <div class="word">Avatar</div>
+                            <div class="content">Mô tả chi tiết</div>
+                        </div>
+                        <div class="col-sm-7">
+                            <label for="" style='width:100%'>
+                            <?php 
+                            $description=$_GET["description"];
+                            echo "<div class='lable-input'>$description</div>"
+                            ?>
+                            </label>                        
+                        </div>
+                    </div>                              
+                    <div class="col-md-12 seacrch">
+                        <div class="col-sm-2">
+                            <div class="content">Avatar</div>
                         </div>
                         <div class="col-sm-7">
                             <label for="" style='width:30%'>
-                                <div class="lable-input avatar">IMAGE</div>
+                            <?php 
+                            $avatarChange=$_GET["avatar"];
+                            echo "<img src='../../web/avata/device/$avatar' class='image'>"
+                            ?>
                             </label>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="col-md-2"></div>
-                    <div class="col-sm-7">
-                        <div><span class="error"></span></div>
-                    </div>
-                </div>
             </div>
-            <div class="col-md-12 confirm">
-                <button type="submit" id="btn-confirm" name="btn-confirm">Xác nhận</button>
-                <button type="submit" id="btn-confirm" name="btn-confirm">Quay lại</button>
+            <div class="col-md-12 accept">
+            <button type="button" id="btn-back" name="back">Quay lại</button>
+            <button type="submit" id="btn-edit" name="edit">Xác nhận</button>
             </div>
         </form>
     </div>
-    <script type="text/javascript" src=""></script>
 </body>
 </html>

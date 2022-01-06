@@ -1,4 +1,3 @@
-
 <?php
     session_start();
     $nameErr = $buildingErr = $descriptionErr = $avatarErr = "";
@@ -16,7 +15,7 @@
         if (empty($_POST["name"])) {
             $nameErr = "Hãy nhập tên phòng học *";
         } else if(strlen($_POST["name"])>100){
-            $nameErr = "Tên phòng học bé hơn 100 ký tự";
+            $nameErr = "Tên phòng học bé hơn 100 ký tự *";
         }else {
             $name = ($_POST["name"]);
         }
@@ -30,7 +29,7 @@
         if (empty($_POST["description"])) {
             $descriptionErr = "Hãy nhập mô tả *";
         }else if(strlen($_POST["description"])>1000){
-            $descriptionErr = "Mô tả chi tiết bé hơn 1000 ký tự";
+            $descriptionErr = "Mô tả chi tiết bé hơn 1000 ký tự *";
         } else {
             $description = ($_POST["description"]);
         }

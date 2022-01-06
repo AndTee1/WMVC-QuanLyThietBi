@@ -1,5 +1,5 @@
 <?php 
-    require '../model/device.php'
+    require '../model/device.php';
     if(isset($_GET['keyword'])){
         $keyword = $_GET['keyword'];
     }else

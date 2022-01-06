@@ -53,7 +53,15 @@
 	}
 
 
-	
+	function addDevice($name, $description, $avatar, $created){
+		global $conn;
+        if($name !="" && $description !="" && $avatar !=""){
+
+            $sql = "INSERT INTO `devices` (`name`,`avatar`,`description`, `created`) VALUES ('$name','$avatar','$description','$created')";
+            $add = $conn -> prepare($sql);
+            $add->execute();
+        };
+    }
 	
 	function borrowDevice($device_id, $teacher, $classroom, $start_transaction, $end_transaction) {
 		global $conn;

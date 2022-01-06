@@ -48,11 +48,10 @@
         }
          else {
             $avatarCorrect =  $_FILES['upload']['name'];
-            move_uploaded_file($_FILES['upload']['tmp_name'], '../../web/avata/room/'.$avatarCorrect);
+            move_uploaded_file($_FILES['upload']['tmp_name'], "../../web/avata/room/roomTMP/$avatarCorrect");
         }
         $upload = $_POST['upload'];
         if($name !="" && $building !="" && $description !="" && $upload !=""){
-            //header("Location: ../view/classroom_edit_confirm_view.php?id=$id&name=$name&building=$building&description=$description&avatar=$upload&avatarPast=$avatarPast");
             header("Location: ../view/classroom_edit_confirm_view.php");
             $_SESSION["id"]=$id;
             $_SESSION["description"] = $description;

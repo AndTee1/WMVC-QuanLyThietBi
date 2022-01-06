@@ -146,3 +146,12 @@ a{
 #upload{
         display: none !important;
 }
+.custombackhome{
+    margin:10px 5px;
+    display: flex;
+    border-radius:8px;
+}
+.custombackhome>a{
+    color:white !important;
+
+}

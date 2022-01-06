@@ -25,7 +25,7 @@ require "../controller/admin_reset_controller.php";
                 ?>
                     <form class="form" action="" method="POST">
                         <tr>
-                            <td class="no"><?php echo $i; ?></td>
+                            <td class="no"><?php echo $i +1; ?></td>
                             <td class="empty"></td>
                             <td class="username"><?php echo $username[$i]; ?></td>
                             <td class="password">

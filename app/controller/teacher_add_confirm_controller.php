@@ -1,6 +1,7 @@
 <?php
     // $name = $specialized = $degree = $avatar = $description=$upload="";
     require '../model/teacher.php';
+    $id=getLastID();
     // require '../controller/teacher_add_controller.php';
     $name=$_GET['name'];
     $specialized=$_GET['specialized'];
@@ -15,7 +16,9 @@
         $loading+=1; 
         if($loading==1){
             add( $name,$specialized,$degree,$avata,$description,$created);
-            deleteImgTmp($avata);
+            mkdir("../../web/avata/$id", 0777);
+            deleteImgTmp($avata,$id);
+
             router();
         }
     }
@@ -24,9 +27,9 @@
         $status='true';
         header("Location: ../view/teacher_add_complete_view.php?status=$status");
     }
-    function deleteImgTmp($avatarT){
+    function deleteImgTmp($avatarT,$id){
         $file="../../web/avata/teacherTMP/$avatarT";
-        $newfile="../../web/avata/$avatarT";
+        $newfile="../../web/avata/$id/$avatarT";
         copy($file, $newfile);
         unlink("../../web/avata/teacherTMP/".$avatarT);
     } 

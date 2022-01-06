@@ -32,4 +32,14 @@
         $rowAll = $query->fetchAll();
         return $rowAll;
     }
+    function getLastID(){
+        global $conn;
+        $idT="";
+        $query = $conn ->prepare("SELECT * FROM `teachers` WHERE id=(SELECT max(id) FROM `teachers`)");
+        $query -> execute();
+        foreach ($query as $id) {
+           $idT= $id['id'];
+        }
+        return $idT+1;
+    }
 ?>

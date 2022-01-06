@@ -1,5 +1,6 @@
 <?php
     require '../model/classroom.php';
+    $id=getLastIDR();
     $name = $_GET['name'];
     $building = $_GET['building'];
     $description = $_GET['description'];
@@ -13,14 +14,15 @@
         $check_tmp += 1; 
         if($check_tmp == 1){
             add_room($name, $building, $description, $avatar, $created);
-            remove_tmp($avatar);
+            mkdir("../../web/avata/$id", 0777);
+            remove_tmp($avatar,$id);
             router_room();
         }
     }
 
-    function remove_tmp($img_tmp){
+    function remove_tmp($img_tmp,$id){
         $file="../../web/avata/add_classroom/$img_tmp";
-        $newfile="../../web/avata/$img_tmp";
+        $newfile="../../web/avata/$id/$img_tmp";
         copy($file, $newfile);
         unlink("../../web/avata/add_classroom/.$img_tmp");
     } 

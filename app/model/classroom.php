@@ -59,4 +59,14 @@
             $update->execute();
         };
     }
+    function getLastIDR(){
+        global $conn;
+        $idT="";
+        $query = $conn ->prepare("SELECT * FROM `classrooms` WHERE id=(SELECT max(id) FROM `classrooms`)");
+        $query -> execute();
+        foreach ($query as $id) {
+           $idT= $id['id'];
+        }
+        return $idT+1;
+    }
 ?>

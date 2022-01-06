@@ -14,6 +14,7 @@
         require '../common/define.php';
        
     ?>
+      <button class="custombackhome"><a href="../../home.php"><img src="https://img.icons8.com/material-outlined/24/FFFFFF/home--v2.png"/>Trang chủ</a></button>
     <div class="component container">
         <div class='col-md-12'>
             <form name='classroom-confirm' action='' method='POST'> 
@@ -69,7 +70,7 @@
                             <label for="" style='width:30%'>
                             <?php 
                             $avatarChange=$_SESSION["avatar"];
-                            echo "<img src='../../web/avata/room/$avatarChange' class='image'>"
+                            echo "<img src='../../web/avata/room/roomTMP/$avatarChange' class='image'>"
                             ?>
                             </label>
                         </div>

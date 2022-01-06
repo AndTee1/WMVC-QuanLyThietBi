@@ -18,7 +18,6 @@
         global $conn;
         $query = $conn->prepare ("DELETE FROM teachers WHERE id=" . $id);
         $query->execute();
-        return 1;
     }
     function searchData($keyword, $specialized) {
         global $conn;

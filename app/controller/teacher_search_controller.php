@@ -45,7 +45,7 @@ if (isset($_GET['search'])) {
                 ?>
                 <td>
                     <?php if ($valid) { ?>
-                        <button id="<?php print_r($v['id']) ?>" onclick="confirmDelete(this)" class="delete" data-confirm="Bạn chắc chắn muốn xóa giáo viên <?php print_r($v['name']) ?>?">Xóa</button>
+                        <button id="<?php print_r($v['id']); ?>" onclick="confirmDelete(this)" class="delete" data-confirm="Bạn chắc chắn muốn xóa giáo viên <?php print_r($v['name']); ?> ?">Xóa</button>
                         <button>
                             <a href="../view/teacher_edit_input_view.php<?php echo '?id=' . $v['id']; ?>">Sửa</a>
                         </button>
@@ -57,8 +57,12 @@ if (isset($_GET['search'])) {
         echo  '</table>';
         if (isset($_POST['id'])) {
             deleteData($_POST['id']);
-            header('Location:../view/teacher_search_view.php?specialized=' . $specialized . "&keyword=" . $keyword . "&search=" . $_GET['search']);
-            exit;
+            $url = '../view/teacher_search_view.php?specialized=' . $specialized . "&keyword=" . $keyword . "&search=" . $_GET["search"];
+        ?>
+            <script>
+                window.location.href = "<?php $url ?>"
+            </script>;
+        <?php
         }
     } else {
         ?>

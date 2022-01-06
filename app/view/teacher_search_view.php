@@ -70,7 +70,7 @@ require '../common/define.php';
         </div>
     </div>
     <!-- Link javascript -->
-    <script src="../../web/js/searchTeacher.js"></script>
+    <script type="text/javascript" src="../../web/js/searchTeacher.js"></script>
 </body>
 
 </html>

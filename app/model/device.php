@@ -1,12 +1,5 @@
 <?php
 	require '../common/connectDB.php';
-	$sqlDeviceSearchADV = $conn->prepare("SELECT devices.id, devices.name, device_transactions.returned_date, 
-        device_transactions.device_id FROM devices
-        LEFT JOIN device_transactions ON devices.id = device_transactions.device_id ");
-	$sqlDeviceSearchADV->execute();
-
-    $result = $sqlDeviceSearchADV->setFetchMode(PDO::FETCH_ASSOC);
-    $r = $sqlDeviceSearchADV->fetchAll() ;
 
 	$sqlDevices = 'SELECT * FROM `devices`';
 	$listDevices = $conn ->prepare($sqlDevices);
@@ -129,6 +122,31 @@
 			$edit = $conn -> prepare($sql);
             $edit->execute();
         };
+    }
+
+    function searchADVDevice($keyword, $status){
+        require '../common/connectDB.php';
+        if ($status == '') {
+            $sqlSearchDevice = "select IF((device_transactions.device_id IS NULL OR (device_transactions.returned_date IS NOT NULL AND device_transactions.device_id IS NOT NULL)),1,2) as status,
+            devices.id, devices.name, device_transactions.returned_date, device_transactions.device_id 
+	    FROM devices LEFT JOIN device_transactions ON devices.id = device_transactions.device_id
+            where name like '%$keyword%' ORDER BY id DESC";
+        }
+         else if ($status == 1) {
+            $sqlSearchDevice = "select 1 as status, devices.id, devices.name, device_transactions.returned_date, device_transactions.device_id 
+	    FROM devices LEFT JOIN device_transactions ON devices.id = device_transactions.device_id 
+	    where (device_transactions.device_id IS NULL OR (device_transactions.returned_date IS NOT NULL AND device_transactions.device_id IS NOT NULL)) 
+	    AND devices.name like '%$keyword%' ORDER BY id DESC";
+        } 
+        else if ($status == 2) {
+            $sqlSearchDevice = "select 2 as status, devices.id, devices.name, device_transactions.returned_date, device_transactions.device_id 
+	    FROM devices LEFT JOIN device_transactions ON devices.id = device_transactions.device_id 
+	    where device_transactions.device_id IS NOT NULL AND device_transactions.returned_date IS NULL AND devices.name like '%$keyword%' ORDER BY id DESC";
+        }
+        $listDevices = $conn->prepare($sqlSearchDevice);
+        $listDevices->execute();
+        $result = $listDevices->fetchAll() ;
+        return $result;
     }
 ?>
 

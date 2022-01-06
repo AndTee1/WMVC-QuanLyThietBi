@@ -110,5 +110,25 @@
         $deviceName = $conn -> prepare($sql);
         $deviceName -> execute();
     }
+
+	function findDevice($id){
+        require '../common/connectDB.php';
+        if($id !=""){
+            $sql = "SELECT * FROM `device` WHERE id=$id ";
+            $ata = $conn -> prepare($sql);
+            $data->execute();
+            $data->setFetchMode(PDO::FETCH_ASSOC); 
+            $result = $data->fetchAll();
+           return $result;
+        };
+    }
+    function editDevice($id ,$name, $description, $avatar, $update){
+        require '../common/connectDB.php';
+        if($id !=""){
+            $sql = "UPDATE `device` SET `name`='$name',`avatar`='$avatar',`description`='$description',`updated`='$update',`created`='' WHERE id=$id";  
+			$edit = $conn -> prepare($sql);
+            $edit->execute();
+        };
+    }
 ?>
 

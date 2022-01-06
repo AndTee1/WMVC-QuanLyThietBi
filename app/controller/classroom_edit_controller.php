@@ -1,14 +1,16 @@
+
 <?php
+    session_start();
     $nameErr = $buildingErr = $descriptionErr = $avatarErr = "";
     $name = $building = $description = $avatarCorrect = "";
         require '../model/classroom.php';
         $id=$_GET["id"];
         $result=get_room($id);
         foreach ($result as $item) {
-        $name=$item["name"];
-        $description=$item["description"];
+        $namePast=$item["name"];
+        $descriptionPast=$item["description"];
         $avatarPast=$item["avatar"];
-        $building=$item["building"];
+        $buildingPast=$item["building"];
         }
     if (isset($_POST['btn-accept'])) {
         if (empty($_POST["name"])) {
@@ -28,7 +30,7 @@
         if (empty($_POST["description"])) {
             $descriptionErr = "Hãy nhập mô tả *";
         }else if(strlen($_POST["description"])>1000){
-            $nameErr = "Mô tả chi tiết bé hơn 1000 ký tự";
+            $descriptionErr = "Mô tả chi tiết bé hơn 1000 ký tự";
         } else {
             $description = ($_POST["description"]);
         }
@@ -50,7 +52,16 @@
         }
         $upload = $_POST['upload'];
         if($name !="" && $building !="" && $description !="" && $upload !=""){
-            header("Location: ../view/classroom_edit_confirm_view.php?id=$id&name=$name&building=$building&description=$description&avatar=$upload&avatarPast=$avatarPast");
+            //header("Location: ../view/classroom_edit_confirm_view.php?id=$id&name=$name&building=$building&description=$description&avatar=$upload&avatarPast=$avatarPast");
+            header("Location: ../view/classroom_edit_confirm_view.php");
+            $_SESSION["id"]=$id;
+            $_SESSION["description"] = $description;
+            $_SESSION["name"] = $name;
+            $_SESSION["building"] = $building;
+            $_SESSION["description"]=$description;
+            $_SESSION["avatar"]=$upload;
+            $_SESSION["avatarPast"]=$avatarPast;
+
         }
     }
 ?>

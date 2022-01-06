@@ -5,7 +5,6 @@
 <head>
   <title>Mượn thiết bị</title>
   <meta charset="utf-8">
-  <!-- <link rel="stylesheet" href="/WMVC-QuanLyThietBi/web/css/device/borrowDevice.css"> -->
   <link rel="stylesheet" href="../../web/css/device/borrowDevice.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.20/jquery.datetimepicker.full.min.js"></script>
@@ -19,6 +18,7 @@
     require '../controller/device_borrow_controller.php';
     
 ?>
+<button class="custombackhome"><a href="../../home.php"><img src="https://img.icons8.com/material-outlined/24/FFFFFF/home--v2.png"/>  Trang chủ  </a></button>
   <form action='' method='POST'>
     <!-- Tên thiết bị -->
     <div>

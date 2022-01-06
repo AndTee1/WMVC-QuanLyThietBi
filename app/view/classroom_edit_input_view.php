@@ -23,7 +23,7 @@
                     <div class="col-sm-7">
                         <label for="" style='width: 100%'>
                         <?php 
-                        echo "<div><input type='text' class='name-input' id='name' name='name' value='$name'></div>"
+                        echo "<div><input type='text' class='name-input' id='name' name='name' value='$namePast'></div>"
                         ?>
                         </label>
                     </div>
@@ -42,7 +42,7 @@
                     <select name="building" id="building" class="building-input">
                         <?php 
                         foreach ($listBuilding as $key=>$build){
-                            if($building===$key){
+                            if($buildingPast===$key){
                                 echo "<option value=$key selected='true'>$build</option>";
                             }else{
                                 echo "<option value=$key>$build</option>";
@@ -65,7 +65,7 @@
                     <div class="col-sm-7">
                         <label for="">
                         <?php 
-                        echo "<textarea type='input' rows='5' cols='60' name='description' id='description' >$description</textarea>"
+                        echo "<textarea type='input' rows='5' cols='60' name='description' id='description' >$descriptionPast</textarea>"
                         ?>
                         </label>                        
                     </div>

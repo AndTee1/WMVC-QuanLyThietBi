@@ -25,7 +25,7 @@
                         <div class="col-sm-7">
                             <label for="" style='width:50%'>
                             <?php 
-                            $nameChange=$_GET["name"];
+                            $nameChange=$_SESSION["name"];
                             echo "<div class='lable-input'>$nameChange</div>"
                             ?>
                             </label>
@@ -38,7 +38,7 @@
                         <div class="col-sm-7">
                             <label for="" style='width:50%'>
                             <?php 
-                            $buildingChange=$_GET["building"];
+                            $buildingChange=$_SESSION["building"];
                             foreach ($listBuilding as $key=>$build){
                                 if($key===$buildingChange){
                                     echo "<div class='lable-input'>$build</div>";
@@ -55,7 +55,7 @@
                         <div class="col-sm-7">
                             <label for="" style='width:100%'>
                             <?php 
-                            $descriptionChange=$_GET["description"];
+                            $descriptionChange=$_SESSION["description"];
                             echo "<div class='lable-input'>$descriptionChange</div>"
                             ?>
                             </label>                        
@@ -68,7 +68,7 @@
                         <div class="col-sm-7">
                             <label for="" style='width:30%'>
                             <?php 
-                            $avatarChange=$_GET["avatar"];
+                            $avatarChange=$_SESSION["avatar"];
                             echo "<img src='../../web/avata/room/$avatarChange' class='image'>"
                             ?>
                             </label>

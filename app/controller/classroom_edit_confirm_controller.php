@@ -1,12 +1,13 @@
 <?php
+    session_start();
     require '../model/classroom.php';
-    $id=$_GET['id'];
-    $name = $_GET['name'];
-    $building = $_GET['building'];
-    $description = $_GET['description'];
-    $avatar = $_GET['avatar'];
+    $id=$_SESSION["id"];
+    $name = $_SESSION["name"];
+    $building = $_SESSION["building"];
+    $description = $_SESSION["description"];
+    $avatar =  $_SESSION["avatar"];
     $update = date("Y-m-d h:i:s");
-    $avatarPast=$_GET['avatarPast'];
+    $avatarPast=$_SESSION["avatarPast"];
     if(isset($_POST['edit'])){
             $file="../../web/avata/room/$avatar";
             $newfile="../../web/avata/$avatar";

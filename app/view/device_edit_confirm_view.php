@@ -1,6 +1,5 @@
 <?php
         require '../controller/device_edit_confirm_controller.php';
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../web/css/device/editDevice.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <title>Thêm phòng học</title>
+    <title>Sửa thiết bị</title>
 </head>
 <body>
     <div class="content container">

@@ -1,5 +1,5 @@
 <?php
-    require '../model/classroom.php';
+    require '../model/device.php';
     $id=$_GET['id'];
     $name = $_GET['name'];
     $description = $_GET['description'];

@@ -6,6 +6,7 @@
     $building = $_SESSION["building"];
     $description = $_SESSION["description"];
     $avatar =  $_SESSION["avatar"];
+    date_default_timezone_set('Asia/Ho_Chi_Minh');
     $update = date("Y-m-d h:i:s");
     $avatarPast=$_SESSION["avatarPast"];
     if(isset($_POST['edit'])){

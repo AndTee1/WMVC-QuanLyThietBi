@@ -1,4 +1,5 @@
 <?php
+     session_start();
     // require '../model/teacher.php';   
     $nameErr = $specializedErr = $degreeErr = $avatarErr = $descriptionErr="";
     $nameT = $specializedT = $degreeT = $avatarT = $descriptionT=$uploadT="";
@@ -42,7 +43,12 @@
         }
         $uploadT = $_FILES['upload']['name'];
         if($nameT!=""&& $specializedT !=""&&$degreeT!=""&&$descriptionT!=""&&$uploadT!=""){
-            header("Location: ../view/teacher_add_confirm_view.php?name=$nameT&specialized=$specializedT&avata=$uploadT&degree=$degreeT&description=$descriptionT");
+            header("Location: ../view/teacher_add_confirm_view.php");
+            $_SESSION['name']=$nameT;
+            $_SESSION['specialized']=$specializedT;
+            $_SESSION['avata']=$uploadT;
+            $_SESSION['degree']=$degreeT;
+            $_SESSION['description']=$descriptionT;
         } 
        
        

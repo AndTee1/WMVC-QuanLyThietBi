@@ -23,4 +23,10 @@
         '005'=> 'Giáo sư',
 
     ];
+function checkLogin()
+{
+	if (!(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)) {
+		echo "<script> window.location.assign('login.php'); </script>";
+	}
+}
 ?>

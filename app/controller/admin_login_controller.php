@@ -1,9 +1,8 @@
 <?php
-//require_once $_SERVER['DOCUMENT_ROOT'] . "/app/model/admin.php";
-require 'app/model/admin.php';
-$nameErr = $passwordErr = "";
-$name = $password = "";
-$valid = true;
+    require 'app/model/admin.php';
+    $nameErr = $passwordErr = "";
+    $name = $password = "";
+    $valid = true;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 

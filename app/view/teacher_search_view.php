@@ -23,7 +23,7 @@ require '../common/define.php';
         <form action="" method="GET">
             <div class="search">
                 <div class="search__specialized">
-                    <label for="">Chuyên ngành</label>
+                    <label class="specialized__label">Chuyên ngành</label>
                     <select id="specialized" class="specialized__select" name="specialized">
                         <option value=''></option>
                         <?php
@@ -34,7 +34,7 @@ require '../common/define.php';
                     </select>
                 </div>
                 <div class="search__keyword">
-                    <label for="">Từ khóa</label>
+                    <label class="keyword__label">Từ khóa</label>
                     <input type="text" name="keyword" class="keyword__input" value="<?php echo isset($_GET['keyword']) ? $_GET['keyword'] : '' ?>">
                 </div>
                 <div class="search__btn">

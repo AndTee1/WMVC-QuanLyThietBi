@@ -18,7 +18,6 @@
             add( $name,$specialized,$degree,$avata,$description,$created);
             mkdir("../../web/avata/$id", 0777);
             deleteImgTmp($avata,$id);
-
             router();
         }
     }

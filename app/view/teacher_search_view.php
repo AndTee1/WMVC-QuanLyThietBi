@@ -42,7 +42,19 @@ require '../common/define.php';
                 </div>
             </div>
         </form>
-        <?php require '../controller/teacher_search_controller.php'; ?>
+        <div class="count">
+            <label class="count__teacher">Số giáo viên tìm thấy : <span id="count">0</span></label>
+        </div>
+        <table>
+            <tr class="tr__label">
+                <th class="th__id">No</th>
+                <th class="th__username">Tên Giáo Viên</th>
+                <th class="th__specialized">Chuyên ngành</th>
+                <th class="th__description">Mô tả chi tiết</th>
+                <th class="th__action">Action</th>
+            </tr>
+            <?php require '../controller/teacher_search_controller.php'; ?>
+        </table>
         <!-- Popup confirm delete -->
         <div id="myPopup" class="popup">
             <div class="popup__dialog">

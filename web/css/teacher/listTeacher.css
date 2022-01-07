@@ -12,6 +12,9 @@ a {
 }
 
 .backHome {
+    position: fixed;
+    top: 0;
+    left: 0;
     margin: 10px 5px;
     border-radius: 8px;
 }
@@ -58,9 +61,7 @@ td {
 }
 
 td:first-child {
-    text-align: right;
-    padding: 0;
-    padding-right: 5px;
+    text-align: center;
 }
 
 td:last-child {
@@ -180,7 +181,7 @@ button {
 }
 
 .popup {
-    position: absolute;
+    position: fixed;
     display: none;
     width: 400px;
     height: 100%;

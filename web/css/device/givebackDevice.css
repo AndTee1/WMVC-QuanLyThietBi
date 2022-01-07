@@ -120,18 +120,28 @@ tr {
     border: 1px solid white;
 }
 
-.custombackhome{
-    margin:10px 5px;
-    display: flex;
-    border-radius:8px;
+.custombackHome {
+    margin: 10px 5px;
+    border-radius: 8px;
     background-color: #4f81bd;
     position: absolute;
-    top: 10px;
-    left: 10px;
-}
-.custombackhome>a{
-    color:white !important;
+    top: 3px;
+    left: 3px;
+    border: #0099ff;
+    }
 
+.custombackHome > a {
+    display: flex;
+    padding-bottom: 3px;
+    color:white !important;
+    
 }
+
+.custombackHome > a > p {
+    padding-top: 3px;
+    padding-left: 7px;
+    padding-right: 6px;
+}
+
 
 

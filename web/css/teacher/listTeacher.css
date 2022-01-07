@@ -58,9 +58,8 @@ td {
 }
 
 td:first-child {
-    text-align: right;
-    padding: 0;
-    padding-right: 5px;
+    text-align: center;
+    /* padding: ; */
 }
 
 td:last-child {

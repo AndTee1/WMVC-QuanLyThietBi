@@ -1,5 +1,6 @@
 <?php
 require "../controller/admin_reset_controller.php";
+require "../common/define.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,6 +11,9 @@ require "../controller/admin_reset_controller.php";
     </head>
 
     <body>
+        <button class="custombackhome">
+            <a href="../../home.php">Trang chủ</a>
+        </button>
         <div class="container">
 
             <table>
@@ -22,10 +26,22 @@ require "../controller/admin_reset_controller.php";
                 </tr>
                 <?php
                 for ($i = 0; $i < $index; $i++) {
+                    if($flag == $i && $flag < $index - 1){
+                        for($j = $i; $j < $index - 1; $j++){
+                            $username[$j] = $username[$j+1];
+                        }
+                        $index--;
+                    }
+                    if($flag == $index - 1){
+                        $index--;
+                        if($index == 0){
+                            break;
+                        }
+                    }
                 ?>
                     <form class="form" action="" method="POST">
                         <tr>
-                            <td class="no"><?php echo $i; ?></td>
+                            <td class="no"><?php echo $i +1; ?></td>
                             <td class="empty"></td>
                             <td class="username"><?php echo $username[$i]; ?></td>
                             <td class="password">

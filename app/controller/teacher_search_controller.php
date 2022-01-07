@@ -15,18 +15,18 @@ if (isset($_GET['search'])) {
         $valid = true;
     ?>
         <tr>
-            <td><?php print_r($v['id']) ?></td>
-            <td><?php print_r($v['name']) ?></td>
+            <td><label><?php print_r($k + 1) ?></label></td>
+            <td><label><?php print_r($v['name']) ?></label></td>
             <td>
-                <?php
-                foreach ($listSpecialized as $key => $value) {
-                    if ($key == $v['specialized']) {
-                        echo $value;
-                    }
-                }
-                ?>
+                <label><?php
+                        foreach ($listSpecialized as $key => $value) {
+                            if ($key == $v['specialized']) {
+                                echo $value;
+                            }
+                        }
+                        ?></label>
             </td>
-            <td><?php print_r($v['description']) ?></td>
+            <td><label><?php print_r($v['description']) ?></label></td>
             <?php
             foreach ($r as $key => $value) {
                 if ($value['teacher_id'] == $v['id']) {

@@ -1,0 +1,83 @@
+* {
+    font-family: time-new-roman;
+    font-size: 16px;
+}
+
+.container{
+    box-sizing: border-box;
+    border: 1px solid #385d8a;
+    width: 720px;
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 200px;
+    overflow: hidden;
+}
+
+td.NO, td.no{
+    width: 60px;
+}
+
+td.no{
+    text-align: center;
+}
+
+td.empty{
+    width:20px;
+}
+
+td.password {
+    width: 370px;
+    text-align: center;
+}
+td.username{
+    width: 140px;
+}
+
+td.action{
+    width: 60px;
+    text-align: center;
+}
+
+td.error span{
+    cursor: no-drop;
+    color: #FF3C33;
+    margin-left: 45px;
+}
+input{
+    border: 1px solid #385d8a;
+    background-color: #e1eaf4;
+    padding: 5px 10px;
+    width: 75%;
+}
+
+button{
+    border: 1px solid #385d8a;
+    background-color: #4f81bd;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: black;
+    border-radius: 4px;
+}
+
+button:hover{
+    background-color:#385d8a;
+    border: 1px solid #385d8a;
+}
+
+table{
+    margin: 20px 0px 20px 30px;
+}
+
+button.custombackhome{
+    margin:10px 5px;
+    display: flex;
+    border-radius:8px;
+}
+
+a{
+    color:white !important;
+    text-decoration: none;
+    margin-bottom: 0px;
+}

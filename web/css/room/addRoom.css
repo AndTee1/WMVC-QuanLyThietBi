@@ -1,0 +1,134 @@
+*{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+}
+.txtarea{
+    border: 1px solid #385d8a;
+    background-color: #e1eaf4;
+}
+input, select{
+    border: 1px solid #385d8a;
+    background-color: #e1eaf4;
+    width: 70%;
+    padding: 5px 5px;
+}
+
+button{
+    background-color: #4f81bd;
+    color: black;
+    border: none;
+}
+
+button.col-sm-3 {
+    padding: 6px;
+    margin-left: 10px;
+    color: white;
+}
+
+.confirm{
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+}
+.confirm > button{
+    border-radius: 8px;
+    padding: 20px 20px;
+    width: 20%;
+    border: 3px solid #385d8a;
+}
+.lable-input{
+    width: 85%;
+    padding: 15px 5px;
+    border: 1px solid #385d8a;
+    background-color: #e1eaf4;
+}
+
+.labelupload{
+    display: inline-block;
+    background-color: #4f81bd;
+    border: 1px solid #385d8a;;
+    cursor: pointer;
+    text-align: center;
+    padding: 5px 10px 5px 10px;
+    color: white;
+    max-width: 150% !important;
+    }
+
+#upload{
+    display: none !important;
+}
+/* input,select{
+    min-height: 45px !important;
+} */
+
+label.col-sm-8 {padding: 0px;}
+
+.lable-input > div {
+	padding: 10px 5px;
+}
+
+.word{
+    padding: 5px 1px;
+    color: black;
+    background-color: #FFFFFF;
+    text-align: left;
+}
+
+.content{
+    margin: auto;
+    width: 70% !important;
+    margin-top: 50px;
+    border: 1px solid #385d8a;
+}
+
+.content > form{
+    margin: 30px 0px;
+}
+
+.content.container > div{
+    margin: 20px 10px;
+    box-sizing: border-box;
+}
+
+.error {
+    color: #FF0000;
+    font-weight: bold;
+}
+
+.description {
+    height: 100px;
+    word-break: break-all;
+    white-space: normal;
+}
+
+textarea {
+    border: 1px solid #385d8a; 
+    background-color: #e1eaf4;
+}
+.avatar{
+    border: 3px solid #385d8a;
+    background-color: #4f81bd;
+    height: 100px;
+    color: white;
+}
+
+#avatar{
+    width: 100%;
+}
+
+/* a{
+    font-style: italic;
+    color: black !important;
+    text-decoration-line: underline !important;
+} */
+
+.custombackhome{
+    margin: 20px 25px;
+    display: flex;
+    border-radius:8px;
+}
+.custombackhome > a{
+    color:white !important;
+    margin: 5px 5px 5px 5px;
+    text-decoration: none;
+}

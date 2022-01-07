@@ -1,0 +1,137 @@
+form {
+    padding: 10px;
+    border: 1px solid #385d8a;
+    width: 700px;
+    font-family: 'Times New Roman';
+    font-size: 16px;
+    margin-left : auto;
+    margin-right: auto; 
+    margin-top: 100px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 50px auto;
+    text-align: center;
+    width: 800px;
+}
+
+label {  
+    width: 100px;
+    display: inline-block;
+    text-align: left;
+    font-size: 1rem;
+    font-family: 'Times New Roman';
+    background: white;
+    margin-right: 20px;
+    padding: 9px;
+    
+}
+
+input {
+    border: 1px solid #385d8a;
+    font-size: 1.3rem;
+    font-weight: 100;
+    padding: 5px 10px;
+    width: 200px;  
+    margin-right: 55px;
+    font-family: 'Times New Roman';
+}
+
+div {
+    margin: 10px;
+}
+
+.error {
+    /* margin: 10px; */
+    color: #FF3C33;
+}
+
+.search {
+    width: 167px;
+    padding: 5px 10px;
+    font-size: 1rem;
+    font-family: 'Times New Roman';
+    font-weight: 1;
+    background: #4f81bd;
+    border: 1px solid #385d8a;
+    margin-top: 30px;
+
+}
+
+.selectbox {
+    width: 222px;
+    padding: 8px;
+    font-size: 1rem;
+    font-family: 'Times New Roman';
+    font-weight: 1;
+    background: #ffffff;
+    border: 1px solid #385d8a;
+    margin-right: 55px;
+}
+
+.count {
+    text-align: left;
+
+}
+
+table {
+    width: 100%;
+    text-align: left;
+    margin: 20px ;
+    font-weight: 100;
+    /* background: blue; */
+}
+
+.pay {
+    width: 100px;
+    font-size: 1rem;
+    background: #4f81bd;
+    border: 1px solid #385d8a;
+}
+
+.pay-non {
+    font-size: 1rem;
+    width: 100px;
+    background: #ffffff;
+    border: 1px solid white;
+    color: #ffffff;
+}
+
+
+th {
+    /* border: 1px solid black; */
+    width: 100px;
+}
+
+tr {
+    padding-bottom: 40px;
+}
+
+.inputClean{
+    width: 1px;
+    height: 1px;
+    padding: 1px;
+    margin: 1px;
+    border: 1px solid white;
+}
+
+.custombackhome{
+    margin:10px 5px;
+    display: flex;
+    border-radius:8px;
+    background-color: #4f81bd;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.custombackhome>a{
+    color:white !important;
+
+}
+
+

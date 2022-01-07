@@ -1,7 +1,7 @@
 <?php 
   require '../common/define.php';
   require '../controller/teacher_add_confirm_controller.php';
-  if($_GET['name']==""){
+  if($_SESSION['name']==""){
       header("Location: ../view/teacher_add_input_view.php");
   }
 ?>

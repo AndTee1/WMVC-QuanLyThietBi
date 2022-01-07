@@ -179,7 +179,7 @@ button {
 }
 
 .popup {
-    position: absolute;
+    position: fixed;
     display: none;
     width: 400px;
     height: 100%;

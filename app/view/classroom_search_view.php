@@ -44,6 +44,7 @@
     <?php
         require '../controller/classroom_search_controller.php';
         require '../common/define.php';
+        checkLogin();
        
     ?>
     <div class="content container">

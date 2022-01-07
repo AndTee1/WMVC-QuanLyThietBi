@@ -1,6 +1,7 @@
 <?php 
   require '../common/define.php';
   require '../controller/teacher_add_controller.php';
+  checkLogin();
 //   if(isset($_POST['btnAvata'])){
     
 //       echo '<img src="../../web/avata/'+$file_part+'.jpg" width="100%"/>';

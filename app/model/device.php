@@ -135,21 +135,21 @@
     function searchADVDevice($keyword, $status){
         require '../common/connectDB.php';
         if ($status == '') {
-            $sqlSearchDevice = "select IF((device_transactions.device_id IS NULL OR (device_transactions.returned_date IS NOT NULL AND device_transactions.device_id IS NOT NULL)),1,2) as status,
-            devices.id, devices.name, device_transactions.returned_date, device_transactions.device_id 
+            $sqlSearchDevice = "SELECT IF((device_transactions.device_id IS NULL OR (device_transactions.returned_date IS NOT NULL AND device_transactions.device_id IS NOT NULL)),1,2) as status,
+            devices.*, device_transactions.* 
 	    FROM devices LEFT JOIN device_transactions ON devices.id = device_transactions.device_id
-            where name like '%$keyword%' ORDER BY id DESC";
+            WHERE CONCAT(devices.name, devices.description) like '%$keyword%' ORDER BY devices.id DESC  ";
         }
          else if ($status == 1) {
-            $sqlSearchDevice = "select 1 as status, devices.id, devices.name, device_transactions.returned_date, device_transactions.device_id 
+            $sqlSearchDevice = "SELECT 1 as status, devices.*, device_transactions.* 
 	    FROM devices LEFT JOIN device_transactions ON devices.id = device_transactions.device_id 
-	    where (device_transactions.device_id IS NULL OR (device_transactions.returned_date IS NOT NULL AND device_transactions.device_id IS NOT NULL)) 
-	    AND devices.name like '%$keyword%' ORDER BY id DESC";
+	    WHERE (device_transactions.device_id IS NULL OR (device_transactions.returned_date IS NOT NULL AND device_transactions.device_id IS NOT NULL)) 
+	    AND CONCAT(devices.name, devices.description) like '%$keyword%' ORDER BY devices.id DESC ";
         } 
         else if ($status == 2) {
-            $sqlSearchDevice = "select 2 as status, devices.id, devices.name, device_transactions.returned_date, device_transactions.device_id 
+            $sqlSearchDevice = "SELECT 2 as status, devices.*, device_transactions.* 
 	    FROM devices LEFT JOIN device_transactions ON devices.id = device_transactions.device_id 
-	    where device_transactions.device_id IS NOT NULL AND device_transactions.returned_date IS NULL AND devices.name like '%$keyword%' ORDER BY id DESC";
+	    WHERE device_transactions.device_id IS NOT NULL AND device_transactions.returned_date IS NULL AND CONCAT(devices.name, devices.description) like '%$keyword%' ORDER BY devices.id DESC";
         }
         $listDevices = $conn->prepare($sqlSearchDevice);
         $listDevices->execute();

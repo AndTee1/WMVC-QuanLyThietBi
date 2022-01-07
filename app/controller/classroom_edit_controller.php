@@ -42,22 +42,20 @@
         } elseif (!in_array($fileType, $typeImage)){
             $avatarErr = "Chỉ được upload các định dạng JPG, PNG, JPEG, GIF *";
         }
-        elseif (file_exists($_FILES['upload']['name'])){
+        else if (file_exists($_FILES['upload']['name'])){
             $avatarErr = "Tên file đã tồn tại, không được ghi đè *";
-        }
-         else {
+        }else {
             $avatarCorrect =  $_FILES['upload']['name'];
             move_uploaded_file($_FILES['upload']['tmp_name'], "../../web/avata/add_classroom/$avatarCorrect");
         }
-        $upload = $_POST['upload'];
-        if($name !="" && $building !="" && $description !="" && $upload !=""){
+        if($name !="" && $building !="" && $description !="" && $avatarCorrect !=""){
             header("Location: ../view/classroom_edit_confirm_view.php");
             $_SESSION["id"]=$id;
             $_SESSION["description"] = $description;
             $_SESSION["name"] = $name;
             $_SESSION["building"] = $building;
             $_SESSION["description"]=$description;
-            $_SESSION["avatar"]=$upload;
+            $_SESSION["avatar"]=$avatarCorrect;
             $_SESSION["avatarPast"]=$avatarPast;
 
         }

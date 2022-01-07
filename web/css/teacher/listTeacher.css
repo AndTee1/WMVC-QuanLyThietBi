@@ -12,6 +12,9 @@ a {
 }
 
 .backHome {
+    position: fixed;
+    top: 0;
+    left: 0;
     margin: 10px 5px;
     border-radius: 8px;
 }
@@ -59,7 +62,6 @@ td {
 
 td:first-child {
     text-align: center;
-    /* padding: ; */
 }
 
 td:last-child {

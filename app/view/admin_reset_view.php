@@ -1,6 +1,6 @@
 <?php
 require "../controller/admin_reset_controller.php";
-require "../common/define.php";
+//require "../common/define.php";
 ?>
 <!DOCTYPE html>
 <html>

@@ -1,8 +1,9 @@
 <?php
     session_start();
     require 'app/controller/home_controller.php';
-    require 'app/common/define.php';
-	checkLogin();
+    if (!(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)) {
+		header("Location:login.php");
+	}
 ?>
 
 <!DOCTYPE html>

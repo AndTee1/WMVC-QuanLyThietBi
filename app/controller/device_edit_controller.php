@@ -1,13 +1,16 @@
 <?php
+session_start();
+
     $nameErr =  $descriptionErr = $avatarErr = "";
     $name = $description = $avatarCorrect = "";
         require '../model/device.php';
         $id=$_GET["id"];
         $result=findDevice($id);
         foreach ($result as $data) {
-        $name=$data["name"];
-        $description=$data["description"];
+        $namePast=$data["name"];
+        $descriptionPast=$data["description"];
         $avatarPast=$data["avatar"];
+
         }
     if (isset($_POST['btn-accept'])) {
         if (empty($_POST["name"])) {
@@ -28,7 +31,7 @@
         
         $typeImage= array('jpg', 'png', 'jpeg', 'gif');
         $fileType = pathinfo($_POST['upload'], PATHINFO_EXTENSION);
-
+            // print_r ($_FILES['upload']); die;
         if (empty($_FILES['upload']['name'])) {
             $avatarErr = "Hãy chọn avatar*";
         } elseif (!in_array($fileType, $typeImage)){
@@ -39,11 +42,19 @@
         }
          else {
             $avatarCorrect =  $_FILES['upload']['name'];
-            move_uploaded_file($_FILES['upload']['tmp_name'], '../../web/avata/device/'.$avatarCorrect);
+            move_uploaded_file($_FILES['upload']['tmp_name'], "../../web/avata/deviceTMP/$avatarCorrect");
         }
         $upload = $_POST['upload'];
         if($name !="" && $description !="" && $upload !=""){
-            header("Location: ../view/device_edit_confirm_view.php?id=$id&name=$nameg&description=$description&avatar=$upload&avatarPast=$avatarPast");
+            header("Location: ../view/device_edit_confirm_view.php");
+            $_SESSION["id"]=$id;
+            $_SESSION["name"] = $name;
+            $_SESSION["description"]=$description;
+            $_SESSION["avatar"]=$upload;
+            $_SESSION["avatarPast"]=$avatarPast;
+
         }
+        
     }
+
 ?>

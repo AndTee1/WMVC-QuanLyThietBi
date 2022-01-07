@@ -7,6 +7,7 @@
     $description = $_SESSION["description"];
     $avatar =  $_SESSION["avatar"];
     $update = date("Y-m-d h:i:s");
+    date_default_timezone_set('Asia/Ho_Chi_Minh');
     $avatarPast=$_SESSION["avatarPast"];
     if(isset($_POST['edit'])){
             $file="../../web/avata/add_classroom/$avatar";

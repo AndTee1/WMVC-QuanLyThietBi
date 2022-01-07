@@ -10,7 +10,7 @@ form {
 }
 
 
-body {
+.container {
     margin: 50px auto;
     text-align: center;
     width: 1000px;
@@ -86,4 +86,17 @@ th {
 
 tr {
     padding-bottom: 40px;
+}
+.custombackhome{
+    margin:10px 5px;
+    display: flex;
+    border-radius:8px;
+    background-color: #4f81bd;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.custombackhome>a{
+    color:white !important;
+
 }

@@ -1,3 +1,7 @@
+<?php
+    require '../controller/classroom_add_controller.php';
+    require '../common/define.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,10 +13,6 @@
     <title>Thêm phòng học</title>
 </head>
 <body>
-    <?php
-        require '../controller/classroom_add_controller.php';
-        require '../common/define.php';
-    ?>
     <div class="content container">
         <div class='col-md-12' style="text-align: center;">
             <p>Bạn đã đăng kí thành công phòng học.</p>

@@ -13,6 +13,7 @@
     <title>Thêm phòng học</title>
 </head>
 <body>
+    <button class="custombackhome"><a href="../../home.php">Trang chủ</a></button>
     <div class="content container">
         <form name='formconfirm' action='' method='POST' class="col-sm-12" enctype="multipart/form-data"> 
             <div class="col-md-12">  
@@ -59,7 +60,7 @@
                     </div>
                     <div class="col-sm-7">
                         <label for="">
-                            <textarea type="text" rows="5" cols="60" name="description" id="description" style="border: 1px solid #385d8a; background-color: #e1eaf4">
+                            <textarea type="text" rows="5" cols="60" name="description" id="description">
                             </textarea>
                         </label>                        
                     </div>
@@ -76,7 +77,7 @@
                     </div>
                     <div class="col-sm-7" style="display:flex">
                         <label for="" class="col-sm-8" style="display:flex">
-                            <input type="text" name="upload" id="avatar">
+                            <input type="text" name="upload" id="avatar" disabled="true">
                         </label>
                         <div class="col-sm-2" style="padding-left: 0px;">
                             <input type="file" id="upload" name="upload" onchange="myFunction(this)"/>

@@ -15,7 +15,7 @@
         if($check_tmp == 1){
             add_room($name, $building, $description, $avatar, $created);
             mkdir("../../web/avata/$id", 0777);
-            remove_tmp($avatar,$id);
+            remove_tmp($avatar, $id);
             router_room();
         }
     }

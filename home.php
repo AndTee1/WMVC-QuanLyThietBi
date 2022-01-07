@@ -1,9 +1,10 @@
 <?php
-session_start();
-require 'app/controller/home_controller.php';
-require 'app/common/define.php';
-checkLogin();
+    session_start();
+    require 'app/controller/home_controller.php';
+    require 'app/common/define.php';
+	checkLogin();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 

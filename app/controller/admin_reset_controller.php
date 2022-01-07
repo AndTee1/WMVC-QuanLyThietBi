@@ -1,4 +1,6 @@
 <?php
+    require "../common/define.php";
+
     // load file model
     require "../model/admin.php";
 
@@ -10,6 +12,7 @@
     $error = array();
     $new_password = array();
     $index = 0;
+    $flag = -1;
 
     foreach($sql as $row){
         $username[$index] = $row[0];
@@ -34,9 +37,10 @@
                     date_default_timezone_set('Asia/Bangkok');
                     $current_time = date("Y-m-d H:i:s");
                     updatePassword($username[$j], $new_password, $current_time);
-                    $index--;
+                    $flag = $j;
                 }
             }
         }
     }
+
     

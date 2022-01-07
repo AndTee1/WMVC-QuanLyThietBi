@@ -13,6 +13,7 @@
     <title>Sửa thông tin giáo viên</title>
 </head>
 <body>
+    <button class="custombackhome"><a href="../../home.php"><img src="https://img.icons8.com/material-outlined/24/FFFFFF/home--v2.png"/>Trang chủ</a></button>    
     <div class="main container">
         <from action="" method='POST' name='editform' class="col-sm-12">
             

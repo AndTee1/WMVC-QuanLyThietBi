@@ -62,11 +62,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (($_POST["end_transaction"]) == "") {
         $end_transactionErr = "Nhập thời gian trả thiết bị *";
+    }
+    elseif($_POST["end_transaction"] != "" && $_POST["end_transaction"] < $_POST["start_transaction"]){
+        $end_transactionErr = "Thời điểm trả phải sau thời điểm mượn *";
     } else {
         $end_transaction = ($_POST["end_transaction"]);
     }
 
-    if($valid && $device_id != "" && $_POST['teacher'] != "" && $_POST['classroom'] != "" && $_POST['start_transaction'] != "" && $_POST['end_transaction'] != "") {
+    if($valid && $device_id != "" && $_POST['teacher'] != "" && $_POST['classroom'] != "" && $_POST['start_transaction'] != "" 
+    && ($_POST["end_transaction"] != "" && ($_POST["end_transaction"] > $_POST["start_transaction"]))) {
         borrowDevice($device_id, $teacher, $classroom, $start_transaction, $end_transaction);
     }
 }

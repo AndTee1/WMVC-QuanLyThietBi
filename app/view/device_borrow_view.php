@@ -18,7 +18,27 @@
     require '../controller/device_borrow_controller.php';
     
 ?>
-<button class="custombackhome"><a href="../../home.php"><img src="https://img.icons8.com/material-outlined/24/FFFFFF/home--v2.png"/>  Trang chủ  </a></button>
+
+<?php
+session_start();
+if (!(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)) {
+    echo "<script> window.location.assign('../../login.php'); </script>";
+}
+require '../../app/common/define.php';
+checkLogin();
+if ($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['logoutAction'])) {
+    $_SESSION['loggedin'] = false;
+    $_SESSION['name'] = '';
+    $_SESSION['time'] = '';
+    echo "<script> window.location.assign('login.php'); </script>";
+} 
+?>
+<button class="custombackHome">
+        <a style="text-decoration: none" href="../../home.php">
+            <img src="https://img.icons8.com/material-outlined/24/FFFFFF/home--v2.png" />
+            <p>Trang chủ</p>
+        </a>
+    </button>
   <form action='' method='POST'>
     <!-- Tên thiết bị -->
     <div>
@@ -44,7 +64,7 @@
     <!-- Lớp học -->
     <div >
       <label>Lớp học</label>&ensp;
-      <select class="combobox1" name="classroom">
+      <select class="combobox" name="classroom">
         <option> </option>
         <?php while ($row = $listRoom->fetch()) { ?>
           <option value="<?php echo $row['id']?> "><?php echo $row['name'] ?></option>
@@ -54,7 +74,6 @@
       
     </div>
     <div class="validate"><?php  echo $classroomErr;?></div>
-    
     
 
     <!-- Thời gian bắt đầu  -->
@@ -68,10 +87,10 @@
     <div class="group-date">&emsp; &ensp;
       <label>Thời gian kết thúc</label>&ensp;
       <input type="text" id="datetimepicker2" name = "end_transaction">
-      <i class="fas fa-calendar-alt" id="icon-calendar2"></i>
+      <i class="fas fa-calendar-alt" id="icon-calendar2" ></i>
     </div>
     <div class="validate"><?php  echo $end_transactionErr;?></div>
-    <input type="submit" name="login" value="Mượn" style="cursor:pointer" class="borrow">
+    <input type="submit" name="login" value="Mượn"  class="borrow">
   </form>
   <script>
     $('#datetimepicker1').datetimepicker();

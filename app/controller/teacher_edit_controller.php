@@ -15,6 +15,7 @@
         } else {
             $specializedQ = ($_POST["specialized"]);
         }
+        
         if($_POST['degree'] == "none") {
             $degreeErr = "Hãy chọn bằng cấp.";
         } else {

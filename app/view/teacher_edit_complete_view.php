@@ -16,6 +16,7 @@
             header("Location: ../view/teacher_edit_input_view.php");
         }
     ?>
+    
     <div class="content-complete container">
         <div class='col-md-12' style="text-align: center;">
             <p>Bạn đã đăng kí thành công giáo viên.</p>

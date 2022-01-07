@@ -2,6 +2,7 @@
     require '../common/define.php';
     require '../controller/teacher_edit_controller.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

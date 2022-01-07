@@ -1,9 +1,16 @@
 <?php
 session_start();
+<<<<<<< HEAD
 require 'app/controller/home_controller.php';
 require 'app/common/define.php';
 checkLogin();
 
+=======
+if (!(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)) {
+    echo "<script> window.location.assign('login.php'); </script>";
+}
+//require 'app/controller/home_controller.php';
+>>>>>>> 306d3ca1b6cfcf46ba0b3b269ca8979e9d48d294
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,6 +60,12 @@ checkLogin();
             <h2>Thiết bị</h2>
             <div>
                 <a href="app/view/device_search_view.php">Tìm kiếm</a>
+<<<<<<< HEAD
+=======
+            </div>
+            <div>
+                <a href="app/view/device_add_input_view.php">Thêm mới</a>
+>>>>>>> 306d3ca1b6cfcf46ba0b3b269ca8979e9d48d294
             </div>
             <?php if ($_SESSION['sa'] == true) echo
             " <div>

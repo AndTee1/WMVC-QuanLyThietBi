@@ -9,6 +9,7 @@
     $update = date("Y-m-d h:i:s");
     $avatarPast=$_SESSION["avatarPast"];
     if(isset($_POST['edit'])){
+<<<<<<< HEAD
             $file="../../web/avata/room/$avatar";
             $newfile="../../web/avata/$avatar";
             copy($file, $newfile);
@@ -17,6 +18,16 @@
                 unlink("../../web/avata/".$avatarPast);
             }else{
                 unlink("../../web/avata/room/".$avatar);
+=======
+            $file="../../web/avata/add_classroom/$avatar";
+            $newfile="../../web/avata/$id/$avatar";
+            copy($file, $newfile);
+            if($avatar!==$avatarPast){
+                unlink("../../web/avata/add_classroom/$avatar");
+                unlink("../../web/avata/$id/$avatarPast");
+            }else{
+                unlink("../../web/avata/add_classroom/$avatar");
+>>>>>>> 306d3ca1b6cfcf46ba0b3b269ca8979e9d48d294
             }
             edit_room($id,$name, $building, $description, $avatar, $update);
             header("Location: ../view/classroom_edit_complete_view.php");

@@ -10,7 +10,11 @@ form {
 }
 
 
+<<<<<<< HEAD
 body {
+=======
+.container {
+>>>>>>> 306d3ca1b6cfcf46ba0b3b269ca8979e9d48d294
     margin: 50px auto;
     text-align: center;
     width: 1000px;
@@ -87,3 +91,19 @@ th {
 tr {
     padding-bottom: 40px;
 }
+<<<<<<< HEAD
+=======
+.custombackhome{
+    margin:10px 5px;
+    display: flex;
+    border-radius:8px;
+    background-color: #4f81bd;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.custombackhome>a{
+    color:white !important;
+
+}
+>>>>>>> 306d3ca1b6cfcf46ba0b3b269ca8979e9d48d294

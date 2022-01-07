@@ -42,8 +42,14 @@
     }
     
     function get_room($id){
+<<<<<<< HEAD
         require '../common/connectDB.php';
         if($id !=""){
+=======
+        
+        require '../common/connectDB.php';
+        if($id !=NULL){
+>>>>>>> 306d3ca1b6cfcf46ba0b3b269ca8979e9d48d294
             $sql = "SELECT * FROM `classrooms` WHERE id=$id ";
             $getData = $conn -> prepare($sql);
             $getData->execute();
@@ -54,9 +60,26 @@
     }
     function edit_room($id ,$name, $building, $description, $avatar, $update){
         require '../common/connectDB.php';
+<<<<<<< HEAD
         if($id !=""){
+=======
+        if($id !=NULL){
+>>>>>>> 306d3ca1b6cfcf46ba0b3b269ca8979e9d48d294
             $sql = "UPDATE `classrooms` SET `name`='$name',`avatar`='$avatar',`description`='$description',`building`='$building',`updated`='$update',`created`='' WHERE id=$id";            $update = $conn -> prepare($sql);
             $update->execute();
         };
     }
+<<<<<<< HEAD
+=======
+    function getLastIDR(){
+        global $conn;
+        $idT=0;
+        $query = $conn ->prepare("SELECT * FROM `classrooms` WHERE id=(SELECT max(id) FROM `classrooms`)");
+        $query -> execute();
+        foreach ($query as $id) {
+           $idT= $id['id'];
+        }
+        return $idT+1;
+    }
+>>>>>>> 306d3ca1b6cfcf46ba0b3b269ca8979e9d48d294
 ?>

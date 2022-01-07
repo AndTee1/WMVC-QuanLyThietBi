@@ -99,12 +99,16 @@
                         <th style="width:20%;"> Action
                         </th>
                     </tr>
+<<<<<<< HEAD
                     <?php foreach ($rowAll as $room) : ?>
+=======
+                    <?php foreach ($rowAll as $key=>$room) : ?>
+>>>>>>> 306d3ca1b6cfcf46ba0b3b269ca8979e9d48d294
                         <tr>
                             <form action="" 
                                   method='POST'>
                                 <td>
-                                    <?php echo $room['id']?>
+                                    <?php echo $key+1?>
                                     <input type="hidden" 
                                            name='id' 
                                            value='<?php echo $room['id']?>' >

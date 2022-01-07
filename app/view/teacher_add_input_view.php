@@ -96,7 +96,11 @@
                     </div>
                     <div class="col-sm-7" style="display:flex">
                         <label for="" class="col-sm-10" style="display:flex">
+<<<<<<< HEAD
                             <input type="text" name="upload" id="avata" >
+=======
+                            <input type="text" name="file" id="avata" disabled="true">
+>>>>>>> 306d3ca1b6cfcf46ba0b3b269ca8979e9d48d294
                             
                         </label>
                         <div class="col-sm-3">

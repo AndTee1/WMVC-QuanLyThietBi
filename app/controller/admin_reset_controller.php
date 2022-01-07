@@ -1,4 +1,9 @@
 <?php
+<<<<<<< HEAD
+=======
+    require "../common/define.php";
+
+>>>>>>> 306d3ca1b6cfcf46ba0b3b269ca8979e9d48d294
     // load file model
     require "../model/admin.php";
 
@@ -10,6 +15,10 @@
     $error = array();
     $new_password = array();
     $index = 0;
+<<<<<<< HEAD
+=======
+    $flag = -1;
+>>>>>>> 306d3ca1b6cfcf46ba0b3b269ca8979e9d48d294
 
     foreach($sql as $row){
         $username[$index] = $row[0];
@@ -34,9 +43,17 @@
                     date_default_timezone_set('Asia/Bangkok');
                     $current_time = date("Y-m-d H:i:s");
                     updatePassword($username[$j], $new_password, $current_time);
+<<<<<<< HEAD
                     $index--;
+=======
+                    $flag = $j;
+>>>>>>> 306d3ca1b6cfcf46ba0b3b269ca8979e9d48d294
                 }
             }
         }
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 306d3ca1b6cfcf46ba0b3b269ca8979e9d48d294
     

@@ -1,4 +1,9 @@
 <?php
+<<<<<<< HEAD
+=======
+    require "../common/define.php";
+    
+>>>>>>> 306d3ca1b6cfcf46ba0b3b269ca8979e9d48d294
     // load file model
     require "../model/admin.php";
 

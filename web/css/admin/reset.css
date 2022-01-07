@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 *{
     box-sizing: border-box;
+=======
+* {
+>>>>>>> 306d3ca1b6cfcf46ba0b3b269ca8979e9d48d294
     font-family: time-new-roman;
     font-size: 16px;
 }
 
+<<<<<<< HEAD
 body{
     display: flex;
     align-items: center;
@@ -18,6 +23,18 @@ body{
     border: 1px solid #385d8a;
     width: 720px;
     max-width: 100%;
+=======
+.container{
+    box-sizing: border-box;
+    border: 1px solid #385d8a;
+    width: 720px;
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 200px;
+    overflow: hidden;
+>>>>>>> 306d3ca1b6cfcf46ba0b3b269ca8979e9d48d294
 }
 
 td.NO, td.no{
@@ -73,4 +90,19 @@ button:hover{
 
 table{
     margin: 20px 0px 20px 30px;
+<<<<<<< HEAD
+=======
+}
+
+button.custombackhome{
+    margin:10px 5px;
+    display: flex;
+    border-radius:8px;
+}
+
+a{
+    color:white !important;
+    text-decoration: none;
+    margin-bottom: 0px;
+>>>>>>> 306d3ca1b6cfcf46ba0b3b269ca8979e9d48d294
 }

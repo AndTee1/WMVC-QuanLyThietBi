@@ -41,4 +41,13 @@
         }
         return $idT+1;
     }
+    function deTeacher(){
+        require '../common/connectDB.php';
+        
+        $sql1 = 'SELECT * FROM `teachers`';
+        $listTeacher = $conn->query($sql1);
+        $listTeacher->execute();
+        return $listTeacher;
+        }
+
 ?>

@@ -1,6 +1,9 @@
 <?php
           require '../controller/classroom_edit_controller.php';
           require '../common/define.php'; 
+          if($_GET['id']===NULL){
+            header("Location: ../view/classroom_search_view.php");
+          }
 ?>
 <!DOCTYPE html>
 <html lang="en">

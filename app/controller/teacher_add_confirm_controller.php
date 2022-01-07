@@ -4,7 +4,7 @@
     require '../model/teacher.php';
     $id=getLastID();
     // require '../controller/teacher_add_controller.php';
-    echo $_SESSION['name'];
+    // echo $_SESSION['name'];
     $name=$_SESSION['name'];
     $specialized=$_SESSION['specialized'];
     $degree=$_SESSION['degree'];

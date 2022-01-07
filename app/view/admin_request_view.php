@@ -1,23 +1,21 @@
 <?php
-// define variables and set to empty values
-$error = "";
-$username = "";
-
+    require "../controller/admin_request_controller.php";
 ?>
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="uft-8" />
-        <link rel="stylesheet" href="/WMVC-QuanLyThietBi/web/css/admin/resetpass.css">
+        <link rel="stylesheet" href="../../web/css/admin/request.css">
     </head>
     <body>
         <div class="container">
-            <form class="form" action="../controller/admin_resetpass_controller.php" method="$_POST">
-                <p class="error"><?php $error; ?></p>
+            <form class="form" action="" method="POST">
                 <div class="form-control">
                     <span>Người dùng</span>
-                    <input type="text" name="login_id" id="login_id" autofocus>
+                    <input type="text" name="login_id" id="login_id" autofocus
+                            value="<?php echo $login_id;?>">
                 </div>
+                <p class="error"><?php echo $error; ?></p>
                 <button>Gửi yêu cầu reset password</button>
             </form>
         </div>

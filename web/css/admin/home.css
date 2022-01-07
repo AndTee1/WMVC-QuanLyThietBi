@@ -28,3 +28,17 @@ body {
     width: 100%;
   }
 }
+.alignleft {
+	float: left;
+}
+.alignright {
+	float: right;
+}
+#btnLogout {
+  background-color: #4f81bd;
+  color: white;
+  padding: 8px 30px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 15px;
+}

@@ -1,6 +1,8 @@
 *{
     font-family: 'Times New Roman', Times, serif;
 }
+
+
 textarea{
     border: 1px solid #385d8a;
     background-color: #e1eaf4;
@@ -10,6 +12,7 @@ input, select{
     background-color: #e1eaf4;
     width: 70%;
     padding: 5px 5px;
+   
 }
 span{ color:red;font-weight: bold;}
 button{
@@ -20,7 +23,7 @@ button{
 .main{
     margin: auto;
     width: 70% !important;
-    margin-top: 100px;
+    margin-top: 60px !important;
     border: 1px solid #385d8a;
 }
 .main > form{
@@ -47,4 +50,10 @@ button.col-sm-3{
     border-radius: 8px;
     padding: 20px 20px;
     width: 30%;
+}
+.content-complete{
+    margin: auto;
+    width: 70% !important;
+    margin-top: 50px;
+    border: 1px solid #385d8a;
 }

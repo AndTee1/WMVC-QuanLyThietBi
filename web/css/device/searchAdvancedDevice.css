@@ -5,28 +5,24 @@
     box-sizing: border-box;
     font-size : 16px
 }
-
-body {
-    margin: 100px auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.container {
+    width: 70% !important;
+    margin: auto;
+    padding: 50px;
+    margin-top: 100px;
+    border: 1px solid #385d8a;
 }
-form {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column; 
+form{
+    text-align: center;
 }
 label{
     width: 100px;
     height: 30px;
-    color: #FFFFFF;
+    color: #000000;
     display: inline-block;
     text-align: left;
-    background-color: rgb(156, 194, 229);
     padding: 5px;
     margin: 3px 50px 3px 0;
-    border: 1px solid #385d8a;
     margin-top: 10px;
 }
 input, select{
@@ -40,28 +36,24 @@ input, select{
 #btn_search{
     background : #4f81bd;
     border: 1px solid #385d8a;
-    color: #FFFFFF;
+    color: #000000;
     padding: 5px 10px;
-    border-radius: 4px;
-    margin:auto;
-    display:block;
+    margin: auto;
     margin-top: 10px;  
+    width: 110px;
+    margin-left: 130px;
+    
+
 }
 .count_device{
     margin-bottom: 10px;
-    margin-right: 600px;
 }
 table, th, td {
     border: 1px solid #385d8a;
     border-collapse: collapse;
 }
 
-th{
-    padding: 5px;
-    text-align: center;
-    background-color: #BDD6EE;
-}
-td{
+td, th{
     padding: 5px;
     text-align: center;
 }
@@ -85,5 +77,5 @@ td{
 }
 a{
     text-decoration: none;
-    color: #FFFFFF;
+    color: #000000;
 }

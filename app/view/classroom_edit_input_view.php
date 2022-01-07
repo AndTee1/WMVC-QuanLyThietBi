@@ -1,4 +1,7 @@
-
+<?php
+          require '../controller/classroom_edit_controller.php';
+          require '../common/define.php'; 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,20 +13,18 @@
     <title>Sửa phòng học</title>
 </head>
 <body>
-  <?php
-          require '../controller/classroom_edit_controller.php';
-          require '../common/define.php'; 
-  ?>
     <div class="component container">
-    <form name='classroom_input' action='' method='POST' class="col-sm-12">  
+    <form name='classroom_input' action='' method='POST' enctype="multipart/form-data" class="col-sm-12">  
     <div class="col-md-12">  
                 <div class="col-md-12">
                     <div class="col-sm-2">
-                        <div class="word">Tên Phòng học</div>
+                        <div class="content">Tên Phòng học</div>
                     </div>
                     <div class="col-sm-7">
                         <label for="" style='width: 100%'>
-                            <input type="text" class="filter" id="name" name="name">
+                        <?php 
+                        echo "<div><input type='text' class='name-input' id='name' name='name' value='$namePast'></div>"
+                        ?>
                         </label>
                     </div>
                 </div>
@@ -35,16 +36,19 @@
                 </div>
                 <div class="col-md-12">
                     <div class="col-sm-2">
-                        <div class="word">Tòa nhà</div>
+                        <div class="content">Tòa nhà</div>
                     </div>
                     <div class="col-sm-7">
-                    <select name="building" id="building" class="filter">
-                        <option value="none"></option>
-                        <?php foreach ($listBuilding as $key=>$building) : ?>
-                            <option value='<?php echo $key ?>'>
-                                <?php echo $building ?>
-                            </option>
-                        <?php endforeach; ?>
+                    <select name="building" id="building" class="building-input">
+                        <?php 
+                        foreach ($listBuilding as $key=>$build){
+                            if($buildingPast===$key){
+                                echo "<option value=$key selected='true'>$build</option>";
+                            }else{
+                                echo "<option value=$key>$build</option>";
+                            }
+                        } 
+                        ?>
                     </select>                    
                     </div>
                 </div>                
@@ -56,12 +60,13 @@
                 </div>                                
                 <div class="col-md-12">
                     <div class="col-sm-2">
-                        <div class="word">Mô tả chi tiết</div>
+                        <div class="content">Mô tả chi tiết</div>
                     </div>
                     <div class="col-sm-7">
                         <label for="">
-                            <textarea type="input" rows="5" cols="60" name="description" id="description" style="border: 1px solid #385d8a; background-color: #e1eaf4">
-                            </textarea>
+                        <?php 
+                        echo "<textarea type='input' rows='5' cols='60' name='description' id='description' >$descriptionPast</textarea>"
+                        ?>
                         </label>                        
                     </div>
                 </div>
@@ -74,18 +79,23 @@
                 <div class="col-md-12">
                     <div class="col-md-2"></div>
                     <div class="col-sm-7">
-                      <img src="../../web/avata/demo.jpg" alt="Italian Trulli" class="image">
+                    <?php 
+                        echo "<img src='../../web/avata/$avatarPast' class='image' id='image'>"
+                    ?>
                     </div>
                 </div>                                
                 <div class="col-sm-12">
                     <div class="col-sm-2">
-                        <div class="word">Avatar</div>
+                        <div class="content">Avatar</div>
                     </div>
-                    <div class="col-sm-7">
-                        <label for="" class="col-sm-8">
-                            <input type="file" name="avatar" id="avatar">
+                    <div class="col-sm-7" style="display:flex">
+                        <label for="" class="col-sm-8" style="display:flex">
+                            <input type="text" name="upload" id="avatar">
                         </label>
-                        <button type="button" name="btnAvatar" class="col-sm-3">Browse</button>
+                        <div class="col-sm-2" style="padding-left: 0px;">
+                            <input type="file" id="upload" name="upload" onchange="preview(this)"/>
+                            <label for="upload" class="browse" id="browse">Browse</label>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-12">
@@ -101,5 +111,6 @@
     </div>
     </form>
     <div>
+    <script type="text/javascript" src="../../web/js/editRoom.js"></script>
 </body>
 </html>

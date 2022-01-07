@@ -18,7 +18,7 @@
     }
 
    
-    for($i = 0; $i < 10000; $i++){
+    for($i = 0; $i < 10000000; $i++){
         if(isset($_POST["giveback".$i])){
             $idgive2 = $_POST["idgiveback".$i];
             $timegive = $_POST["timegiveback"];

@@ -1,7 +1,22 @@
+<?php
+    session_start();
+    if (!(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)) {
+        echo "<script> window.location.assign('../../login.php'); </script>";
+    }
+    require '../../app/common/define.php';
+    checkLogin();
+    if ($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['logoutAction'])) {
+        $_SESSION['loggedin'] = false;
+        $_SESSION['name'] = '';
+        $_SESSION['time'] = '';
+        echo "<script> window.location.assign('login.php'); </script>";
+    } 
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Trả sách</title>
+    <title>Trả thiết bị</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../../web/css/device/givebackDevice.css" />
    
@@ -14,8 +29,12 @@
 ?>
 
 
-<button class="custombackhome"><a href="../../home.php"><img src="https://img.icons8.com/material-outlined/24/FFFFFF/home--v2.png"/>  Trang chủ  </a></button>
-
+<button class="custombackHome">
+        <a style="text-decoration: none" href="../../home.php">
+            <img src="https://img.icons8.com/material-outlined/24/FFFFFF/home--v2.png" />
+            <p>Trang chủ</p>
+        </a>
+</button>
 <form method="post">
        
         
@@ -52,7 +71,8 @@
         <!-- Nút tìm kiếm -->
         <input type="submit" name="search" value="Tìm kiếm" style="cursor:pointer" class="search"> 
 
-        <?php $result2 = searchGiveBackBook($equipment, $teacher, $classroom);
+        <?php 
+              $result2 = searchGiveBackBook($equipment,$teacher,$classroom);
               $time = date('Y-m-d H:i:s');
               ?>
         <!-- Đếm số thiết bị -->
@@ -83,7 +103,7 @@
                     <td> <?php if($result2[$i]->returned_date != ""){ ?>
                                    <label class="pay-non"> .</label>
                                 <?php } else { ?>
-                                   <input type="submit" name="giveback<?php echo $result2[$i]->id ?>" value="Trả" class="pay">
+                                   <input type="submit" name="giveback<?php echo $result2[$i]->id ?>" value="Trả" onclick="return confirm('Bạn có muốn trả <?php echo $result2[$i]->deviceName; ?> ?');" class="pay">
                                    <input class="inputClean" type="text" name="idgiveback<?php echo $result2[$i]->id ?>" value="<?php echo $result2[$i]->id ?>">
                                    <input class="inputClean" type="text" name="timegiveback" value="<?php echo $time ?>">
                                    

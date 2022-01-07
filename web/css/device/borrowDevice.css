@@ -1,6 +1,6 @@
 form {
   margin: 25px auto;
-  padding: 10px;
+  padding: 30px;
   border: 2px solid #385d8a;
   width: 700px;
   margin-left: auto;
@@ -11,7 +11,7 @@ form {
 * {
   padding: 0;
   margin: 0;
-  font-family: "Times New Roman";
+  font-family: "Times New Roman", Times, serif;
 }
 
 body {
@@ -31,12 +31,13 @@ label {
 
 input {
   border: 1px solid #385d8a;
-  font-size: 16px;
-  font-weight: 100;
-  font-family: "Times New Roman";
+  font-size: 17px;
+  font-weight: 1;
+  font-family: "Times New Roman", Times, serif;
   padding: 6px;
   width: 200px;
   background-color: #e1eaf4;
+  
 }
 
 div {
@@ -55,43 +56,36 @@ div {
   height: 45px;
   padding: 5px 10px;
   font-size: 16px;
-  font-family: "Times New Roman";
+  font-family: "Times New Roman", Times, serif;
   font-weight: 1;
   background: #4f81bd;
   border: 1px solid #385d8a;
   margin-top: 100px;
   border-radius: 8px;
+  cursor: pointer;
+  
 }
 
 .time {
   width: 200px;
   padding: 5px 10px;
   font-size: 16px;
-  font-family: "Times New Roman";
+  font-family: "Times New Roman", Times, serif;
   font-weight: 1;
   border: 1px solid #385d8a;
   margin-top: 10px;
 }
 
 .combobox {
-  width: 214.8px;
-  padding: 8px;
-  font-size: 16px;
-  font-family: "Times New Roman";
-  font-weight: 1;
-  background-color: #e1eaf4;
-  border: 1px solid #385d8a;
-}
-.combobox1 {
   width: 215px;
   padding: 8px;
   font-size: 16px;
-  font-family: "Times New Roman";
+  font-family: "Times New Roman", Times, serif;
   font-weight: 1;
   background-color: #e1eaf4;
   border: 1px solid #385d8a;
-  margin-right: -2px;
-
+  cursor: pointer;
+  
 }
 
 
@@ -117,6 +111,7 @@ table {
   border: 1px solid #385d8a;
   background-color: #e1eaf4;
   margin-right: -6px;
+  cursor: pointer;
 }
 
 th {
@@ -135,17 +130,26 @@ th {
   margin: 0;
 }
 
-.custombackhome{
-  margin:10px 5px;
-  display: flex;
-  border-radius:7px;
+
+.custombackHome {
+  margin: 10px 5px;
+  border-radius: 5px;
   background-color: #4f81bd;
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 3px;
+  left: 3px;
+  border: #0099ff;
 }
-.custombackhome>a{
+
+.custombackHome > a {
+  display: flex;
+  padding-bottom: 3px;
   color:white !important;
   
+}
 
+.custombackHome > a > p {
+  padding-top: 3px;
+  padding-left: 7px;
+  padding-right: 6px;
 }

@@ -73,7 +73,7 @@
                     </div>
                     <div class="col-sm-7">
                         <label for="" class="col-sm-8">
-                            <input type="text" name="avatar" id="avatar">
+                            <input type="text" name="avata" id="avata">
                             <div><span><?php echo $avatarErr;?></span></div>  
                         </label>
                         <button type="button" name="btnAvatar" class="col-sm-3">Browse</button>

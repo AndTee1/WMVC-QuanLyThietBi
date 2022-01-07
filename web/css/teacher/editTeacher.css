@@ -28,7 +28,7 @@ button{
 .col-sm-12{
     margin-bottom:10px ;
 }
-#avatar{
+#avata{
     width: 100%;
 }
 label{
@@ -48,3 +48,9 @@ button.col-sm-3{
     width: 30%;
 }
 span{ color:rgb(255, 9, 9);font-weight: bold;}
+.content-complete{
+    margin: auto;
+    width: 70% !important;
+    margin-top: 50px;
+    border: 1px solid #385d8a;
+}

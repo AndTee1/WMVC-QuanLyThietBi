@@ -96,7 +96,7 @@
                     </div>
                     <div class="col-sm-7" style="display:flex">
                         <label for="" class="col-sm-10" style="display:flex">
-                            <input type="text" name="upload" id="avata" >
+                            <input type="text" name="file" id="avata" disabled="true">
                             
                         </label>
                         <div class="col-sm-3">

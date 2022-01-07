@@ -31,7 +31,7 @@
             }
         }
         $allowtypes    = array('jpg', 'png', 'jpeg', 'gif');
-        $imageFileType = pathinfo($_POST['upload'], PATHINFO_EXTENSION);
+        $imageFileType = pathinfo($_FILES['upload']['name'], PATHINFO_EXTENSION);
         
         if (empty($_FILES['upload']['name'])) {
             $avatarErr = "Hãy chọn avatar*";
@@ -46,7 +46,7 @@
             move_uploaded_file($_FILES['upload']['tmp_name'], '../../web/avata/add_classroom/'.$avatarR);
         }
 
-        $uploadR = $_POST['upload'];        
+        $uploadR = $_FILES['upload']['name'];      
 
         if($nameR !="" && $buildingR !="" && $descriptionR !="" && $uploadR !=""){
             header("Location: ../view/classroom_add_confirm_view.php?name=$nameR&building=$buildingR&description=$descriptionR&avatar=$uploadR");

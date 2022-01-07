@@ -12,9 +12,11 @@
     <?php
         require '../controller/classroom_edit_confirm_controller.php';
         require '../common/define.php';
-       
+        if($_GET["name"]===NULL && $_GET["id"]!==NULL){
+            header("Location: ../view/classroom_edit_input_view.php");
+        }
     ?>
-      <button class="custombackhome"><a href="../../home.php"><img src="https://img.icons8.com/material-outlined/24/FFFFFF/home--v2.png"/>Trang chủ</a></button>
+    <button class="custombackhome"><a href="../../home.php"><img src="https://img.icons8.com/material-outlined/24/FFFFFF/home--v2.png"/>Trang chủ</a></button>
     <div class="component container">
         <div class='col-md-12'>
             <form name='classroom-confirm' action='' method='POST'> 
@@ -26,7 +28,7 @@
                         <div class="col-sm-7">
                             <label for="" style='width:50%'>
                             <?php 
-                            $nameChange=$_SESSION["name"];
+                            $nameChange=$_GET['name'];
                             echo "<div class='lable-input'>$nameChange</div>"
                             ?>
                             </label>
@@ -56,7 +58,7 @@
                         <div class="col-sm-7">
                             <label for="" style='width:100%'>
                             <?php 
-                            $descriptionChange=$_SESSION["description"];
+                            $descriptionChange=$_GET['description'];
                             echo "<div class='lable-input'>$descriptionChange</div>"
                             ?>
                             </label>                        
@@ -69,7 +71,7 @@
                         <div class="col-sm-7">
                             <label for="" style='width:30%'>
                             <?php 
-                            $avatarChange=$_SESSION["avatar"];
+                            $avatarChange=$_GET['avatar'];
                             echo "<img src='../../web/avata/add_classroom/$avatarChange' class='image'>"
                             ?>
                             </label>

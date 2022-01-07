@@ -49,14 +49,7 @@
             move_uploaded_file($_FILES['upload']['tmp_name'], "../../web/avata/add_classroom/$avatarCorrect");
         }
         if($name !="" && $building !="" && $description !="" && $avatarCorrect !=""){
-            header("Location: ../view/classroom_edit_confirm_view.php");
-            $_SESSION["id"]=$id;
-            $_SESSION["description"] = $description;
-            $_SESSION["name"] = $name;
-            $_SESSION["building"] = $building;
-            $_SESSION["description"]=$description;
-            $_SESSION["avatar"]=$avatarCorrect;
-            $_SESSION["avatarPast"]=$avatarPast;
+            header("Location: ../view/classroom_edit_confirm_view.php?id=$id&name=$name&description=$description&building=$building&avatar=$avatarCorrect&avatarPast=$avatarPast");
 
         }
     }

@@ -1,3 +1,8 @@
+<?php
+        if($_GET["accuracy"]==NULL){
+            header("Location: ../view/classroom_edit_input_view.php");
+        } 
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

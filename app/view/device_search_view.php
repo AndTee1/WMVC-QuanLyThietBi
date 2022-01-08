@@ -10,19 +10,20 @@
 </head>
 
 <body>
+    <button class="custombackhome"><a href="../../home.php"><img src="https://img.icons8.com/material-outlined/24/FFFFFF/home--v2.png" />Trang chủ</a></button>
     <div class="content container">
         <form action="" method="GET">
             <div class="search">
                 <div class="search_keyword">
                     <label>Từ khóa</label>
-                    <input type="text" value="<?php if(isset($_GET['keyword'])) echo $_GET['keyword'] ?>" name="keyword">
+                    <input type="text" value="<?php if (isset($_GET['keyword'])) echo $_GET['keyword'] ?>" name="keyword">
                 </div>
                 <div class="search_status">
                     <label>Tình trạng</label>
                     <select id="status" name="status">
                         <option value=''>Tất cả</option>
-                        <option value="1" <?php if(isset($_GET['status']) && $_GET['status'] == 1) echo 'selected' ?> >Đang rảnh</option>
-                        <option value="2"  <?php if(isset($_GET['status']) && $_GET['status'] == 2) echo 'selected' ?>>Đang mượn</option>
+                        <option value="1" <?php if (isset($_GET['status']) && $_GET['status'] == 1) echo 'selected' ?>>Đang rảnh</option>
+                        <option value="2" <?php if (isset($_GET['status']) && $_GET['status'] == 2) echo 'selected' ?>>Đang mượn</option>
                     </select>
                 </div>
                 <div>
@@ -33,7 +34,7 @@
         <?php require '../controller/device_search_controller.php'; ?>
         <div class="count_device">
             <p>Số thiết bị tìm thấy: <?php echo count($resultSearch) ?></p>
-            
+
         </div>
         <table>
             <tr>
@@ -42,15 +43,15 @@
                 <th id="th_status">Trạng thái</th>
                 <th id="th_action">Action</th>
             </tr>
-            <?php 
-           
+            <?php
+
             foreach ($resultSearch as $row) { ?>
                 <tr>
                     <td><?php echo $row['id'] ?></td>
                     <td><?php echo $row['name'] ?></td>
                     <td>
                         <?php
-                        if (isset($row['status']) && $row['status'] == 2 ) {
+                        if (isset($row['status']) && $row['status'] == 2) {
                             echo "Đang mượn";
                         } else {
                             echo "Đang rảnh";
@@ -61,10 +62,13 @@
                         <?php
                         if (isset($row['status']) && $row['status'] == 1) {
                             
-                           //$b = '<button class="btn_delete"><a href="device_delete_view.php?id=' .  $row['id'] . '">Xóa</a></button> <button class="btn_delete"><a href="device_edit_view.php?id=' .  $row['id'] . '">Sửa</a></button>';
                            
 
-                           $b = '<a href="../controller/device_search_controller.php?delete=true&id=' . $row['id'] .'" class="btn_delete" onclick="return confirm(`Bạn chắc chắn muốn xóa thiết bị?`)">Xóa</a><a class="btn_edit" href="device_edit_input_view.php?id=' .  $row['id'] . '">Sửa</a>';                            echo $
+
+
+                            //$b = '<button class="btn_delete"><a href="device_delete_view.php?id=' .  $row['id'] . '">Xóa</a></button> <button class="btn_delete"><a href="device_edit_view.php?id=' .  $row['id'] . '">Sửa</a></button>';
+
+                            $b = '<a href="../controller/device_search_controller.php?delete=true&id=' . $row['id'] . '" class="btn_delete" onclick="return confirm(`Bạn chắc chắn muốn xóa thiết bị?`)">Xóa</a><a class="btn_edit" href="device_edit_view.php?id=' .  $row['id'] . '">Sửa</a>';
 
                             echo $b;
                         } else {

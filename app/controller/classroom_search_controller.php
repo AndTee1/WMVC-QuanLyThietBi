@@ -18,7 +18,7 @@
         deleteDataC($id);
         $word = trim($_GET['filter']);
         $building= $_GET['building'];
-        $rowAll = searchData( $word,$building);
+        $rowAll = searchDataC( $word,$building);
     }
                                     
 

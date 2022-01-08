@@ -135,26 +135,71 @@
     function searchADVDevice($keyword, $status){
         require '../common/connectDB.php';
         if ($status == '') {
-            $sqlSearchDevice = "select IF((device_transactions.device_id IS NULL OR (device_transactions.returned_date IS NOT NULL AND device_transactions.device_id IS NOT NULL)),1,2) as status,
-            devices.id, devices.name, device_transactions.returned_date, device_transactions.device_id 
+            $sqlSearchDevice = "SELECT IF((device_transactions.device_id IS NULL OR (device_transactions.returned_date IS NOT NULL AND device_transactions.device_id IS NOT NULL)),1,2) as status,
+            devices.*, device_transactions.* 
 	    FROM devices LEFT JOIN device_transactions ON devices.id = device_transactions.device_id
-            where name like '%$keyword%' ORDER BY id DESC";
+            WHERE CONCAT(devices.name, devices.description) like '%$keyword%' ORDER BY devices.id DESC  ";
         }
          else if ($status == 1) {
-            $sqlSearchDevice = "select 1 as status, devices.id, devices.name, device_transactions.returned_date, device_transactions.device_id 
+            $sqlSearchDevice = "SELECT 1 as status, devices.*, device_transactions.* 
 	    FROM devices LEFT JOIN device_transactions ON devices.id = device_transactions.device_id 
-	    where (device_transactions.device_id IS NULL OR (device_transactions.returned_date IS NOT NULL AND device_transactions.device_id IS NOT NULL)) 
-	    AND devices.name like '%$keyword%' ORDER BY id DESC";
+	    WHERE (device_transactions.device_id IS NULL OR (device_transactions.returned_date IS NOT NULL AND device_transactions.device_id IS NOT NULL)) 
+	    AND CONCAT(devices.name, devices.description) like '%$keyword%' ORDER BY devices.id DESC ";
         } 
         else if ($status == 2) {
-            $sqlSearchDevice = "select 2 as status, devices.id, devices.name, device_transactions.returned_date, device_transactions.device_id 
+            $sqlSearchDevice = "SELECT 2 as status, devices.*, device_transactions.* 
 	    FROM devices LEFT JOIN device_transactions ON devices.id = device_transactions.device_id 
-	    where device_transactions.device_id IS NOT NULL AND device_transactions.returned_date IS NULL AND devices.name like '%$keyword%' ORDER BY id DESC";
+	    WHERE device_transactions.device_id IS NOT NULL AND device_transactions.returned_date IS NULL AND CONCAT(devices.name, devices.description) like '%$keyword%' ORDER BY devices.id DESC";
         }
         $listDevices = $conn->prepare($sqlSearchDevice);
         $listDevices->execute();
         $result = $listDevices->fetchAll() ;
         return $result;
     }
+    function history_transaction($device_name,$teacher_id)
+    {
+    require '../common/connectDB.php';
+        $querys = '';
+        if ($device_name == '' && $teacher_id == '') {
+            $querys = "SELECT  devices.name as devices_name, 
+            device_transactions.start_transaction_plan as start_time_plan,
+            device_transactions.end_transaction_plan as end_time_plan,
+            device_transactions.returned_date as returned_date,
+            teachers.name as teachers_name 
+            FROM `device_transactions`,`devices`,`teachers` 
+            WHERE devices.id = device_transactions.device_id AND device_transactions.teacher_id = teachers.id";
+        } else if ($teacher_id == '') {
+            $querys = "SELECT  devices.name as devices_name, 
+                        device_transactions.start_transaction_plan as start_time_plan,
+                        device_transactions.end_transaction_plan as end_time_plan,
+                        device_transactions.returned_date as returned_date,
+		                teachers.name as teachers_name 
+                FROM `device_transactions`,`devices`,`teachers` 
+                WHERE devices.name LIKE '%".$device_name."%' AND devices.id = device_transactions.device_id AND device_transactions.teacher_id = teachers.id";
+                
+        } else if ($device_name == '') {
+            $querys = "SELECT  devices.name as devices_name, 
+            device_transactions.start_transaction_plan as start_time_plan,
+            device_transactions.end_transaction_plan as end_time_plan,
+            device_transactions.returned_date as returned_date,
+            teachers.name as teachers_name 
+            FROM `device_transactions`,`devices`,`teachers` 
+            WHERE teacher_id =".$teacher_id." AND devices.id = device_transactions.device_id AND device_transactions.teacher_id = teachers.id";
+        } else {
+            $querys = "SELECT devices.name as devices_name, 
+            device_transactions.start_transaction_plan as start_time_plan,
+            device_transactions.end_transaction_plan as end_time_plan,
+            device_transactions.returned_date as returned_date,
+            teachers.name as teachers_name 
+            FROM `device_transactions`,`devices`,`teachers` 
+            WHERE teacher_id =".$teacher_id." AND devices.name LIKE '%".$device_name."%' AND devices.id = device_transactions.device_id AND device_transactions.teacher_id = teachers.id";
+        }
+        $sql = $conn->prepare($querys);
+        $sql->execute();
+        $result = $sql -> fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+}
+
+
 ?>
 

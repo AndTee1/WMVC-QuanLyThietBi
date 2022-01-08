@@ -19,6 +19,7 @@
     <title>Xác nhận thêm phòng học</title>
 </head>
 <body>
+    <button class="custombackhome"><a href="../../home.php">Trang chủ</a></button>
     <div class="content container">
         <div class='col-md-12'>
             <form name='formadd' action='' method='POST' id="formadd"> 
@@ -39,7 +40,7 @@
                         </div>
                         <div class="col-sm-7">
                             <label for="" style='width:50%'>
-                                <input type="text" name="building" disabled="true" value="<?php echo $building;?>">
+                                <input type="text" name="building" disabled="true" value="<?php foreach ($listBuilding as $key=>$build) : ?><?php if($building==$key){ echo $build;}?><?php endforeach; ?>">
                             </label>                  
                         </div>
                     </div>
@@ -49,7 +50,7 @@
                         </div>
                         <div class="col-sm-7">
                             <label for="">                
-                                <textarea type="input" rows="5" cols="60" name="description" id="description" disabled="true" style="border: 1px solid #385d8a; background-color: #e1eaf4"> 
+                                <textarea type="input" rows="5" cols="60" name="description" id="description" disabled="true"> 
                                     <?php echo $description?>
                                 </textarea>
                             </label>                        

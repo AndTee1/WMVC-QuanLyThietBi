@@ -1,9 +1,8 @@
 <?php
-//require_once $_SERVER['DOCUMENT_ROOT'] . "/app/model/admin.php";
-require 'app/model/admin.php';
-$nameErr = $passwordErr = "";
-$name = $password = "";
-$valid = true;
+    require 'app/model/admin.php';
+    $nameErr = $passwordErr = "";
+    $name = $password = "";
+    $valid = true;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -24,12 +23,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $passwordErr = "Hãy nhập password tối thiểu 6 ký tự";
         $valid = false;
     } else {
-        $password = ($_POST["password"]);
+        $password = md5($_POST["password"]);
     }
 
     if ($valid) {
         if (checkAdmin($name, $password)) {
-            echo "<script> window.location.assign('home.php'); </script>";
+            header("Location:home.php");
         } else {
             $passwordErr = "login id và password không đúng";
         }

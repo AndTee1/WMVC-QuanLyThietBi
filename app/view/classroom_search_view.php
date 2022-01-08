@@ -1,3 +1,9 @@
+<?php
+        session_start();
+        require '../common/define.php';
+        require '../controller/classroom_search_controller.php';    
+        checkLogin();  
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,14 +44,22 @@
             margin:0px 10px ;
             min-width: 90px;
         }
+        .custombackhome{
+        margin:10px 5px;
+        display: flex;
+        border-radius:8px;
+        background-color: #4f81bd;
+        color: black;
+        border: none;
+        }
+        .custombackhome>a{
+            color:white !important;
+
+        }
     </style>
 </head>
 <body>
-    <?php
-        require '../controller/classroom_search_controller.php';
-        require '../common/define.php';
-       
-    ?>
+<button class="custombackhome"><a href="../../home.php"><img src="https://img.icons8.com/material-outlined/24/FFFFFF/home--v2.png"/>Trang chủ</a></button>
     <div class="content container">
         <div class='col-md-12'>
             <form name='formsearch' method='GET'>
@@ -99,12 +113,12 @@
                         <th style="width:20%;"> Action
                         </th>
                     </tr>
-                    <?php foreach ($rowAll as $room) : ?>
+                    <?php foreach ($rowAll as $key=>$room) : ?>
                         <tr>
                             <form action="" 
                                   method='POST'>
                                 <td>
-                                    <?php echo $room['id']?>
+                                    <?php echo $key+1?>
                                     <input type="hidden" 
                                            name='id' 
                                            value='<?php echo $room['id']?>' >

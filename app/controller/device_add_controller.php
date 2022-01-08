@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $addName = $addDescription = $avatarUpload ='';
     $nameErr = $descriptionErr = $avatarErr ="";
     $avatarT="";

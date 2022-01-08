@@ -1,10 +1,11 @@
 <?php
-session_start();
-if (!(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)) {
-    echo "<script> window.location.assign('login.php'); </script>";
-}
-//require 'app/controller/home_controller.php';
+    session_start();
+    require 'app/controller/home_controller.php';
+    if (!(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)) {
+		header("Location:login.php");
+	}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,6 +19,14 @@ if (!(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)) {
 
 <body>
 
+    <form action="" method="post">
+        <input type="submit" name="logoutAction" value="Logout" class="alignright" id="btnLogout" />
+    </form>
+        <?php if ($_SESSION['sa'] == true) echo
+            "<div>
+                <a href='app/view/admin_reset_view.php'>Thông báo cấp lại mật khẩu</a>
+            </div>"
+        ?>
     <p> <?php echo "Tên login: " . $_SESSION['name']; ?></p>
     <p> <?php date_default_timezone_set('Asia/Bangkok');
         echo "Thời gian login: " . $_SESSION['time']; ?> </p>
@@ -28,27 +37,33 @@ if (!(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)) {
             <div>
                 <a href="app/view/classroom_search_view.php">Tìm kiếm</a>
             </div>
-            <div>
-                <a href="app/view/classroom_add_input_view.php">Thêm mới</a>
-            </div>
+            <?php if ($_SESSION['sa'] == true) echo
+            "<div>
+                <a href='app/view/classroom_add_input_view.php'>Thêm mới</a>
+            </div>"
+            ?>
         </div>
         <div class="column">
             <h2>Giáo viên</h2>
             <div>
                 <a href="app/view/teacher_search_view.php">Tìm kiếm</a>
             </div>
-            <div>
-                <a href="app/view/teacher_add_input_view.php">Thêm mới</a>
-            </div>
+            <?php if ($_SESSION['sa'] == true) echo
+            " <div>
+                <a href='app/view/teacher_add_input_view.php'>Thêm mới</a>
+            </div>"
+            ?>
         </div>
         <div class="column">
             <h2>Thiết bị</h2>
             <div>
                 <a href="app/view/device_search_view.php">Tìm kiếm</a>
             </div>
-            <div>
-                <a href="app/view/device_add_input_view.php">Thêm mới</a>
-            </div>
+            <?php if ($_SESSION['sa'] == true) echo
+            " <div>
+                <a href='app/view/device_add_input_view.php'>Thêm mới</a>
+            </div>"
+            ?>
         </div>
         <div class="column">
             <h2>Mượn/trả thiết bị</h2>

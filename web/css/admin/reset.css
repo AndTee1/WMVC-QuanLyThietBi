@@ -1,23 +1,18 @@
-*{
-    box-sizing: border-box;
+* {
     font-family: time-new-roman;
     font-size: 16px;
 }
 
-body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    margin: 0;
-    overflow: hidden;
-    
-}
-
 .container{
+    box-sizing: border-box;
     border: 1px solid #385d8a;
     width: 720px;
     max-width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 200px;
+    overflow: hidden;
 }
 
 td.NO, td.no{
@@ -73,4 +68,16 @@ button:hover{
 
 table{
     margin: 20px 0px 20px 30px;
+}
+
+button.custombackhome{
+    margin:10px 5px;
+    display: flex;
+    border-radius:8px;
+}
+
+a{
+    color:white !important;
+    text-decoration: none;
+    margin-bottom: 0px;
 }

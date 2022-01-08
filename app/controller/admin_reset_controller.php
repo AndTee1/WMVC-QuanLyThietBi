@@ -10,6 +10,7 @@
     $error = array();
     $new_password = array();
     $index = 0;
+    $flag = -1;
 
     foreach($sql as $row){
         $username[$index] = $row[0];
@@ -23,7 +24,6 @@
             if(isset($_POST[$username[$j]])){
 
                 $new_password[$username[$j]] = $_POST[$username[$j]];
-    
                 if(strlen($_POST[$username[$j]]) == 0){
                     $error[$username[$j]] = "Hãy nhập mật khẩu mới";
 
@@ -33,10 +33,11 @@
                 }else {
                     date_default_timezone_set('Asia/Bangkok');
                     $current_time = date("Y-m-d H:i:s");
-                    updatePassword($username[$j], $new_password, $current_time);
-                    $index--;
+                    updatePassword($username[$j], $_POST[$username[$j]], $current_time);
+                    $flag = $j;
                 }
             }
         }
     }
+
     

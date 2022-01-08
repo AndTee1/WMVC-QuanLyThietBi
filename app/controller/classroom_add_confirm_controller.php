@@ -1,10 +1,12 @@
 <?php
+    session_start();
     require '../model/classroom.php';
+
     $id=getLastIDR();
-    $name = $_GET['name'];
-    $building = $_GET['building'];
-    $description = $_GET['description'];
-    $avatar = $_GET['avatar'];
+    $name = $_SESSION['name'];
+    $building = $_SESSION['building'];
+    $description = $_SESSION['description'];
+    $avatar = $_SESSION['avatar'];
 
     date_default_timezone_set('Asia/Ho_Chi_Minh');
     $created = date("Y-m-d h:i:s");
@@ -15,7 +17,7 @@
         if($check_tmp == 1){
             add_room($name, $building, $description, $avatar, $created);
             mkdir("../../web/avata/$id", 0777);
-            remove_tmp($avatar,$id);
+            remove_tmp($avatar, $id);
             router_room();
         }
     }

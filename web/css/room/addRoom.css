@@ -101,6 +101,10 @@ label.col-sm-8 {padding: 0px;}
     white-space: normal;
 }
 
+textarea {
+    border: 1px solid #385d8a; 
+    background-color: #e1eaf4;
+}
 .avatar{
     border: 3px solid #385d8a;
     background-color: #4f81bd;
@@ -112,9 +116,19 @@ label.col-sm-8 {padding: 0px;}
     width: 100%;
 }
 
-a{
+/* a{
     font-style: italic;
     color: black !important;
     text-decoration-line: underline !important;
-}
+} */
 
+.custombackhome{
+    margin: 20px 25px;
+    display: flex;
+    border-radius:8px;
+}
+.custombackhome > a{
+    color:white !important;
+    margin: 5px 5px 5px 5px;
+    text-decoration: none;
+}

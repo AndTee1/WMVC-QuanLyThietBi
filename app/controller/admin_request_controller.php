@@ -1,4 +1,6 @@
 <?php
+    require "../common/define.php";
+    
     // load file model
     require "../model/admin.php";
 

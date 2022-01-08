@@ -1,37 +1,37 @@
 <?php
     require '../model/teacher.php';   
     $nameErr = $specializedErr = $degreeErr = $avatarErr = $descriptionErr="";
-    $name = $specialized = $degree = $avatar = $description="";
+    $nameQ = $specializedQ = $degreeQ = $avatarQ = $descriptionQ="";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST["name"])) {
-            $nameErr = "Hãy nhập tên";
+            $nameErr = "Hãy nhập tên giáo viên.";
         } else {
-            $name = ($_POST["name"]);
+            $nameQ = ($_POST["name"]);
         }
                     
         if($_POST['specialized'] == "none") {
-            $specializedErr = "Hãy chọn chuyên ngành";
+            $specializedErr = "Hãy chọn chuyên ngành.";
         } else {
-            $specialized = ($_POST["specialized"]);
+            $specializedQ = ($_POST["specialized"]);
         }
+        
         if($_POST['degree'] == "none") {
-            $degreeErr = "Hãy chọn học vị";
+            $degreeErr = "Hãy chọn bằng cấp.";
         } else {
-            $degree = ($_POST["degree"]);
+            $degreeQ = ($_POST["degree"]);
         }
 
         if ($_POST["description"]) {
-            $descriptionErr = "Hãy nhập mô tả";
+            $descriptionErr = "Hãy nhập mô tả chi tiết.";
         } else {
-            $description = ($_POST["description"]);
+            $descriptionQ = ($_POST["description"]);
         }
 
         if (empty($_POST["avatar"])) {
-            $avatarErr = "Hãy chọn avatar";
+            $avatarErr = "Hãy chọn avatar.";
         } else {
-            $avatar = ($_POST["avatar"]);
+            $avatarQ = ($_POST["avatar"]);
         }
     }    
-
 ?>

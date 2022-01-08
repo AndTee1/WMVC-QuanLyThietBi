@@ -12,8 +12,10 @@
         $buildingPast=$item["building"];
         }
     if (isset($_POST['btn-accept'])) {
-        if (empty($_POST["name"])) {
+        if (empty($_POST["name"]) ) {
             $nameErr = "Hãy nhập tên phòng học *";
+        }else if(preg_replace('/\s+/', ' ', $_POST["name"])===" "){
+            $nameErr = "Phòng học không được chỉ có khoảng trắng  *";
         } else if(strlen($_POST["name"])>100){
             $nameErr = "Tên phòng học bé hơn 100 ký tự *";
         }else {
@@ -28,6 +30,8 @@
 
         if (empty($_POST["description"])) {
             $descriptionErr = "Hãy nhập mô tả *";
+        }else if(preg_replace('/\s+/', ' ', $_POST["description"])===" "){
+            $descriptionErr = "Mô tả không được chỉ có  khoảng trắng *";
         }else if(strlen($_POST["description"])>1000){
             $descriptionErr = "Mô tả chi tiết bé hơn 1000 ký tự *";
         } else {
@@ -42,23 +46,16 @@
         } elseif (!in_array($fileType, $typeImage)){
             $avatarErr = "Chỉ được upload các định dạng JPG, PNG, JPEG, GIF *";
         }
-        elseif (file_exists($_FILES['upload']['name'])){
+        else if (file_exists($_FILES['upload']['name'])){
             $avatarErr = "Tên file đã tồn tại, không được ghi đè *";
-        }
-         else {
+        }else {
             $avatarCorrect =  $_FILES['upload']['name'];
             move_uploaded_file($_FILES['upload']['tmp_name'], "../../web/avata/add_classroom/$avatarCorrect");
         }
-        $upload = $_POST['upload'];
-        if($name !="" && $building !="" && $description !="" && $upload !=""){
-            header("Location: ../view/classroom_edit_confirm_view.php");
-            $_SESSION["id"]=$id;
-            $_SESSION["description"] = $description;
-            $_SESSION["name"] = $name;
-            $_SESSION["building"] = $building;
-            $_SESSION["description"]=$description;
-            $_SESSION["avatar"]=$upload;
-            $_SESSION["avatarPast"]=$avatarPast;
+        if($name !="" && $building !="" && $description !="" && $avatarCorrect !=""){
+            $name=preg_replace('/\s+/', ' ', $name);
+            $description=preg_replace('/\s+/', ' ', $description);
+            header("Location: ../view/classroom_edit_confirm_view.php?id=$id&name=$name&description=$description&building=$building&avatar=$avatarCorrect&avatarPast=$avatarPast");
 
         }
     }

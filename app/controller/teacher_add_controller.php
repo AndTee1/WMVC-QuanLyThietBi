@@ -1,4 +1,5 @@
 <?php
+     session_start();
     // require '../model/teacher.php';   
     $nameErr = $specializedErr = $degreeErr = $avatarErr = $descriptionErr="";
     $nameT = $specializedT = $degreeT = $avatarT = $descriptionT=$uploadT="";
@@ -32,16 +33,22 @@
 
         if (empty( $_FILES['upload']['name'])) {
             $avatarErr = "Hãy chọn avatar";
-        } else if(preg_match("/\.(jpg|jpeg|png|gif|JPG|JPEG|PNG|GIF)$/",$_POST['upload'])){
+        } else if(preg_match("/\.(jpg|jpeg|png|gif|JPG|JPEG|PNG|GIF)$/",$_FILES['upload']['name'])){
             $avatarT =  $_FILES['upload']['name'];
-            move_uploaded_file($_FILES['upload']['tmp_name'], '../../web/avata/teacherTMP/'.$avatarT); 
+            move_uploaded_file($_FILES['upload']['tmp_name'], '../../web/avata/teacherTMP/'.$avatarT);
         }
         else {
             $avatarErr= "Đây không phải file ảnh";
+             
         }
-        $uploadT = $_POST['upload'];
+        $uploadT = $_FILES['upload']['name'];
         if($nameT!=""&& $specializedT !=""&&$degreeT!=""&&$descriptionT!=""&&$uploadT!=""){
-            header("Location: ../view/teacher_add_confirm_view.php?name=$nameT&specialized=$specializedT&avata=$uploadT&degree=$degreeT&description=$descriptionT");
+            header("Location: ../view/teacher_add_confirm_view.php");
+            $_SESSION['name']=$nameT;
+            $_SESSION['specialized']=$specializedT;
+            $_SESSION['avata']=$uploadT;
+            $_SESSION['degree']=$degreeT;
+            $_SESSION['description']=$descriptionT;
         } 
        
        

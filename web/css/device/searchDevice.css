@@ -100,3 +100,21 @@ a {
     text-decoration: none;
     color: #000000;
 }
+
+.custombackhome {
+    margin: 10px 5px;
+    display: flex;
+    border-radius: 8px;
+    background-color: #4f81bd;
+    border: 1px solid #4f81bd;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.custombackhome>a {
+    color: white !important;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}

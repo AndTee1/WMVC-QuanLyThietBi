@@ -1,6 +1,10 @@
 <?php
-require "../controller/admin_reset_controller.php";
-//require "../common/define.php";
+    session_start();
+    require "../common/define.php";
+    checkLogin();
+
+    require "../controller/admin_reset_controller.php";
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -31,13 +35,12 @@ require "../controller/admin_reset_controller.php";
                             $username[$j] = $username[$j+1];
                         }
                         $index--;
-                    }
-                    if($flag == $index - 1){
+                    }else if($flag == $index - 1){
                         $index--;
-                        if($index == 0){
-                            break;
-                        }
                     }
+
+                    if($index == 0) break;
+
                 ?>
                     <form class="form" action="" method="POST">
                         <tr>

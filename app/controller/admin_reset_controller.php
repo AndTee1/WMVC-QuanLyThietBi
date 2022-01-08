@@ -1,6 +1,4 @@
 <?php
-    require "../common/define.php";
-
     // load file model
     require "../model/admin.php";
 
@@ -26,7 +24,6 @@
             if(isset($_POST[$username[$j]])){
 
                 $new_password[$username[$j]] = $_POST[$username[$j]];
-    
                 if(strlen($_POST[$username[$j]]) == 0){
                     $error[$username[$j]] = "Hãy nhập mật khẩu mới";
 
@@ -36,7 +33,7 @@
                 }else {
                     date_default_timezone_set('Asia/Bangkok');
                     $current_time = date("Y-m-d H:i:s");
-                    updatePassword($username[$j], $new_password, $current_time);
+                    updatePassword($username[$j], $_POST[$username[$j]], $current_time);
                     $flag = $j;
                 }
             }

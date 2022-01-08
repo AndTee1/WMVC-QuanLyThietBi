@@ -1,6 +1,7 @@
 <?php
 session_start();
 require 'app/controller/admin_login_controller.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

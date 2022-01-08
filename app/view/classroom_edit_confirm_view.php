@@ -41,7 +41,7 @@
                         <div class="col-sm-7">
                             <label for="" style='width:50%'>
                             <?php 
-                            $buildingChange=$_SESSION["building"];
+                            $buildingChange=$_GET["building"];
                             foreach ($listBuilding as $key=>$build){
                                 if($key===$buildingChange){
                                     echo "<div class='lable-input'>$build</div>";

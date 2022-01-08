@@ -49,6 +49,8 @@
             move_uploaded_file($_FILES['upload']['tmp_name'], "../../web/avata/add_classroom/$avatarCorrect");
         }
         if($name !="" && $building !="" && $description !="" && $avatarCorrect !=""){
+            $name=preg_replace('/\s+/', ' ', $name);
+            $description=preg_replace('/\s+/', ' ', $description);
             header("Location: ../view/classroom_edit_confirm_view.php?id=$id&name=$name&description=$description&building=$building&avatar=$avatarCorrect&avatarPast=$avatarPast");
 
         }

@@ -11,6 +11,7 @@
         $avatarPast=$item["avatar"];
         $buildingPast=$item["building"];
         }
+        $_SESSION['avatarCorrect']=" ";   
     if (isset($_POST['btn-accept'])) {
         if (empty($_POST["name"]) ) {
             $nameErr = "Hãy nhập tên phòng học *";

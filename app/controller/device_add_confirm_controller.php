@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require '../model/device.php';
     $name = $_GET['name'];
     $description = $_GET['description'];

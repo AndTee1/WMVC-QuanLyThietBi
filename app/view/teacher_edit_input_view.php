@@ -13,6 +13,7 @@
     <title>Sửa thông tin giáo viên</title>
 </head>
 <body>
+    <button class="custombackhome"><a href="../../home.php"><img src="https://img.icons8.com/material-outlined/24/FFFFFF/home--v2.png"/>Trang chủ</a></button>    
     <div class="main container">
         <from action="" method='POST' name='editform' class="col-sm-12">
             
@@ -73,7 +74,7 @@
                     </div>
                     <div class="col-sm-7">
                         <label for="" class="col-sm-8">
-                            <input type="text" name="avatar" id="avatar">
+                            <input type="text" name="avata" id="avata">
                             <div><span><?php echo $avatarErr;?></span></div>  
                         </label>
                         <button type="button" name="btnAvatar" class="col-sm-3">Browse</button>

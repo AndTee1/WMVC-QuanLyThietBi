@@ -1,6 +1,3 @@
-<?php
-require '../common/define.php';
-?>
 <html lang="en">
 
 <head>
@@ -12,6 +9,12 @@ require '../common/define.php';
 </head>
 
 <body>
+    <?php
+    session_start();
+    require '../controller/teacher_search_controller.php';
+    require '../common/define.php';
+    checkLogin();
+    ?>
     <button class="backHome">
         <a href="../../home.php">
             <img src="https://img.icons8.com/material-outlined/24/FFFFFF/home--v2.png" />
@@ -42,9 +45,11 @@ require '../common/define.php';
                 </div>
             </div>
         </form>
+        <!-- count number teacher -->
         <div class="count">
-            <label class="count__teacher">Số giáo viên tìm thấy : <span id="count">0</span></label>
+            <label class="count__teacher">Số giáo viên tìm thấy : <?php echo count($rowAll); ?></label>
         </div>
+        <!-- table data teacher -->
         <table>
             <tr class="tr__label">
                 <th class="th__id">No</th>
@@ -53,7 +58,43 @@ require '../common/define.php';
                 <th class="th__description">Mô tả chi tiết</th>
                 <th class="th__action">Action</th>
             </tr>
-            <?php require '../controller/teacher_search_controller.php'; ?>
+            <?php if (isset($_GET['search'])) {
+                foreach ($rowAll as $k => $v) {
+                    $valid = true;
+            ?>
+                    <tr>
+                        <td><label><?php print_r($k + 1) ?></label></td>
+                        <td><label><?php print_r($v['name']) ?></label></td>
+                        <td>
+                            <label><?php
+                                    foreach ($listSpecialized as $key => $value) {
+                                        if ($key == $v['specialized']) {
+                                            echo $value;
+                                        }
+                                    }
+                                    ?></label>
+                        </td>
+                        <td><label><?php print_r($v['description']) ?></label></td>
+                        <?php
+                        foreach ($r as $key => $value) {
+                            if ($value['teacher_id'] == $v['id']) {
+                                $valid = false;
+                            }
+                        }
+                        ?>
+                        <td>
+                            <?php if ($valid) { ?>
+                                <button id="<?php print_r($v['id']); ?>" onclick="confirmDelete(this)" class="delete" data-confirm="Bạn chắc chắn muốn xóa giáo viên <?php print_r($v['name']); ?> ?">Xóa</button>
+                                <button>
+                                    <a href="../view/teacher_edit_input_view.php<?php echo '?id=' . $v['id']; ?>">Sửa</a>
+                                </button>
+                            <?php   } ?>
+                        </td>
+                    </tr>
+            <?php
+                }
+            }
+            ?>
         </table>
         <!-- Popup confirm delete -->
         <div id="myPopup" class="popup">
@@ -76,7 +117,6 @@ require '../common/define.php';
                         <button type="button" class="button__cancel" onclick="closePopup()">Cancel</button>
                         <button type="submit" form="form-delete-teacher" class="button__confirm">OK</button>
                     </div>
-
                 </div>
             </div>
         </div>

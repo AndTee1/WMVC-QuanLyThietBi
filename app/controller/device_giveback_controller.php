@@ -8,7 +8,19 @@
     $count = 0;
     $i = 1;
     // error_reporting(0);
-
+    session_start();
+    if (!(isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true)) {
+        echo "<script> window.location.assign('../../login.php'); </script>";
+    }
+    require '../../app/common/define.php';
+    checkLogin();
+    if ($_SERVER['REQUEST_METHOD'] == "POST" and isset($_POST['logoutAction'])) {
+        $_SESSION['loggedin'] = false;
+        $_SESSION['name'] = '';
+        $_SESSION['time'] = '';
+        echo "<script> window.location.assign('login.php'); </script>";
+    } 
+    
     if (isset($_POST["search"])) {
         // error_reporting(0);
         $equipment = ($_POST["equipment"]);

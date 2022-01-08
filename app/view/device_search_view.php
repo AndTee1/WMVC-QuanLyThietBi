@@ -61,6 +61,10 @@
                     <td>
                         <?php
                         if (isset($row['status']) && $row['status'] == 1) {
+                            
+                           
+
+
 
 
 
@@ -68,7 +72,9 @@
 
                             //$b = '<button class="btn_delete"><a href="device_delete_view.php?id=' .  $row['id'] . '">Xóa</a></button> <button class="btn_delete"><a href="device_edit_view.php?id=' .  $row['id'] . '">Sửa</a></button>';
 
-                            $b = '<a href="../controller/device_search_controller.php?delete=true&id=' . $row['id'] . '" class="btn_delete" onclick="return confirm(`Bạn chắc chắn muốn xóa thiết bị?`)">Xóa</a><a class="btn_edit" href="device_edit_input_view.php?id=' .  $row['id'] . '">Sửa</a>';
+
+                            $b = '<a href="../controller/device_search_controller.php?delete=true&id=' . $row['id'] . '" class="btn_delete" onclick="return confirm(`Bạn chắc chắn muốn xóa thiết bị?`)">Xóa</a><a class="btn_edit" href="device_edit_view.php?id=' .  $row['id'] . '">Sửa</a>';
+
 
                             echo $b;
                         } else {

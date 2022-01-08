@@ -84,7 +84,12 @@
                     <div class="col-md-2"></div>
                     <div class="col-sm-7">
                     <?php 
-                        echo "<img src='../../web/avata/$id/$avatarPast' class='image' id='image'>"
+                        if($_SESSION['avatarCorrect']!==" "){
+                            $avatarNew=$_SESSION['avatarCorrect'];
+                            echo "<img src='../../web/avata/add_classroom/$avatarNew' class='image' id='image'>";
+                        }else{
+                            echo "<img src='../../web/avata/$id/$avatarPast' class='image' id='image'>" ;
+                        }
                     ?>
                     </div>
                 </div>                                

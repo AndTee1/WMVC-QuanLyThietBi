@@ -2,7 +2,7 @@
         require '../controller/classroom_add_confirm_controller.php';
         require '../common/define.php';
 
-        $room_name = isset($_GET['name']) ? $_GET['name'] : '';
+        $room_name = isset($_SESSION['name']) ? $_SESSION['name'] : '';
         if ($room_name == '') {
             header('Location: ../view/classroom_add_input_view.php');
         }

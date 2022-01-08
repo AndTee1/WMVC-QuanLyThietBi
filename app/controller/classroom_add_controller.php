@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     $nameErr = $buildingErr = $descriptionErr = $avatarErr = "";
     $nameR = $buildingR = $descriptionR = $avatarR = "";
 
@@ -49,7 +51,11 @@
         $uploadR = $_FILES['upload']['name'];      
 
         if($nameR !="" && $buildingR !="" && $descriptionR !="" && $uploadR !=""){
-            header("Location: ../view/classroom_add_confirm_view.php?name=$nameR&building=$buildingR&description=$descriptionR&avatar=$uploadR");
+            header("Location: ../view/classroom_add_confirm_view.php");
+            $_SESSION['name']=$nameR;
+            $_SESSION['building']=$buildingR;
+            $_SESSION['description']=$descriptionR;
+            $_SESSION['avatar']=$uploadR;
         }
     }
 ?>

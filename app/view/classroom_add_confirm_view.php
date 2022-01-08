@@ -40,7 +40,7 @@
                         </div>
                         <div class="col-sm-7">
                             <label for="" style='width:50%'>
-                                <input type="text" name="building" disabled="true" value="<?php echo $building;?>">
+                                <input type="text" name="building" disabled="true" value="<?php foreach ($listBuilding as $key=>$build) : ?><?php if($building==$key){ echo $build;}?><?php endforeach; ?>">
                             </label>                  
                         </div>
                     </div>

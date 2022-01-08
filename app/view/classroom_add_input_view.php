@@ -1,6 +1,7 @@
 <?php
         require '../controller/classroom_add_controller.php';
         require '../common/define.php'; 
+        checkLogin();
     ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -77,7 +78,7 @@
                     </div>
                     <div class="col-sm-7" style="display:flex">
                         <label for="" class="col-sm-8" style="display:flex">
-                            <input type="text" name="upload" id="avatar" disabled="true">
+                            <input type="text" name="upload" id="avatar">
                         </label>
                         <div class="col-sm-2" style="padding-left: 0px;">
                             <input type="file" id="upload" name="upload" onchange="myFunction(this)"/>

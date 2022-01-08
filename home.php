@@ -22,7 +22,11 @@
     <form action="" method="post">
         <input type="submit" name="logoutAction" value="Logout" class="alignright" id="btnLogout" />
     </form>
-
+        <?php if ($_SESSION['sa'] == true) echo
+            "<div>
+                <a href='app/view/admin_reset_view.php'>Thông báo cấp lại mật khẩu</a>
+            </div>"
+        ?>
     <p> <?php echo "Tên login: " . $_SESSION['name']; ?></p>
     <p> <?php date_default_timezone_set('Asia/Bangkok');
         echo "Thời gian login: " . $_SESSION['time']; ?> </p>

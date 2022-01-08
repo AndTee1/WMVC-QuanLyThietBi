@@ -1,6 +1,8 @@
 <?php
         require '../controller/device_add_confirm_controller.php';
         require '../common/define.php';
+
+        checkLogin();
 ?>
 
 <!DOCTYPE html>

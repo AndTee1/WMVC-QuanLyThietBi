@@ -9,6 +9,7 @@
     $avatarPast=$_GET['avatarPast'];
     date_default_timezone_set('Asia/Ho_Chi_Minh');
     $update = date("Y-m-d h:i:s");
+    $_SESSION['avatarCorrect']=$_GET['avatar'];
     if(isset($_POST['edit'])){
             $file="../../web/avata/add_classroom/$avatar";
             $newfile="../../web/avata/$id/$avatar";

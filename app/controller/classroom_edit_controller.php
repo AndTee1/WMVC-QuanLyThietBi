@@ -55,6 +55,8 @@
         if($name !="" && $building !="" && $description !="" && $avatarCorrect !=""){
             $name=preg_replace('/\s+/', ' ', $name);
             $description=preg_replace('/\s+/', ' ', $description);
+            session_start();
+            $_SESSION['avatarCorrect']=$avatarCorrect;            
             header("Location: ../view/classroom_edit_confirm_view.php?id=$id&name=$name&description=$description&building=$building&avatar=$avatarCorrect&avatarPast=$avatarPast");
 
         }

@@ -1,5 +1,6 @@
 <?php
     require "../controller/admin_request_controller.php";
+
 ?>
 <!DOCTYPE html>
 <html>

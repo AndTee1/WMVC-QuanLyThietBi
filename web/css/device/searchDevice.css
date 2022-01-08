@@ -72,15 +72,20 @@ th {
 }
 
 #th_name {
-    width: 230px;
+    width: 630px;
+    text-align: left;
 }
 
 #th_status {
-    width: 230px;
+    width: 180px;
 }
 
 #th_action {
-    width: 220px;
+    width: 180px;
+}
+
+.td-name {
+    text-align: left;
 }
 
 .btn_delete {

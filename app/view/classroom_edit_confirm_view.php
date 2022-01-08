@@ -12,7 +12,7 @@
     <?php
         require '../controller/classroom_edit_confirm_controller.php';
         require '../common/define.php';
-        if($_GET["name"]===NULL && $_GET["id"]!==NULL){
+        if($_GET["name"]===NULL && $_GET["id"]===NULL){
             header("Location: ../view/classroom_edit_input_view.php");
         }
     ?>

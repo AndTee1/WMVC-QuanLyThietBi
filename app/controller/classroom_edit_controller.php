@@ -11,6 +11,12 @@
         $avatarPast=$item["avatar"];
         $buildingPast=$item["building"];
         }
+        echo "
+        <script type=\"text/javascript\">
+        var e = document.getElementById('image').value;
+        console.log(e);
+        </script>
+    ";
         $_SESSION['avatarCorrect']=" ";   
     if (isset($_POST['btn-accept'])) {
         if (empty($_POST["name"]) ) {

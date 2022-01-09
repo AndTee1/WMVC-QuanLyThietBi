@@ -120,6 +120,14 @@
     </div>
     </form>
     <div>
-    <script type="text/javascript" src="../../web/js/editRoom.js"></script>
+    <script type="text/javascript" src="../../web/js/editRoom.js" defer></script>
+    <script type="text/javascript" defer>
+        window.onload=()=>{
+            var avatar=document.getElementById("avatar").value;
+            if(avatar){
+            document.getElementById("image").src=`../../web/avata/add_classroom/${avatar}`;
+                }
+            }
+    </script>
 </body>
 </html>

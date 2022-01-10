@@ -84,12 +84,7 @@
                     <div class="col-md-2"></div>
                     <div class="col-sm-7">
                     <?php 
-                         $avatarNew=$_SESSION['avatarCorrect'];
-                        if($_SESSION['avatarCorrect']!==" "){
-                            echo "<img src='../../web/avata/add_classroom/$avatarNew' class='image' id='image'>";
-                        }else{
-                            echo "<img src='../../web/avata/$id/$avatarPast' class='image' id='image'>" ;
-                        }
+                    echo "<img src='../../web/avata/$id/$avatarPast' class='image' id='image'>" ;
                     ?>
                     </div>
                 </div>                                
@@ -120,11 +115,12 @@
     </div>
     </form>
     <div>
-    <script type="text/javascript" src="../../web/js/editRoom.js" defer></script>
+    <script type="text/javascript" src="../../web/js/editRoom.js"></script>
     <script type="text/javascript" defer>
+
         window.onload=()=>{
             var avatar=document.getElementById("avatar").value;
-            if(avatar){
+            if(avatar!==""){
             document.getElementById("image").src=`../../web/avata/add_classroom/${avatar}`;
                 }
             }
